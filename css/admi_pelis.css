@@ -80,3 +80,68 @@ body{
 .form-search input{
     border-radius: 1.2em;
 }
+
+
+/* botones  */
+
+
+.btn-opciones {
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 0.31em;
+    color: #fff;
+    font-size: 1.16em;
+    transition: .3s ease all;
+    padding: 0.08em 0.5em;
+    margin: 1px;
+}
+
+.btn-publicado {
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 0.31em;
+    color: #54f095;
+    font-size: 1.16em;
+    transition: .3s ease all;
+    padding: 0.08em 0.5em;
+    margin: 1px;
+}
+.btn-publicado:hover{
+    background: #54f095;
+    color: #000;
+}
+
+.btn-opciones:hover {
+    background: #fff;
+    color: #000;
+}
+
+.boton-add{
+    background: #202649;
+    border: none;
+    border-radius: 0.6em;
+    color: #fff;
+    font-size: 1em;
+    padding: 0.6rem 1.3rem;
+    transition: .3s ease all;
+    margin: 1px;
+}
+
+.boton-add i{
+    margin-right: 0.4em;
+}
+
+.boton-add:hover{
+    background: #ffffff;
+    color: #000;
+}
+footer{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(50, 58, 58);
+    height: 4rem;
+    color: #fff;
+}
