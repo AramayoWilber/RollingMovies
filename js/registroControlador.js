@@ -1,5 +1,5 @@
-import { Usuario } from './Usuario.class.js';
-import { UsuariosDB } from './UsuariosDB.class.js';
+import { Usuario } from './clases/Usuario.class.js';
+import { UsuariosDB } from './clases/UsuariosDB.class.js';
 
 const formRegistro = document.getElementById('formRegistro');
 const inputs = document.querySelectorAll('#formRegistro input');
@@ -150,7 +150,7 @@ formRegistro.addEventListener('submit', e => {
         
         usuarioDB.agregarUsuario(nuevoUsuario);
 
-        window.location.href = '/Proyecto/error404.html';
+        window.location.href = '../error404.html';
     }
 
 
