@@ -1,0 +1,82 @@
+.navbar-toggler-icon {
+    background-color: #080f28;
+}
+/* background: #8da0bc; letras costado  */
+
+
+body{
+    background-color: #080f28;
+}
+
+
+/* nav bar  */
+
+.bg-navbar{
+    background:  #202649 ;
+
+}
+
+.navbar-nav {
+    font-size: 1.1em;
+}
+.nav-link{
+    color: azure;
+    
+}
+
+.nav-link:hover{
+    color: #8da0bc;
+}
+
+.navbar-toggler{
+    border: 1px solid #8da0bc;
+    color: #8da0bc;
+}
+
+
+
+.navbar-toggler span{
+    color: aqua;
+}
+
+.navbar-brand img{
+    height: 25%;
+    width: 7rem;
+}
+
+
+
+.ancho {
+    width: 90%;
+}
+
+.form-search {
+    position: relative;
+}
+
+.form-search .btn{
+    width: 3rem;
+    height: 2.4rem;
+    position: absolute;
+    right: .2em;
+    bottom: 0.0em;
+    z-index: 100;
+    background: #8da0bc;
+    border-radius:  0% 45% 45% 0%;
+}
+
+.btn-outline-light{
+    border: transparent;
+}
+
+.form-search i{
+    /* falta modificar para lograr lo deseado  */
+    font-size: .9rem;
+    background: transparent;
+    color: #080f28;
+}
+
+
+.form-search input{
+    border-radius: 1.2em;
+}

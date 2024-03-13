@@ -1,4 +1,4 @@
-import { UsuariosDB } from "./UsuariosDB.class.js";
+import { UsuariosDB } from "./clases/UsuariosDB.class.js";
 
 const formulario = document.getElementById('formLogin');
 const parrafo_alert = document.querySelector('#formLogin p'); //trae el primer parrafor de la card-body
