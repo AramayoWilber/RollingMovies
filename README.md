@@ -3,7 +3,7 @@
 - Aramayo, Wilber David
 - Franco L
 - Leila Magali
-- Maximo
+- Maximo Garcia Toledo
 - Cristian
 
 #GitHub comado utiles
