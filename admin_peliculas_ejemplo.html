@@ -7,6 +7,9 @@
     <title>Disney</title>
     <link rel="stylesheet" href="bootstrap/bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bootstrap/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css">
+    <!-- DataTable -->
+    <link href="bootstrap/DataTable/datatables.min.css" rel="stylesheet">
+    
     <link rel="stylesheet" href="css/admi_pelis.css" />
 </head>
 
@@ -73,126 +76,22 @@
                             <th scope="col">Opciones</th>
                             </tr>
                         </thead>
-                        <tbody class="table-group-divider">
+                        <tbody class="table-group-divider" id="body-tabla">
                             <!-- primer elemento de la tabla -->
-                            <tr class="text-center">
-                            <th scope="row">1</th>
-                            <td class="p-2">Kung Fu Panda 4</td>
-                            <td>pelicula</td>
-                            <td>
-                                <button class="btn-publicado"><i class="bi bi-check-square"></i></button>
-                            </td>
-                            <td>
-                                <button class="btn-opciones" data-bs-toggle="modal" data-bs-target="#modal-delete"><i class="bi bi-trash"></i></button>
-                                <button class="btn-opciones" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="bi bi-pencil-square"></i></button>
-                                <button class="btn-opciones"><i class="bi bi-star-fill"></i></button>
-                            </td>
-                            </tr>
+                            <!-- <tr class="text-center">
+                                <th scope="row">1</th>
+                                <td class="p-2">Kung Fu Panda 4</td>
+                                <td>pelicula</td>
+                                <td>
+                                    <button class="btn-publicado"><i class="bi bi-check-square"></i></button>
+                                </td>
+                                <td>
+                                    <button class="btn-opciones" data-bs-toggle="modal" data-bs-target="#modal-delete"><i class="bi bi-trash"></i></button>
+                                    <button class="btn-opciones" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="bi bi-pencil-square"></i></button>
+                                    <button class="btn-destacado"><i class="bi bi-star-fill"></i></button>
+                                </td>
+                            </tr> -->
                             <!-- Fin primer elemento de tabla -->
-                            <tr class="text-center">
-                                <th scope="row">1</th>
-                                <td class="p-2">Kung Fu Panda 4</td>
-                                <td>pelicula</td>
-                                <td>
-                                <button class="btn-publicado"><i class="bi bi-check-square"></i></button>
-                                </td>
-                                <td>
-                                <button class="btn-opciones" data-bs-toggle="modal" data-bs-target="#modal-delete"><i class="bi bi-trash"></i></button>
-                                <button class="btn-opciones" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="bi bi-pencil-square"></i></button>
-                                <button class="btn-opciones"><i class="bi bi-star-fill"></i></button>
-                                </td>
-                            </tr>
-                            <tr class="text-center">
-                                <th scope="row">1</th>
-                                <td class="p-2">Kung Fu Panda 4</td>
-                                <td>pelicula</td>
-                                <td>
-                                <button class="btn-publicado"><i class="bi bi-check-square"></i></button>
-                                </td>
-                                <td>
-                                <button class="btn-opciones" data-bs-toggle="modal" data-bs-target="#modal-delete"><i class="bi bi-trash"></i></button>
-                                <button class="btn-opciones" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="bi bi-pencil-square"></i></button>
-                                <button class="btn-opciones"><i class="bi bi-star-fill"></i></button>
-                                </td>
-                            </tr>
-                            <tr class="text-center">
-                                <th scope="row">1</th>
-                                <td class="p-2">Kung Fu Panda 4</td>
-                                <td>pelicula</td>
-                                <td>
-                                <button class="btn-publicado"><i class="bi bi-check-square"></i></button>
-                                </td>
-                                <td>
-                                <button class="btn-opciones" data-bs-toggle="modal" data-bs-target="#modal-delete"><i class="bi bi-trash"></i></button>
-                                <button class="btn-opciones" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="bi bi-pencil-square"></i></button>
-                                <button class="btn-opciones"><i class="bi bi-star-fill"></i></button>
-                                </td>
-                            </tr>
-                            <tr class="text-center">
-                                <th scope="row">1</th>
-                                <td class="p-2">Kung Fu Panda 4</td>
-                                <td>pelicula</td>
-                                <td>
-                                <button class="btn-publicado"><i class="bi bi-check-square"></i></button>
-                                </td>
-                                <td>
-                                <button class="btn-opciones" data-bs-toggle="modal" data-bs-target="#modal-delete"><i class="bi bi-trash"></i></button>
-                                <button class="btn-opciones" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="bi bi-pencil-square"></i></button>
-                                <button class="btn-opciones"><i class="bi bi-star-fill"></i></button>
-                                </td>
-                            </tr>
-                            <tr class="text-center">
-                                <th scope="row">1</th>
-                                <td class="p-2">Kung Fu Panda 4</td>
-                                <td>pelicula</td>
-                                <td>
-                                <button class="btn-publicado"><i class="bi bi-check-square"></i></button>
-                                </td>
-                                <td>
-                                <button class="btn-opciones" data-bs-toggle="modal" data-bs-target="#modal-delete"><i class="bi bi-trash"></i></button>
-                                <button class="btn-opciones" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="bi bi-pencil-square"></i></button>
-                                <button class="btn-opciones"><i class="bi bi-star-fill"></i></button>
-                                </td>
-                            </tr>
-                            <tr class="text-center">
-                                <th scope="row">1</th>
-                                <td class="p-2">Kung Fu Panda 4</td>
-                                <td>pelicula</td>
-                                <td>
-                                <button class="btn-publicado"><i class="bi bi-check-square"></i></button>
-                                </td>
-                                <td>
-                                <button class="btn-opciones" data-bs-toggle="modal" data-bs-target="#modal-delete"><i class="bi bi-trash"></i></button>
-                                <button class="btn-opciones" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="bi bi-pencil-square"></i></button>
-                                <button class="btn-opciones"><i class="bi bi-star-fill"></i></button>
-                                </td>
-                            </tr>
-                            <tr class="text-center">
-                                <th scope="row">1</th>
-                                <td class="p-2">Kung Fu Panda 4</td>
-                                <td>pelicula</td>
-                                <td>
-                                <button class="btn-publicado"><i class="bi bi-check-square"></i></button>
-                                </td>
-                                <td>
-                                <button class="btn-opciones" data-bs-toggle="modal" data-bs-target="#modal-delete"><i class="bi bi-trash"></i></button>
-                                <button class="btn-opciones" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="bi bi-pencil-square"></i></button>
-                                <button class="btn-opciones"><i class="bi bi-star-fill"></i></button>
-                                </td>
-                            </tr>
-                            <tr class="text-center">
-                                <th scope="row">1</th>
-                                <td class="p-2">Kung Fu Panda 4</td>
-                                <td>pelicula</td>
-                                <td>
-                                <button class="btn-publicado"><i class="bi bi-check-square"></i></button>
-                                </td>
-                                <td>
-                                <button class="btn-opciones" data-bs-toggle="modal" data-bs-target="#modal-delete"><i class="bi bi-trash"></i></button>
-                                <button class="btn-opciones" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="bi bi-pencil-square"></i></button>
-                                <button class="btn-opciones"><i class="bi bi-star-fill"></i></button>
-                                </td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -265,7 +164,8 @@
 
 
     <script src="bootstrap/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
-    <script type="module" src=""></script>
+    <script src="bootstrap/DataTable/datatables.min.js"></script>
+    <script type="module" src="./js/adminControlador.js"></script>
 </body>
 
 </html>

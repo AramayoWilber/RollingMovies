@@ -96,6 +96,32 @@ body{
     margin: 1px;
 }
 
+.btn-destacado {
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 0.31em;
+    color: #fff;
+    font-size: 1.16em;
+    transition: .3s ease all;
+    padding: 0.08em 0.5em;
+    margin: 1px;
+}
+
+.btn-destacado .bi-star-fill{
+    color: #cfe417;
+}
+
+.btn-no-destacado {
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 0.31em;
+    color: #fff;
+    font-size: 1.16em;
+    transition: .3s ease all;
+    padding: 0.08em 0.5em;
+    margin: 1px;
+}
+
 .btn-publicado {
     background: rgba(0, 0, 0, 0.5);
     border: none;
@@ -106,8 +132,25 @@ body{
     padding: 0.08em 0.5em;
     margin: 1px;
 }
+
 .btn-publicado:hover{
     background: #54f095;
+    color: #000;
+}
+
+.btn-no-publicado {
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 0.31em;
+    color: #d3226c;
+    font-size: 1.16em;
+    transition: .3s ease all;
+    padding: 0.08em 0.5em;
+    margin: 1px;
+}
+
+.btn-no-publicado:hover {
+    background: #d3226c;
     color: #000;
 }
 
