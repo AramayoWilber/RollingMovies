@@ -127,6 +127,12 @@ body{
     margin: 1px;
 }
 
+.boder-contenedor {
+    border: 1px solid #fff;
+    padding: 10px;
+    border-radius: 20px;
+}
+
 .boton-add i{
     margin-right: 0.4em;
 }
