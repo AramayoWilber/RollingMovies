@@ -1,4 +1,5 @@
 import {PeliculasDB} from './clases/PeliculasDB.class.js'
+import language_ES from '../bootstrap/DataTable/language_ES.js';
 
 const bodyTabla = document.getElementById('body-tabla');
 
@@ -46,6 +47,17 @@ const llenarTabla = () => {
 }
 
 llenarTabla(); // llenamos la tabla con los datos de peliculas
+
+
+const tabla = new DataTable('#tabla', {
+    language: language_ES,
+    lengthMenu: [3, 6, 9, 12],
+    columnDefs:[ //cambiar las definiciones de las columnas "leerDocumentacion"
+        { orderable: false, target: [3,4]},
+        { searchable: false, target: [0,2,3,4]}
+    ],
+    pageLength: 5
+});
 
 const btn_destacado = document.getElementById('btn_destacado_1');
 const scopes_table =document.querySelectorAll('#body-tabla th');

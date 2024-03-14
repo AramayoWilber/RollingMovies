@@ -7,8 +7,11 @@
     <title>Disney</title>
     <link rel="stylesheet" href="bootstrap/bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bootstrap/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css">
+    <!-- Iconos de Fontawesome  -->
+    <link rel="stylesheet" href="bootstrap/fontawesome-free-6.5.1-web/css/all.min.css">
     <!-- DataTable -->
-    <link href="bootstrap/DataTable/datatables.min.css" rel="stylesheet">
+    <link href="bootstrap/boostrar.min.css" rel="stylesheet">
+    <link href="bootstrap/dataTables.bootstrap5.css" rel="stylesheet">
     
     <link rel="stylesheet" href="css/admi_pelis.css" />
 </head>
@@ -50,23 +53,19 @@
     </header>
 
     <main >
-        <div>
-
-        </div>
-        <div class="container my-5">
-            <div class="row boder-contenedor justify-content-center">
+        <div class="container my-1">
+            <div class="row justify-content-center">
                 <div class="col-12 my-4 d-flex justify-content-between align-items-center">
                     <button type="button" class="btn boton-add">
-                        <i class="bi bi-plus-lg"></i>Añadir</button>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Fitrar por nombre..." aria-label="Search">
-                        <button class="btn btn-outline-primary" type="submit">
-                            <i class="bi bi-search"></i>
-                        </button>
-                    </form>
+                        <i class="bi bi-plus-lg"></i>Añadir
+                    </button>
                 </div>
-                <div class="col-12 mb-3">
-                    <table class="table table-dark table-striped table-hover" >
+                <div class="col-12 justify-content-center mb-3 boder-contenedor shadow">
+                    <!-- table-dark table-striped table-hover -->
+                    <table id="tabla" class="table table-striped" style="width: 100%;">
+                        <caption>
+                            Tabla de Peliculas y Seies
+                        </caption>
                         <thead>
                             <tr class="text-center">
                             <th scope="col">Codigo</th>
@@ -77,42 +76,10 @@
                             </tr>
                         </thead>
                         <tbody class="table-group-divider" id="body-tabla">
-                            <!-- primer elemento de la tabla -->
-                            <!-- <tr class="text-center">
-                                <th scope="row">1</th>
-                                <td class="p-2">Kung Fu Panda 4</td>
-                                <td>pelicula</td>
-                                <td>
-                                    <button class="btn-publicado"><i class="bi bi-check-square"></i></button>
-                                </td>
-                                <td>
-                                    <button class="btn-opciones" data-bs-toggle="modal" data-bs-target="#modal-delete"><i class="bi bi-trash"></i></button>
-                                    <button class="btn-opciones" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="bi bi-pencil-square"></i></button>
-                                    <button class="btn-destacado"><i class="bi bi-star-fill"></i></button>
-                                </td>
-                            </tr> -->
-                            <!-- Fin primer elemento de tabla -->
                         </tbody>
                     </table>
                 </div>
             </div>
-
-
-            <nav aria-label="Page navigation example" class="my-4">
-                <ul class="pagination justify-content-center">
-                <li class="page-item disabled">
-                    <a class="page-link">Previous</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
-                </li>
-                </ul>
-            </nav>
-
-
         </div>
     </main>
 
@@ -164,7 +131,10 @@
 
 
     <script src="bootstrap/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
-    <script src="bootstrap/DataTable/datatables.min.js"></script>
+    <script src="bootstrap/DataTable/datatables.js"></script>
+    <!-- <script src="bootstrap/dataTables.bootstrap.js"></script> -->
+    <!-- jQuety -->
+    <script src="bootstrap/DataTable/jQuery-3.7.0/jquery-3.7.0.min.js"></script>
     <script type="module" src="./js/adminControlador.js"></script>
 </body>
 

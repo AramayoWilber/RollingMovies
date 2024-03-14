@@ -3,9 +3,12 @@
 }
 /* background: #8da0bc; letras costado  */
 
-
+/* background-color: #080f28; */
 body{
-    background-color: #080f28;
+    position: relative;
+    margin: 0;
+    padding-bottom: 8em;
+    min-height: 100vh;
 }
 
 
@@ -171,9 +174,9 @@ body{
 }
 
 .boder-contenedor {
-    border: 1px solid #fff;
-    padding: 10px;
-    border-radius: 20px;
+    border: 1px solid #202649;
+    padding: 1em;
+    border-radius: 10px;
 }
 
 .boton-add i{
@@ -185,12 +188,11 @@ body{
     color: #000;
 }
 footer{
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    bottom: 0;
+    padding: 1em;
+    position: absolute;
     text-align: center;
     background-color: rgb(50, 58, 58);
-    height: 4rem;
     color: #fff;
 }
