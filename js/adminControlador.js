@@ -53,7 +53,7 @@ function eventBotonPublicado(e){
     }
 }
 
-function eventBotonDestacar(e){
+function eventBotonDestacados(e){
 
     const catalogo = new PeliculasDB();
 
@@ -108,14 +108,14 @@ const llenarTabla = () => {
         let peliculaDestacada;
 
         if(element.publicado){
-            peliculaPulicada = `<button id="icono_boton_publicado_${element.codigo}" class="btn-publicado"><i class="fa-solid fa-circle-check"></i></button>`;
+            peliculaPulicada = `<button name="botones_publicado" id="icono_boton_publicado_${element.codigo}" class="btn-publicado"><i class="fa-solid fa-circle-check"></i></button>`;
         }else
-            peliculaPulicada = `<button id="icono_boton_publicado_${element.codigo}" class="btn-no-publicado"><i class="fa-solid fa-circle-xmark"></i></button>`;
+            peliculaPulicada = `<button name="botones_publicado" id="icono_boton_publicado_${element.codigo}" class="btn-no-publicado"><i class="fa-solid fa-circle-xmark"></i></button>`;
 
         if(element.destacada){
-            peliculaDestacada = `<button class="btn-destacado"><i class="bi bi-star-fill"></i></button>`;
+            peliculaDestacada = `<button class="btn-destacado" name="botones_destacados"><i class="bi bi-star-fill"></i></button>`;
         }else
-            peliculaDestacada = `<button class="btn-no-destacado"><i class="bi bi-star-fill"></i></button>`;
+            peliculaDestacada = `<button class="btn-no-destacado" name="botones_destacados"><i class="bi bi-star-fill"></i></button>`;
     
 
         const filaTabla = `
@@ -166,6 +166,30 @@ new DataTable('#tabla', {
 
 const tabla = document.getElementById('tabla');
 const btn_add = document.getElementById('btn_add')
+const btns_destacados = document.getElementsByName('botones_destacados');
+const btns_publicados = document.getElementsByName('botones_publicado');
+
+
+btns_destacados.forEach(boton => {
+    boton.addEventListener('click', eventBotonDestacados)
+})
+
+btns_publicados.forEach(button => {
+    button.addEventListener('click',eventBotonPublicado)
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 btn_add.addEventListener('click', e => {
     console.log(e.target.parentElement.parentElement)
@@ -173,10 +197,11 @@ btn_add.addEventListener('click', e => {
 
 
 
-
 //eventos de la tabla
 //tabla.addEventListener('click', eventBotonDestacar);
-//tabla.addEventListener('click', eventBotonPublicado);
+// tabla.addEventListener('click', e => {
+
+// });
 
 
 
