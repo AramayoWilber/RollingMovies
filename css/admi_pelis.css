@@ -1,16 +1,21 @@
-.navbar-toggler-icon {
-    background-color: #080f28;
-}
-/* background: #8da0bc; letras costado  */
 
 /* background-color: #080f28; */
 body{
     position: relative;
+    background: #eeeeee;
     margin: 0;
     padding-bottom: 8em;
     min-height: 100vh;
 }
 
+.boder-contenedor {
+
+    background: transparent;
+    border: 1px solid #202649;
+    padding: 1em;
+    backdrop-filter: blur(30px);
+    border-radius: 10px;
+}
 
 /* nav bar  */
 
@@ -88,20 +93,41 @@ body{
 /* botones  */
 
 
-.btn-opciones {
-    background: rgba(0, 0, 0, 0.5);
+.btn-opcion-borrar {
+    background: transparent;
     border: none;
     border-radius: 0.31em;
-    color: #fff;
+    color: #030303;
     font-size: 1.16em;
     transition: .3s ease all;
     padding: 0.08em 0.5em;
     margin: 1px;
 }
 
-.btn-destacado {
-    background: rgba(0, 0, 0, 0.5);
+.btn-opcion-borrar:hover {
+    background: rgba(122, 120, 120, 0.5);
+    color: #ff0000;
+}
+
+.btn-opcion-editar {
+    background: transparent;
     border: none;
+    border-radius: 0.31em;
+    color: #030303;
+    font-size: 1.16em;
+    transition: .3s ease all;
+    padding: 0.08em 0.5em;
+    margin: 1px;
+}
+
+.btn-opcion-editar:hover {
+    background: rgba(122, 120, 120, 0.5);
+    color: #230ee2;
+}
+
+.btn-destacado {
+    background: transparent;
+    border: 1px solid #868383;
     border-radius: 0.31em;
     color: #fff;
     font-size: 1.16em;
@@ -111,11 +137,11 @@ body{
 }
 
 .btn-destacado .bi-star-fill{
-    color: #cfe417;
+    color: rgb(236,253,24) ;
 }
 
 .btn-no-destacado {
-    background: rgba(0, 0, 0, 0.5);
+    background: #8da0bc;
     border: none;
     border-radius: 0.31em;
     color: #fff;
@@ -126,10 +152,10 @@ body{
 }
 
 .btn-publicado {
-    background: rgba(0, 0, 0, 0.5);
+    background: transparent;
     border: none;
     border-radius: 0.31em;
-    color: #54f095;
+    color: #25bb63;
     font-size: 1.16em;
     transition: .3s ease all;
     padding: 0.08em 0.5em;
@@ -137,15 +163,15 @@ body{
 }
 
 .btn-publicado:hover{
-    background: #54f095;
-    color: #000;
+    background: #ebe1e1;
+
 }
 
 .btn-no-publicado {
-    background: rgba(0, 0, 0, 0.5);
+    background: transparent;
     border: none;
     border-radius: 0.31em;
-    color: #d3226c;
+    color: #ff006a;
     font-size: 1.16em;
     transition: .3s ease all;
     padding: 0.08em 0.5em;
@@ -153,14 +179,10 @@ body{
 }
 
 .btn-no-publicado:hover {
-    background: #d3226c;
-    color: #000;
+    background: #ebe1e1;
+    color: #e70f69;
 }
 
-.btn-opciones:hover {
-    background: #fff;
-    color: #000;
-}
 
 .boton-add{
     background: #202649;
@@ -173,10 +195,9 @@ body{
     margin: 1px;
 }
 
-.boder-contenedor {
-    border: 1px solid #202649;
-    padding: 1em;
-    border-radius: 10px;
+.fa-circle-user{
+    font-size: 1.8em;
+    margin-left: 0.3em;
 }
 
 .boton-add i{
@@ -184,9 +205,11 @@ body{
 }
 
 .boton-add:hover{
-    background: #ffffff;
-    color: #000;
+    background: transparent;
+    color: #1100ff;
+    border: 1px solid blue;
 }
+
 footer{
     width: 100%;
     bottom: 0;
