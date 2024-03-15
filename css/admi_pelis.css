@@ -1,10 +1,11 @@
 
 /* background-color: #080f28; */
 body{
+    font-size: 16px;
     position: relative;
     background: #eeeeee;
     margin: 0;
-    padding-bottom: 8em;
+    padding-bottom: 4em;
     min-height: 100vh;
 }
 
@@ -105,7 +106,7 @@ body{
 }
 
 .btn-opcion-borrar:hover {
-    background: rgba(122, 120, 120, 0.5);
+    background: rgb(204, 194, 194);
     color: #ff0000;
 }
 
@@ -126,8 +127,9 @@ body{
 }
 
 .btn-destacado {
+    position: relative;
     background: transparent;
-    border: 1px solid #868383;
+    border: none;
     border-radius: 0.31em;
     color: #fff;
     font-size: 1.16em;
@@ -141,10 +143,10 @@ body{
 }
 
 .btn-no-destacado {
-    background: #8da0bc;
+    background: transparent;
     border: none;
     border-radius: 0.31em;
-    color: #fff;
+    color: #3d3737;
     font-size: 1.16em;
     transition: .3s ease all;
     padding: 0.08em 0.5em;
@@ -155,33 +157,38 @@ body{
     background: transparent;
     border: none;
     border-radius: 0.31em;
-    color: #25bb63;
     font-size: 1.16em;
     transition: .3s ease all;
     padding: 0.08em 0.5em;
     margin: 1px;
 }
 
-.btn-publicado:hover{
-    background: #ebe1e1;
-
+.btn-publicado i {
+    color: rgb(8, 155, 45) ;
 }
+
+/* .btn-publicado:hover{
+    background: rgb(204, 194, 194);
+
+} */
 
 .btn-no-publicado {
     background: transparent;
     border: none;
     border-radius: 0.31em;
-    color: #ff006a;
     font-size: 1.16em;
     transition: .3s ease all;
     padding: 0.08em 0.5em;
     margin: 1px;
 }
 
-.btn-no-publicado:hover {
-    background: #ebe1e1;
-    color: #e70f69;
+.btn-no-publicado i{
+    color: #cc105f;
 }
+
+/* .btn-no-publicado:hover {
+    background: rgb(204, 194, 194);
+} */
 
 
 .boton-add{
@@ -209,6 +216,8 @@ body{
     color: #1100ff;
     border: 1px solid blue;
 }
+
+
 
 footer{
     width: 100%;

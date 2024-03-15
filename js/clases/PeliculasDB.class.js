@@ -174,11 +174,57 @@ export class PeliculasDB {
     }
 
 
-    buscarPelicula(){
+    peliDestacada(id_pelicula){
+
+        const id = parseInt(id_pelicula);
+        const catalogo = this.establecerConexion();
+        let posicion;
+
+        catalogo.forEach(element => {
+            if(element.codigo === id){
+                posicion = element.codigo;
+            }
+        });
+
+        return catalogo[posicion].destacada;
 
     }
 
-    mostrarPeliculas(){
+    modificarDestacado(id_pelicula, boolean){
+        const id = parseInt(id_pelicula);
+        const catalogo = this.establecerConexion();
+        
+        catalogo[id].destacada= boolean;
+        // Actualizo base de datos 
+        localStorage.setItem('peliculas', JSON.stringify(catalogo));
+    }
+
+
+
+    peliPublicada(id_pelicula){
+
+        const id = parseInt(id_pelicula);
+        const catalogo = this.establecerConexion();
+        let posicion;
+
+        catalogo.forEach(element => {
+            if(element.codigo === id){
+                posicion = element.codigo;
+            }
+        });
+  
+        return catalogo[posicion].publicado;
 
     }
+
+    modificarPublicada(id_pelicula, boolean){
+        const id = parseInt(id_pelicula);
+        const catalogo = this.establecerConexion();
+        
+        catalogo[id].publicado= boolean;
+        // Actualizo base de datos 
+        localStorage.setItem('peliculas', JSON.stringify(catalogo));
+    }
+
+
 }

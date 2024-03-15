@@ -1,6 +1,100 @@
 import {PeliculasDB} from './clases/PeliculasDB.class.js'
 import language_ES from '../bootstrap/DataTable/language_ES.js';
 
+function eventBotonPublicado(e){
+
+    const catalogo = new PeliculasDB();
+
+    const btn_publicado_b = e.target.parentElement.parentElement.getAttribute('key');
+    const btn_publicado_i = e.target.parentElement.parentElement.parentElement.getAttribute('key');
+
+    if(btn_publicado_b !== null){
+        
+        //click en el icono de boton
+
+        const id_pelicula = e.target.parentElement.parentElement.getAttribute('key');
+
+        if(catalogo.peliPublicada(id_pelicula)){
+            document.querySelector(`#icono_boton_publicado_${id_pelicula} i`).classList.remove('fa-circle-check');
+            document.querySelector(`#icono_boton_publicado_${id_pelicula} i`).classList.add('fa-circle-xmark');
+            e.target.classList.remove('btn-publicado');
+            e.target.classList.add('btn-no-publicado');
+
+            catalogo.modificarPublicada(id_pelicula, false);
+        }else{
+            document.querySelector(`#icono_boton_publicado_${id_pelicula} i`).classList.remove('fa-circle-xmark');
+            document.querySelector(`#icono_boton_publicado_${id_pelicula} i`).classList.add('fa-circle-check');
+            e.target.classList.remove('btn-no-publicado');
+            e.target.classList.add('btn-publicado');
+            catalogo.modificarPublicada(id_pelicula, true);
+        }
+
+    }  
+
+    if(btn_publicado_i!== null){
+            
+        const id_pelicula = e.target.parentElement.parentElement.parentElement.getAttribute('key');
+            
+        if(catalogo.peliPublicada(id_pelicula)){
+            document.querySelector(`#icono_boton_publicado_${id_pelicula} i`).classList.remove('fa-circle-check');
+            document.querySelector(`#icono_boton_publicado_${id_pelicula} i`).classList.add('fa-circle-xmark');
+            e.target.parentElement.classList.remove('btn-publicado');
+            e.target.parentElement.classList.add('btn-no-publicado');
+
+            catalogo.modificarPublicada(id_pelicula, false);
+        }else{
+            document.querySelector(`#icono_boton_publicado_${id_pelicula} i`).classList.remove('fa-circle-xmark');
+            document.querySelector(`#icono_boton_publicado_${id_pelicula} i`).classList.add('fa-circle-check');
+            e.target.parentElement.classList.remove('btn-no-publicado');
+            e.target.parentElement.classList.add('btn-publicado');
+            catalogo.modificarPublicada(id_pelicula, true);
+        }
+
+    }
+}
+
+function eventBotonDestacar(e){
+
+    const catalogo = new PeliculasDB();
+
+    const btn_destacado_b = e.target.parentElement.parentElement.getAttribute('key');
+    const btn_descacado_i = e.target.parentElement.parentElement.parentElement.getAttribute('key');
+
+    ////////////////////////////////////clips en icono destacado/////////////////////////////////////////
+    if(btn_destacado_b !== null){
+        //click en el icono de boton
+        const id_pelicula = e.target.parentElement.parentElement.getAttribute('key');  
+        if(catalogo.peliDestacada(id_pelicula)){
+            e.target.classList.remove('btn-destacado')
+            e.target.classList.add('btn-no-destacado')
+            catalogo.modificarDestacado(id_pelicula, false)
+        }else{
+            e.target.classList.remove('btn-no-destacado')
+            e.target.classList.add('btn-destacado')
+            catalogo.modificarDestacado(id_pelicula, true)
+        }
+
+
+    }
+        if(btn_descacado_i !== null){
+           
+            //click en el icono dentro del boton
+
+            const id_pelicula = e.target.parentElement.parentElement.parentElement.getAttribute('key');
+            
+            if(catalogo.peliDestacada(id_pelicula)){
+                e.target.parentElement.classList.remove('btn-destacado')
+                e.target.parentElement.classList.add('btn-no-destacado')
+                catalogo.modificarDestacado(id_pelicula, false)
+            }else{
+                e.target.parentElement.classList.remove('btn-no-destacado')
+                e.target.parentElement.classList.add('btn-destacado')
+                catalogo.modificarDestacado(id_pelicula, true)
+            }
+
+        }
+}
+
 const bodyTabla = document.getElementById('body-tabla');
 
 
@@ -14,24 +108,22 @@ const llenarTabla = () => {
         let peliculaDestacada;
 
         if(element.publicado){
-            peliculaPulicada = `<button class="btn-publicado"><i class="fa-solid fa-circle-check"></i></button>`;
+            peliculaPulicada = `<button id="icono_boton_publicado_${element.codigo}" class="btn-publicado"><i class="fa-solid fa-circle-check"></i></button>`;
         }else
-            peliculaPulicada = `<button class="btn-no-publicado"><i class="fa-solid fa-circle-xmark"></i></button>`;
+            peliculaPulicada = `<button id="icono_boton_publicado_${element.codigo}" class="btn-no-publicado"><i class="fa-solid fa-circle-xmark"></i></button>`;
 
         if(element.destacada){
-            peliculaDestacada = `<button class="btn-destacado" id="btn_destacado_${element.codigo}"><i class="bi bi-star-fill"></i></button>`;
+            peliculaDestacada = `<button class="btn-destacado"><i class="bi bi-star-fill"></i></button>`;
         }else
-            peliculaDestacada = `<button class="btn-no-destacado" id="btn_destacado_${element.codigo}"><i class="bi bi-star-fill"></i></button>`;
+            peliculaDestacada = `<button class="btn-no-destacado"><i class="bi bi-star-fill"></i></button>`;
     
 
         const filaTabla = `
-        <th scope="row" class="text-center" id="id_fila_${element.codigo}">${element.codigo}</th>
+        <th scope="row" class="text-center">${element.codigo}</th>
         <td class="p-2">${element.nombre}</td>
         <td>${element.categoria}</td>
-        <td>
-            ${peliculaPulicada}
-        </td>
-        <td>
+        <td class="text-center">${peliculaPulicada}</td>
+        <td class="text-center">
             <button class="btn-opcion-borrar" data-bs-toggle="modal" data-bs-target="#modal-delete"><i class="bi bi-trash"></i></button>
             <button class="btn-opcion-editar" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="bi bi-pencil-square"></i></button>
             ${peliculaDestacada}
@@ -39,6 +131,7 @@ const llenarTabla = () => {
         `;
 
         const nuevaFilaTabla = document.createElement('tr');
+        nuevaFilaTabla.setAttribute('key',element.codigo);
         nuevaFilaTabla.classList.add('text-center');
         nuevaFilaTabla.innerHTML = filaTabla;
         bodyTabla.append(nuevaFilaTabla);
@@ -46,10 +139,12 @@ const llenarTabla = () => {
 
 }
 
+
+
 llenarTabla(); // llenamos la tabla con los datos de peliculas
 
 
-const tabla = new DataTable('#tabla', {
+new DataTable('#tabla', {
     language: language_ES,
     lengthMenu: [3, 6, 9, 12],
     columnDefs:[ //cambiar las definiciones de las columnas "leerDocumentacion"
@@ -59,18 +154,30 @@ const tabla = new DataTable('#tabla', {
     pageLength: 5
 });
 
-const btn_destacado = document.getElementById('btn_destacado_1');
-const scopes_table =document.querySelectorAll('#body-tabla th');
-
-const valorTabla = document.querySelectorAll('#body-tabla');
-console.log(valorTabla)
-valorTabla.forEach(row => {
-    row.addEventListener('click', e =>{
-        console.log(e.target.value);
-
-    });
-});
 
 
-btn_destacado.addEventListener('click',()=>{
-});
+
+
+
+/////////////////////ACTION LISTENERS////////////////////////////////
+
+
+
+
+const tabla = document.getElementById('tabla');
+const btn_add = document.getElementById('btn_add')
+
+btn_add.addEventListener('click', e => {
+    console.log(e.target.parentElement.parentElement)
+})
+
+
+
+
+//eventos de la tabla
+//tabla.addEventListener('click', eventBotonDestacar);
+//tabla.addEventListener('click', eventBotonPublicado);
+
+
+
+
