@@ -218,6 +218,17 @@ body{
 }
 
 
+.modal-body .fa-circle-xmark{
+    font-size: 5rem;
+    padding: 1rem;
+    margin-bottom: 0.8rem;
+    color: red;
+}
+
+.modal-body p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.3rem;
+}
 
 footer{
     width: 100%;

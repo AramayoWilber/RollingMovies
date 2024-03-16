@@ -1,19 +1,20 @@
 export class PeliculasDB {
-    constructor(){
+    constructor() {
     }
 
-    establecerConexion(){  //devuelve los datos de la tabla Peliculas, sino hay ninguna la crea
+    establecerConexion() {  //devuelve los datos de la tabla Peliculas, sino hay ninguna la crea
         let peliculasDB;
 
         const tablaPeliculas = JSON.parse(localStorage.getItem('peliculas'));
-    
+
         if (tablaPeliculas) {
             peliculasDB = tablaPeliculas;
-    
+
         } else {
             //en caso de no encontrar ninguna base de datos pelicula creamos una
             const nuevaPelicula = [
-                {   codigo: 0,
+                {
+                    codigo: 0,
                     nombre: 'Oppenheimer',
                     categoria: 'pelicula',
                     genero: 'drama',
@@ -24,7 +25,8 @@ export class PeliculasDB {
                     img_banner: '/img/peliculas/banners/Oppenheimer_fondo.jpg',
                     url_trailer: 'https://youtu.be/yLYbOe914ZU?si=s86bPU_fgA0AjQi1'
                 },
-                {   codigo: 1,
+                {
+                    codigo: 1,
                     nombre: 'Kung Fu Panda 4',
                     categoria: 'pelicula',
                     genero: 'animacion',
@@ -36,7 +38,8 @@ export class PeliculasDB {
                     url_trailer: 'https://youtu.be/78jhetZy5Vk'
 
                 },
-                {   codigo: 2,
+                {
+                    codigo: 2,
                     nombre: 'Shrek',
                     categoria: 'pelicula',
                     genero: 'comedia',
@@ -48,7 +51,8 @@ export class PeliculasDB {
                     url_trailer: 'https://youtu.be/yLYbOe914ZU?si=s86bPU_fgA0AjQi1'
 
                 },
-                {   codigo: 3,
+                {
+                    codigo: 3,
                     nombre: 'Titanic',
                     categoria: 'pelicula',
                     genero: 'drama',
@@ -59,7 +63,8 @@ export class PeliculasDB {
                     img_banner: '/img/peliculas/banners/Titanic_banner.jpg',
                     url_trailer: 'https://youtu.be/F2RnxZnubCM?si=WLm3_j3Nb8oqkCM9'
                 },
-                {   codigo: 4,
+                {
+                    codigo: 4,
                     nombre: 'Jurassic World: Fallen Kingdom',
                     categoria: 'pelicula',
                     genero: 'accion',
@@ -70,7 +75,8 @@ export class PeliculasDB {
                     img_banner: '/img/peliculas/banners/Jurassic_World_banner.jpg',
                     url_trailer: 'https://youtu.be/MOblcRRCSYU?si=j32BFXasOEIhwuJy'
                 },
-                {   codigo: 5,
+                {
+                    codigo: 5,
                     nombre: 'Harry Potter',
                     categoria: 'pelicula',
                     genero: 'fantasia',
@@ -81,7 +87,8 @@ export class PeliculasDB {
                     img_banner: '/img/peliculas/banners/Harry_Potter_banner.jpg',
                     url_trailer: 'https://youtu.be/ZgrCZVjPg9g?si=03uV6u5NgdIUPBM1'
                 },
-                {   codigo: 6,
+                {
+                    codigo: 6,
                     nombre: 'Wonka',
                     categoria: 'pelicula',
                     genero: 'familiar',
@@ -92,7 +99,8 @@ export class PeliculasDB {
                     img_banner: '/img/peliculas/banners/Wonka_banner.jpg',
                     url_trailer: 'https://youtu.be/Fr1tOQIlUcw?si=XYnb3N8pKe02Vv9a'
                 },
-                {   codigo: 7,
+                {
+                    codigo: 7,
                     nombre: 'Barbie',
                     categoria: 'pelicula',
                     genero: 'comedia',
@@ -103,7 +111,8 @@ export class PeliculasDB {
                     img_banner: '/img/peliculas/banners/Barbie_banner.jpg',
                     url_trailer: 'https://youtu.be/gH2mRECr6y4?si=7d-572X4UPVS2j_s'
                 },
-                {   codigo: 8,
+                {
+                    codigo: 8,
                     nombre: 'Mujer Maravilla',
                     categoria: 'pelicula',
                     genero: 'aventura',
@@ -114,7 +123,8 @@ export class PeliculasDB {
                     img_banner: '/img/peliculas/banners/Wonder_banner.jpg',
                     url_trailer: 'https://youtu.be/eyt29sHDc9M?si=sgNurGDrV_77rzX6'
                 },
-                {   codigo: 9,
+                {
+                    codigo: 9,
                     nombre: 'Avengers: Endgame',
                     categoria: 'pelicula',
                     genero: 'accion',
@@ -125,7 +135,8 @@ export class PeliculasDB {
                     img_banner: '/img/peliculas/banners/Avengers_banner.jpg',
                     url_trailer: 'https://youtu.be/Oy_SER6dfK4?si=u_V0yzTd9tTJ8w58'
                 },
-                {   codigo: 10,
+                {
+                    codigo: 10,
                     nombre: 'Super Mario Bros',
                     categoria: 'pelicula',
                     genero: 'infantil',
@@ -137,21 +148,21 @@ export class PeliculasDB {
                     url_trailer: 'https://youtu.be/SvJwEiy2Wok?si=Joeg13ffK98YSPUk'
                 }
             ];
-    
+
             localStorage.setItem('peliculas', JSON.stringify(nuevaPelicula));
-            peliculasDB =JSON.parse(localStorage.getItem('peliculas'));
+            peliculasDB = JSON.parse(localStorage.getItem('peliculas'));
         }
-    
-        return peliculasDB;    
+
+        return peliculasDB;
     }
 
-    obtenerCodigo(){ //obtiene el siguiente codigo segun la base de datos de peliculas
+    obtenerCodigo() { //obtiene el siguiente codigo segun la base de datos de peliculas
         const datos = this.establecerConexion();
         const ultimoElemento = datos.length - 1;
         return datos[ultimoElemento].codigo + 1;
     }
 
-    agregarPelicula(objPelicula){ 
+    agregarPelicula(objPelicula) {
 
         const nuevaPelicula = {
             codigo: objPelicula.codigo,
@@ -167,21 +178,21 @@ export class PeliculasDB {
         };
 
         let peliculasDB = this.establecerConexion();
- 
+
         peliculasDB.push(nuevaPelicula);
         //Actualizo la nueva base de datos
         localStorage.setItem('peliculas', JSON.stringify(peliculasDB));
     }
 
 
-    peliDestacada(id_pelicula){
+    peliDestacada(id_pelicula) {
 
         const id = parseInt(id_pelicula);
         const catalogo = this.establecerConexion();
         let posicion;
 
         catalogo.forEach(element => {
-            if(element.codigo === id){
+            if (element.codigo === id) {
                 posicion = element.codigo;
             }
         });
@@ -190,41 +201,63 @@ export class PeliculasDB {
 
     }
 
-    modificarDestacado(id_pelicula, boolean){
+    modificarDestacado(id_pelicula, boolean) {
         const id = parseInt(id_pelicula);
         const catalogo = this.establecerConexion();
-        
-        catalogo[id].destacada= boolean;
+
+        catalogo[id].destacada = boolean;
         // Actualizo base de datos 
         localStorage.setItem('peliculas', JSON.stringify(catalogo));
     }
 
 
 
-    peliPublicada(id_pelicula){
+    peliPublicada(id_pelicula) {
 
         const id = parseInt(id_pelicula);
         const catalogo = this.establecerConexion();
         let posicion;
 
         catalogo.forEach(element => {
-            if(element.codigo === id){
+            if (element.codigo === id) {
                 posicion = element.codigo;
             }
         });
-  
+
         return catalogo[posicion].publicado;
 
     }
 
-    modificarPublicada(id_pelicula, boolean){
+    modificarPublicada(id_pelicula, boolean) {
         const id = parseInt(id_pelicula);
         const catalogo = this.establecerConexion();
-        
-        catalogo[id].publicado= boolean;
+
+        catalogo[id].publicado = boolean;
         // Actualizo base de datos 
         localStorage.setItem('peliculas', JSON.stringify(catalogo));
     }
 
 
+    eliminarRegistro(id_pelicula) {
+        const id = parseInt(id_pelicula);
+        const catalogo = this.establecerConexion();
+        const productoFiltrados = catalogo.filter(item => item.codigo !== id);
+
+        // Actualizo base de datos
+        localStorage.setItem('peliculas', JSON.stringify(productoFiltrados));
+    }
+
+    paginaciondeTabla() {
+        const catalogo = this.establecerConexion();
+
+        //variables para la paginacion 
+        let limite = 5;
+        let desde = 0;
+        let paginas = catalogo.length / limite;
+        let paginaActiva = 1;
+
+        //let arreglo = catalogo.slice(desde, hasta);///slice me permite crear arreglos hasta un numero personalizado
+    }
+
 }
+
