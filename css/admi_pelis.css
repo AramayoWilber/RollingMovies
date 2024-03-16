@@ -1,13 +1,22 @@
-.navbar-toggler-icon {
-    background-color: #080f28;
-}
-/* background: #8da0bc; letras costado  */
 
-
+/* background-color: #080f28; */
 body{
-    background-color: #080f28;
+    font-size: 16px;
+    position: relative;
+    background: #eeeeee;
+    margin: 0;
+    padding-bottom: 4em;
+    min-height: 100vh;
 }
 
+.boder-contenedor {
+
+    background: transparent;
+    border: 1px solid #202649;
+    padding: 1em;
+    backdrop-filter: blur(30px);
+    border-radius: 10px;
+}
 
 /* nav bar  */
 
@@ -79,4 +88,158 @@ body{
 
 .form-search input{
     border-radius: 1.2em;
+}
+
+
+/* botones  */
+
+
+.btn-opcion-borrar {
+    background: transparent;
+    border: none;
+    border-radius: 0.31em;
+    color: #030303;
+    font-size: 1.16em;
+    transition: .3s ease all;
+    padding: 0.08em 0.5em;
+    margin: 1px;
+}
+
+.btn-opcion-borrar:hover {
+    background: rgb(204, 194, 194);
+    color: #ff0000;
+}
+
+.btn-opcion-editar {
+    background: transparent;
+    border: none;
+    border-radius: 0.31em;
+    color: #030303;
+    font-size: 1.16em;
+    transition: .3s ease all;
+    padding: 0.08em 0.5em;
+    margin: 1px;
+}
+
+.btn-opcion-editar:hover {
+    background: rgba(122, 120, 120, 0.5);
+    color: #230ee2;
+}
+
+.btn-destacado {
+    position: relative;
+    background: transparent;
+    border: none;
+    border-radius: 0.31em;
+    color: #fff;
+    font-size: 1.16em;
+    transition: .3s ease all;
+    padding: 0.08em 0.5em;
+    margin: 1px;
+}
+
+.btn-destacado .bi-star-fill{
+    color: rgb(236,253,24) ;
+}
+
+.btn-no-destacado {
+    background: transparent;
+    border: none;
+    border-radius: 0.31em;
+    color: #3d3737;
+    font-size: 1.16em;
+    transition: .3s ease all;
+    padding: 0.08em 0.5em;
+    margin: 1px;
+}
+
+.btn-publicado {
+    background: transparent;
+    border: none;
+    border-radius: 0.31em;
+    font-size: 1.16em;
+    transition: .3s ease all;
+    padding: 0.08em 0.5em;
+    margin: 1px;
+}
+
+.btn-publicado i {
+    color: rgb(8, 155, 45) ;
+}
+
+/* .btn-publicado:hover{
+    background: rgb(204, 194, 194);
+
+} */
+
+.btn-no-publicado {
+    background: transparent;
+    border: none;
+    border-radius: 0.31em;
+    font-size: 1.16em;
+    transition: .3s ease all;
+    padding: 0.08em 0.5em;
+    margin: 1px;
+}
+
+.btn-no-publicado i{
+    color: #cc105f;
+}
+
+/* .btn-no-publicado:hover {
+    background: rgb(204, 194, 194);
+} */
+
+
+.boton-add{
+    background: #202649;
+    border: none;
+    border-radius: 0.6em;
+    color: #fff;
+    font-size: 1em;
+    padding: 0.6rem 1.3rem;
+    transition: .3s ease all;
+    margin: 1px;
+}
+
+.fa-circle-user{
+    font-size: 1.8em;
+    margin-left: 0.3em;
+}
+
+.boton-add i{
+    margin-right: 0.4em;
+}
+
+.boton-add:hover{
+    background: transparent;
+    color: #1100ff;
+    border: 1px solid blue;
+}
+
+
+.modal-body .fa-circle-xmark{
+    font-size: 5rem;
+    padding: 1rem;
+    margin-bottom: 0.8rem;
+    color: red;
+}
+
+.modal-body p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.3rem;
+}
+
+footer{
+    width: 100%;
+    bottom: 0;
+    padding: 1em;
+    position: absolute;
+    text-align: center;
+    background-color: rgb(50, 58, 58);
+    color: #fff;
+}
+
+.form-select{
+    width: 30%;
 }
