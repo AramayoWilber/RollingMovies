@@ -1,4 +1,4 @@
-export class PeliculasDB {
+export class CatalogoDB {
     constructor() {
     }
 
@@ -247,17 +247,5 @@ export class PeliculasDB {
         localStorage.setItem('peliculas', JSON.stringify(productoFiltrados));
     }
 
-    paginaciondeTabla() {
-        const catalogo = this.establecerConexion();
-
-        //variables para la paginacion 
-        let limite = 5;
-        let desde = 0;
-        let paginas = catalogo.length / limite;
-        let paginaActiva = 1;
-
-        //let arreglo = catalogo.slice(desde, hasta);///slice me permite crear arreglos hasta un numero personalizado
-    }
 
 }
-

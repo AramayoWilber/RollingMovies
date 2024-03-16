@@ -49,12 +49,26 @@
 
     <main>
         <div class="container my-2">
-            <div class="row justify-content-center">
-                <div class="col-12 my-4 d-flex justify-content-between align-items-center">
+            <div class="row my-4 justify-content-between">
+                <div class="col-4">
                     <button type="button" id="btn_add" class="btn boton-add">
                         <i class="bi bi-plus-lg"></i>Añadir
                     </button>
                 </div>
+                <!-- ----------Select------- -->
+                <div class="col-5 d-flex justify-content-center mt-1">
+                    <h6 class="mt-2 mx-2">Mostrar</h6>
+                    <select id="select_candidad_registros" class="form-select" aria-label="Default select example">
+                        <option value="3">3</option>
+                        <option selected="5">5</option>
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                    </select>
+                    <h6 class="mt-2 mx-2">registros</h6>
+                </div>
+            </div>
+
+            <div class="row">
                 <div class="col-12 mb-3 boder-contenedor shadow">
                     <!-- table-dark table-striped table-hover -->
                     <table id="tabla" class="table table-striped" style="width: 100%;">
@@ -75,25 +89,28 @@
                     </table>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-8 offset-2">
                     <!-- -------------Paginacion------------- -->
-                    <div class="d-flex justify-content-end">
-                        <ul class="pagination">
-                            <li class="page-item">
-                                <button class="page-link">
-                                    <span aria-hidden="true">&laquo;</span>
-                                </button>
-                            </li>
+                    <div class="d-flex justify-content-center">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <button class="page-link" onclick="previusPage()" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </button>
+                                </li>
+                                <!-- items de pagination -->
+                                <div id="items-paginacion" class="d-flex"></div>
 
-                            <div id="items" class="d-flex"></div>
-
-                            <li class="page-item">
-                                <button class="page-link">
-                                    <span aria-hidden="true">&laquo;</span>
-                                </button>
-                            </li>
-                        </ul>
+                                <li class="page-item">
+                                    <button class="page-link" onclick="nextPage()" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
             </div>
