@@ -105,6 +105,10 @@ body{
     margin: 1px;
 }
 
+.btn-opcion-borrar i{
+    pointer-events: none;
+}
+
 .btn-opcion-borrar:hover {
     background: rgb(204, 194, 194);
     color: #ff0000;
@@ -127,30 +131,35 @@ body{
 }
 
 .btn-destacado {
-    position: relative;
     background: transparent;
     border: none;
     border-radius: 0.31em;
-    color: #fff;
+    color: transparent;
     font-size: 1.16em;
     transition: .3s ease all;
     padding: 0.08em 0.5em;
     margin: 1px;
 }
 
-.btn-destacado .bi-star-fill{
+.btn-destacado i {
     color: rgb(236,253,24) ;
+    pointer-events: none;
 }
 
 .btn-no-destacado {
     background: transparent;
     border: none;
+    color: transparent;
     border-radius: 0.31em;
-    color: #3d3737;
     font-size: 1.16em;
     transition: .3s ease all;
     padding: 0.08em 0.5em;
     margin: 1px;
+}
+
+.btn-no-destacado i{
+    color: #3d3737;
+    pointer-events: none;
 }
 
 .btn-publicado {
@@ -165,12 +174,12 @@ body{
 
 .btn-publicado i {
     color: rgb(8, 155, 45) ;
+    pointer-events: none;
 }
 
 /* .btn-publicado:hover{
     background: rgb(204, 194, 194);
-
-} */
+}  */
 
 .btn-no-publicado {
     background: transparent;
@@ -184,11 +193,13 @@ body{
 
 .btn-no-publicado i{
     color: #cc105f;
+    pointer-events: none;
 }
 
 /* .btn-no-publicado:hover {
     background: rgb(204, 194, 194);
-} */
+    pointer-events: none;
+}  */
 
 
 .boton-add{
