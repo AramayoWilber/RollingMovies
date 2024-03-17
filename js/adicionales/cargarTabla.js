@@ -25,24 +25,24 @@ export const cargarCatalogo = (id_bodyTabla, id_item_paginacion, mostrarRegistro
             let peliculaDestacada;
 
             if (element.publicado) {
-                peliculaPulicada = `<button name="botones_publicado" id="icono_boton_publicado_${element.codigo}" class="btn-publicado"><i class="fa-solid fa-circle-check"></i></button>`;
+                peliculaPulicada = `<button name="btn_publicado" id="icono_boton_publicado_${element.codigo}" class="btn-publicado"><i class="fa-solid fa-circle-check"></i></button>`;
             } else
-                peliculaPulicada = `<button name="botones_publicado" id="icono_boton_publicado_${element.codigo}" class="btn-no-publicado"><i class="fa-solid fa-circle-xmark"></i></button>`;
+                peliculaPulicada = `<button name="btn_publicado" id="icono_boton_publicado_${element.codigo}" class="btn-no-publicado"><i class="fa-solid fa-circle-xmark"></i></button>`;
 
             if (element.destacada) {
-                peliculaDestacada = `<button class="btn-destacado" name="botones_destacados"><i class="bi bi-star-fill"></i></button>`;
+                peliculaDestacada = `<button name="btn_destacado" class="btn-destacado"><i class="bi bi-star-fill"></i></button>`;
             } else
-                peliculaDestacada = `<button class="btn-no-destacado" name="botones_destacados"><i class="bi bi-star-fill"></i></button>`;
+                peliculaDestacada = `<button name="btn_destacado" class="btn-no-destacado"><i class="bi bi-star-fill"></i></button>`;
 
 
             const filaTabla = `
-            <th scope="row" class="text-center">${element.codigo}</th>
-            <td class="p-2">${element.nombre}</td>
+            <th scope="row">${element.codigo}</th>
+            <td>${element.nombre}</td>
             <td>${element.categoria}</td>
-            <td class="text-center">${peliculaPulicada}</td>
-            <td class="text-center">
-                <button class="btn-opcion-borrar" name="btn-opcion-borrar" data-bs-toggle="modal" data-bs-target="#modal-delete"><i class="bi bi-trash"></i></button>
-                <button class="btn-opcion-editar" name="btn-opcion-editar" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="bi bi-pencil-square"></i></button>
+            <td>${peliculaPulicada}</td>
+            <td id="btn-opciones">
+                <button class="btn-opcion-borrar" name="btn-opcion-borrar" data-bs-toggle="modal" data-bs-target="#deteleBtnModal"><i class="bi bi-trash"></i></button>
+                <button class="btn-opcion-editar" name="btn-opcion-editar" data-bs-toggle="modal" data-bs-target="#editBtnModal"><i class="bi bi-pencil-square"></i></button>
                 ${peliculaDestacada}
             </td>
             `;

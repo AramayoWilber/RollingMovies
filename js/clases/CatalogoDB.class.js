@@ -94,7 +94,7 @@ export class CatalogoDB {
                     genero: 'familiar',
                     descripcion: 'El noble y humilde Charlie desea obtener un ticket dorado para poder entrar a la fabulosa fábrica de chocolate del excéntrico Willy Wonka.',
                     publicado: false,
-                    destacada: true,
+                    destacada: false,
                     img_portada: '/img/peliculas/portadas/Wonka_portada.jpg',
                     img_banner: '/img/peliculas/banners/Wonka_banner.jpg',
                     url_trailer: 'https://youtu.be/Fr1tOQIlUcw?si=XYnb3N8pKe02Vv9a'
@@ -152,7 +152,6 @@ export class CatalogoDB {
             localStorage.setItem('peliculas', JSON.stringify(nuevaPelicula));
             peliculasDB = JSON.parse(localStorage.getItem('peliculas'));
         }
-
         return peliculasDB;
     }
 
@@ -186,55 +185,59 @@ export class CatalogoDB {
 
 
     peliDestacada(id_pelicula) {
-
         const id = parseInt(id_pelicula);
         const catalogo = this.establecerConexion();
-        let posicion;
+        let valor;
 
         catalogo.forEach(element => {
             if (element.codigo === id) {
-                posicion = element.codigo;
+                valor = element.destacada;
             }
         });
 
-        return catalogo[posicion].destacada;
-
+        return valor;
     }
 
     modificarDestacado(id_pelicula, boolean) {
         const id = parseInt(id_pelicula);
-        const catalogo = this.establecerConexion();
+        const catalog = this.establecerConexion();
 
-        catalogo[id].destacada = boolean;
+        catalog.forEach(element => {
+            if (element.codigo === id) {
+                element.destacada = boolean;
+            }
+        });
         // Actualizo base de datos 
-        localStorage.setItem('peliculas', JSON.stringify(catalogo));
+        localStorage.setItem('peliculas', JSON.stringify(catalog));
     }
 
 
 
     peliPublicada(id_pelicula) {
-
         const id = parseInt(id_pelicula);
         const catalogo = this.establecerConexion();
-        let posicion;
+        let valor;
 
         catalogo.forEach(element => {
             if (element.codigo === id) {
-                posicion = element.codigo;
+                valor = element.publicado;
             }
         });
 
-        return catalogo[posicion].publicado;
-
+        return valor;
     }
 
     modificarPublicada(id_pelicula, boolean) {
         const id = parseInt(id_pelicula);
-        const catalogo = this.establecerConexion();
+        const catalog = this.establecerConexion();
 
-        catalogo[id].publicado = boolean;
+        catalog.forEach(element => {
+            if (element.codigo === id) {
+                element.publicado = boolean;
+            }
+        });
         // Actualizo base de datos 
-        localStorage.setItem('peliculas', JSON.stringify(catalogo));
+        localStorage.setItem('peliculas', JSON.stringify(catalog));
     }
 
 
@@ -242,7 +245,6 @@ export class CatalogoDB {
         const id = parseInt(id_pelicula);
         const catalogo = this.establecerConexion();
         const productoFiltrados = catalogo.filter(item => item.codigo !== id);
-
         // Actualizo base de datos
         localStorage.setItem('peliculas', JSON.stringify(productoFiltrados));
     }
