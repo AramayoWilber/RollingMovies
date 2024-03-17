@@ -1,5 +1,6 @@
 import { CatalogoDB } from './clases/CatalogoDB.class.js'
 import cargarCatalogo from './adicionales/cargarTabla.js';
+import { Pelicula } from './clases/Pelicula.class.js';
 
 const catalogo = new CatalogoDB();
 
@@ -60,9 +61,12 @@ const bodyTabla = document.getElementById('body-tabla');
 const items_paginacion = document.getElementById('items-paginacion');
 const cantidadRegistros = document.getElementById('select_candidad_registros');
 const btnModalEliminar = document.getElementById('btn-modal-eliminar');
-
+const modalAdd = new bootstrap.Modal('#addBtnModal');
 
 cargarCatalogo(bodyTabla, items_paginacion, cantidadRegistros.value);
+modalAdd.show()
+
+modalAdd.hide()
 
 
 /////////////////////ACTION LISTENERS////////////////////////////////
@@ -84,4 +88,28 @@ btnModalEliminar.addEventListener('click', (e) => {
 
     datosParaBorrar.filaTabla = null;
     datosParaBorrar.key = null;
+})
+
+
+
+// ----------------------MODAL AGREGAR ------------ 
+const formularioModal = document.getElementById('formulario_modal');
+
+formularioModal.addEventListener('submit', e => {
+
+    const titulo = document.getElementById('titulo_form').value;
+    const genero = document.getElementById('genero_form').value;
+    const descripcion = document.getElementById('descripcion_form').value;
+    const categoria = document.getElementById('categoria_form').value;
+    const publicar = document.getElementById('publicar_form').value;
+    const destacar = document.getElementById('destacar_form').value;
+    const URL = document.getElementById('validacionURL').value;
+    const portada = document.getElementById('portada_form').value;
+    const banner = document.getElementById('banner_form').value;
+
+    const pelicula = new Pelicula(catalogo.obtenerCodigo(), titulo, categoria, genero, descripcion, publicar, destacar, portada, banner, URL);
+    catalogo.agregarContenido(pelicula);
+    cargarCatalogo(bodyTabla, items_paginacion, cantidadRegistros.value);
+
+
 })

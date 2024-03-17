@@ -161,8 +161,7 @@ export class CatalogoDB {
         return datos[ultimoElemento].codigo + 1;
     }
 
-    agregarPelicula(objPelicula) {
-
+    agregarContenido(objPelicula) {
         const nuevaPelicula = {
             codigo: objPelicula.codigo,
             nombre: objPelicula.nombre,
@@ -175,7 +174,7 @@ export class CatalogoDB {
             img_fondo: objPelicula.img_fondo,
             url_trailer: objPelicula.url_trailer
         };
-
+        console.log(nuevaPelicula)
         let peliculasDB = this.establecerConexion();
 
         peliculasDB.push(nuevaPelicula);
