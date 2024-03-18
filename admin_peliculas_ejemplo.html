@@ -124,14 +124,14 @@
             aria-labelledby="addBtnModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header bg-modal-add shadow">
                         <h1 class="modal-title fs-5" id="addBtnModalLabel">Añadir al catalogo</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <!-- ------- BODY MODAL ------ -->
                         <div class="container">
-                            <form class="was-validated" id="formulario_modal">
+                            <form class="was-validated" id="formulario_modal_agregar">
                                 <div class="mb-3">
                                     <label for="titulo_form" class="form-label">Titulo</label>
                                     <input type="text" class="form-control" id="titulo_form" required>
@@ -235,73 +235,159 @@
                 <div class="col-12 col-sm-12">
                     <div class="modal fade" id="editBtnModal" data-bs-backdrop="static" data-bs-keyboard="false"
                         tabindex="-1" aria-labelledby="editBtnModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
+                        <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="editBtnModalLabel">Modal title</h1>
+                                <div class="modal-header bg-dark-subtle container shadow">
+                                    <h1 class="modal-title fs-5" id="editBtnModalLabel">Editar elementos</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
-                                <div class="modal-body">
-                                    <form class="row g-3">
-                                        <div class="col-auto">
-                                            <label for="staticEmail2" class="visually-hidden">Email</label>
-                                            <input type="text" readonly class="form-control-plaintext" id="staticEmail2"
-                                                value="email@example.com">
-                                        </div>
-                                        <div class="col-auto">
-                                            <label for="inputPassword2" class="visually-hidden">Password</label>
-                                            <input type="password" class="form-control" id="inputPassword2"
-                                                placeholder="Password">
-                                        </div>
-                                        <div class="col-auto">
-                                            <button type="submit" class="btn btn-primary mb-3">Confirm identity</button>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-outline-primary">Understood</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Modal DELETE-->
-        <div class="modal fade" id="deteleBtnModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="deteleBtnModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header text-center bg-danger-subtle">
-                        <h1 class="modal-title fs-5" id="deteleBtnModalLabel">
-                            ¿ESTAS SEGURO?
-                        </h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-12 text-center">
-                                    <i class="fa-regular fa-circle-xmark"></i>
-                                </div>
-                                <div class="col-12 text-center">
-                                    <p>Este proceso no se puede desahacer</p>
+
+                                <div class="modal-body bg-body-tertiary">
+                                    <!-- ------- BODY MODAL ------ -->
+                                    <div class="container">
+                                        <form class="was-validated" id="formulario_modal_editar">
+                                            <div class="mb-3">
+                                                <label for="titulo_formEdit" class="form-label">Titulo</label>
+                                                <input type="text" class="form-control" id="titulo_formEdit" required>
+                                                <div class="invalid-feedback">Escribe un titulo</div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="genero_formEdit" class="form-label">Genero</label>
+                                                <input type="text" class="form-control" id="genero_formEdit" required>
+                                                <div class="invalid-feedback">Escribe un genero</div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="descripcion_formEdit" class="form-label">Descripción</label>
+                                                <textarea class="form-control" id="descripcion_formEdit"
+                                                    placeholder="Resumen del breve del guion." required></textarea>
+                                                <div class="invalid-feedback">
+                                                    Ingrese una sinopsis.
+                                                </div>
+                                            </div>
+
+                                            <div class="container">
+                                                <div class="row justify-content-between">
+                                                    <div class="col-6">
+                                                        <div class="mb-3">
+                                                            <label for="publicar_formEdit"
+                                                                class="form-label">Publicado</label>
+                                                            <select id="publicar_formEdit" class="form-select w-75"
+                                                                required aria-label="select example">
+                                                                <option disabled selected value="">...</option>
+                                                                <option value="true">Si</option>
+                                                                <option value="false">No</option>
+                                                            </select>
+                                                            <div class="invalid-feedback">Ingrese una opcion</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="mb-3">
+                                                            <label for="destacar_formEdit"
+                                                                class="form-label">Destacado</label>
+                                                            <select id="destacar_formEdit" class="form-select w-75"
+                                                                required aria-label="select example">
+                                                                <option disabled selected value="">...</option>
+                                                                <option value="true">Si</option>
+                                                                <option value="false">No</option>
+                                                            </select>
+                                                            <div class="invalid-feedback">Ingrese una opcion</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-8">
+                                                        <div class="mb-3">
+                                                            <label for="categoria_formEdit"
+                                                                class="form-label">Categoria</label>
+                                                            <select id="categoria_formEdit" class="form-select w-75"
+                                                                required aria-label="select example">
+                                                                <option disabled selected value="">...</option>
+                                                                <option value="pelicula">Pelicula</option>
+                                                                <option value="serie">Serie</option>
+                                                            </select>
+                                                            <div class="invalid-feedback">Ingrese una opcion</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="validacionURL_formEdit" class="form-label">URL del
+                                                    video</label>
+                                                <input type="text" class="form-control" id="validacionURL_formEdit"
+                                                    required>
+                                                <div class="valid-feedback">
+                                                    Todo bien!
+                                                </div>
+                                                <div class="invalid-feedback">Ingrese una URL del video</div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="url_portada_formEdit" class="form-label">URL imagen
+                                                    portada</label>
+                                                <input type="text" class="form-control" id="url_portada_formEdit"
+                                                    required>
+                                                <div class="valid-feedback">
+                                                    Todo bien!
+                                                </div>
+                                                <div class="invalid-feedback">Ingrese una URL para la portada</div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="url_banner_formEdit" class="form-label">URL imagen
+                                                    banner</label>
+                                                <input type="text" class="form-control" id="url_banner_formEdit"
+                                                    required>
+                                                <div class="valid-feedback">
+                                                    Todo bien!
+                                                </div>
+                                                <div class="invalid-feedback">Ingrese una URL para el banner</div>
+                                            </div>
+                                            <div class="mb-3 d-flex justify-content-end">
+                                                <button type="button" class="btn btn-secondary mx-3"
+                                                    data-bs-dismiss="modal">Cancelar</button>
+                                                <button class="btn btn-primary" type="submit">Guardar cambios</button>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="modal-footer justify-content-evenly">
-                        <button type="button" class="btn btn-secondary w-25" data-bs-dismiss="modal">Cerrar</button>
-                        <button id="btn-modal-eliminar" type="button" class="btn btn-danger w-25"
-                            data-bs-dismiss="modal">Eliminar</button>
+                </div>
+            </div>
+
+            <!-- Modal DELETE-->
+            <div class="modal fade" id="deteleBtnModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="deteleBtnModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header text-center bg-danger-subtle">
+                            <h1 class="modal-title fs-5" id="deteleBtnModalLabel">
+                                ¿ESTAS SEGURO?
+                            </h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12 text-center">
+                                        <i class="fa-regular fa-circle-xmark"></i>
+                                    </div>
+                                    <div class="col-12 text-center">
+                                        <p>Este proceso no se puede desahacer</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer justify-content-evenly">
+                            <button type="button" class="btn btn-secondary w-25" data-bs-dismiss="modal">Cerrar</button>
+                            <button id="btn-modal-eliminar" type="button" class="btn btn-danger w-25"
+                                data-bs-dismiss="modal">Eliminar</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
     </main>
 
