@@ -97,7 +97,7 @@ btnModalEliminar.addEventListener('click', (e) => {
 
     datosParaBorrar.filaTabla = null;
     datosParaBorrar.key = null;
-    cargarCatalogo(bodyTabla, items_paginacion, cantidadRegistros.value);
+    cargarCatalogo(bodyTabla, items_paginacion, cantidadRegistros.value, "");
 })
 
 
@@ -110,7 +110,7 @@ const bodyTabla = document.getElementById('body-tabla');
 const items_paginacion = document.getElementById('items-paginacion');
 const cantidadRegistros = document.getElementById('select_candidad_registros');
 
-cargarCatalogo(bodyTabla, items_paginacion, cantidadRegistros.value);
+cargarCatalogo(bodyTabla, items_paginacion, cantidadRegistros.value, "");
 
 /////////////////////ACTION LISTENERS////////////////////////////////
 
@@ -120,7 +120,7 @@ tabla.addEventListener('click', eventBotonPublicado)
 tabla.addEventListener('click', cargarModalEdit)
 cantidadRegistros.addEventListener('change', e => {
     const registros = document.getElementById('select_candidad_registros').value;
-    cargarCatalogo(bodyTabla, items_paginacion, registros)
+    cargarCatalogo(bodyTabla, items_paginacion, registros, "")
 });
 
 
@@ -142,15 +142,16 @@ modalAgregar.addEventListener('submit', e => {
 
     const pelicula = new Pelicula(catalogo.obtenerCodigo(), titulo, categoria, genero, descripcion, publicar, destacar, url_portada, url_banner, url_trailer);
     catalogo.agregarContenido(pelicula);
-    cargarCatalogo(bodyTabla, items_paginacion, cantidadRegistros.value);
+    cargarCatalogo(bodyTabla, items_paginacion, cantidadRegistros.value, "");
     setTimeout(() => {
         modalAdd.hide() // cierra el modal
-    }, 500);
+    }, 100);
 
 })
 
 //////////////////// MODAL EDITAR /////////////////////////////
 const modalEditar = document.getElementById('editBtnModal');
+const modalEdit = new bootstrap.Modal('#editBtnModal');
 
 modalEditar.addEventListener('submit', e => {
     e.preventDefault();
@@ -168,6 +169,19 @@ modalEditar.addEventListener('submit', e => {
 
     const nuevaPelicula = new Pelicula(key, titulo, categoria, genero, descripcion, publicar, destacar, url_portada, url_banner, url_trailer)
     catalogo.editatElementoDelCatalogo(key, nuevaPelicula);
+    cargarCatalogo(bodyTabla, items_paginacion, cantidadRegistros.value, "");
+    setTimeout(() => {
+        modalEdit.hide() // cierra el modal
+    }, 100);
 
+})
+
+///////////////// FILTRADO O CUADRO DE BUSQUEDAS
+const buscarFormulario = document.getElementById('filtrar_nombres');
+
+buscarFormulario.addEventListener('submit', e => {
+    e.preventDefault()
+    const search = document.getElementById('input-search').value;
+    cargarCatalogo(bodyTabla, items_paginacion, cantidadRegistros.value, search);
 })
 

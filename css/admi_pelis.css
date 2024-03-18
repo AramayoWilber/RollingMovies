@@ -9,7 +9,7 @@ body{
     min-height: 100vh;
 }
 
-.boder-contenedor {
+.borde-contenedor {
 
     background: transparent;
     border: 1px solid #202649;
@@ -208,13 +208,12 @@ body{
 
 .boton-add{
     background: #202649;
-    border: none;
+    border: 1px solid transparent;
     border-radius: 0.6em;
     color: #fff;
     font-size: 1em;
     padding: 0.6rem 1.3rem;
     transition: .3s ease all;
-    margin: 1px;
 }
 
 .fa-circle-user{

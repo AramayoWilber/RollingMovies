@@ -267,5 +267,11 @@ export class CatalogoDB {
         localStorage.setItem('peliculas', JSON.stringify(productoFiltrados));
     }
 
-
+    filtrarTitulo(titulo) {
+        const catalogo = this.establecerConexion();
+        const catalogo_filtrado = catalogo.filter(element => {
+            return element.nombre.toLowerCase().indexOf(titulo) > -1
+        })
+        return catalogo_filtrado;
+    }
 }
