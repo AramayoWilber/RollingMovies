@@ -4,12 +4,12 @@ import { CatalogoDB } from '../clases/CatalogoDB.class.js'
 // 1. variable con la ID de la tabla en el HTML 
 // 2. variable con la ID del contenedor de los il para crear los items de la paginacion li 
 // 3. cantidad de registros que se quieren mostar en la tabla
+// 4. filtro por nombre de un array
 
-export const cargarCatalogo = (id_bodyTabla, id_item_paginacion, mostrarRegistros) => {
+export const cargarCatalogo = (id_bodyTabla, id_item_paginacion, mostrarRegistros, filtro) => {
 
-    const catalogo = new CatalogoDB().establecerConexion();
-
-    //variables para la paginacion 
+    //variables para la paginacion
+    const catalogo = new CatalogoDB().filtrarTitulo(filtro);
     let limite = mostrarRegistros;
     let desde = 0;
     let paginas = catalogo.length / limite;
@@ -75,7 +75,8 @@ export const cargarCatalogo = (id_bodyTabla, id_item_paginacion, mostrarRegistro
     }
 
     const moficarArregloCatalogo = () => {
-        arreglo = catalogo.slice(desde, paginaActiva * limite);
+        const catalogoActualizado = new CatalogoDB().filtrarTitulo(filtro);
+        arreglo = catalogoActualizado.slice(desde, paginaActiva * limite);
         cargarCatalogo();
     }
 
