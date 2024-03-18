@@ -64,10 +64,6 @@ const btnModalEliminar = document.getElementById('btn-modal-eliminar');
 const modalAdd = new bootstrap.Modal('#addBtnModal');
 
 cargarCatalogo(bodyTabla, items_paginacion, cantidadRegistros.value);
-modalAdd.show()
-
-modalAdd.hide()
-
 
 /////////////////////ACTION LISTENERS////////////////////////////////
 
@@ -96,20 +92,25 @@ btnModalEliminar.addEventListener('click', (e) => {
 const formularioModal = document.getElementById('formulario_modal');
 
 formularioModal.addEventListener('submit', e => {
-
+    e.preventDefault()
     const titulo = document.getElementById('titulo_form').value;
     const genero = document.getElementById('genero_form').value;
     const descripcion = document.getElementById('descripcion_form').value;
     const categoria = document.getElementById('categoria_form').value;
     const publicar = document.getElementById('publicar_form').value;
     const destacar = document.getElementById('destacar_form').value;
-    const URL = document.getElementById('validacionURL').value;
-    const portada = document.getElementById('portada_form').value;
-    const banner = document.getElementById('banner_form').value;
+    const url_trailer = document.getElementById('validacionURL').value;
+    const url_portada = document.getElementById('url_portada_form')
+    const url_banner = document.getElementById('url_banner_form')
 
-    const pelicula = new Pelicula(catalogo.obtenerCodigo(), titulo, categoria, genero, descripcion, publicar, destacar, portada, banner, URL);
+
+
+
+    const pelicula = new Pelicula(catalogo.obtenerCodigo(), titulo, categoria, genero, descripcion, publicar, destacar, url_portada, url_banner, url_trailer);
     catalogo.agregarContenido(pelicula);
     cargarCatalogo(bodyTabla, items_paginacion, cantidadRegistros.value);
-
+    setTimeout(() => {
+        modalAdd.hide() // cierra el modal
+    }, 500);
 
 })
