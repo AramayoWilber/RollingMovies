@@ -131,14 +131,16 @@
                     <div class="modal-body">
                         <!-- ------- BODY MODAL ------ -->
                         <div class="container">
-                            <form class="was-validated" id="formulario_modal" novalidate>
+                            <form class="was-validated" id="formulario_modal">
                                 <div class="mb-3">
                                     <label for="titulo_form" class="form-label">Titulo</label>
                                     <input type="text" class="form-control" id="titulo_form" required>
+                                    <div class="invalid-feedback">Escribe un titulo</div>
                                 </div>
                                 <div class="mb-3">
                                     <label for="genero_form" class="form-label">Genero</label>
                                     <input type="text" class="form-control" id="genero_form" required>
+                                    <div class="invalid-feedback">Escribe un genero</div>
                                 </div>
                                 <div class="mb-3">
                                     <label for="descripcion_form" class="form-label">Descripción</label>
@@ -193,26 +195,31 @@
                                     <div class="valid-feedback">
                                         Todo bien!
                                     </div>
+                                    <div class="invalid-feedback">Ingrese una URL del video</div>
                                 </div>
 
                                 <div class="mb-3">
-                                    <label class="form-label">Portada</label>
-                                    <input id="portada_form" type="file" class="form-control" aria-label="file example"
-                                        required>
-                                    <div class="invalid-feedback">Seleciona una imagen de portada</div>
+                                    <label for="url_portada_form" class="form-label">URL imagen portada</label>
+                                    <input type="text" class="form-control" id="url_portada_form" required>
+                                    <div class="valid-feedback">
+                                        Todo bien!
+                                    </div>
+                                    <div class="invalid-feedback">Ingrese una URL para la portada</div>
                                 </div>
 
                                 <div class="mb-3">
-                                    <label class="form-label">Banner</label>
-                                    <input id="banner_form" type="file" class="form-control" aria-label="file example"
-                                        required>
-                                    <div class="invalid-feedback">Seleciona una imagen de banner</div>
+                                    <label for="url_banner_form" class="form-label">URL imagen banner</label>
+                                    <input type="text" class="form-control" id="url_banner_form" required>
+                                    <div class="valid-feedback">
+                                        Todo bien!
+                                    </div>
+                                    <div class="invalid-feedback">Ingrese una URL para el banner</div>
                                 </div>
 
                                 <div class="mb-3 d-flex justify-content-end">
-                                    <button type="button" class="btn btn-secondary mx-2"
+                                    <button type="button" class="btn btn-secondary mx-3"
                                         data-bs-dismiss="modal">Cancelar</button>
-                                    <button class="btn btn-primary" type="submit">Agregar</button>
+                                    <button class="btn btn-primary" type="submit">Agregar al catalogo</button>
                                 </div>
                             </form>
                         </div>
@@ -255,8 +262,7 @@
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
                                         data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-outline-primary"
-                                        data-bs-dismiss="modal">Understood</button>
+                                    <button type="button" class="btn btn-outline-primary">Understood</button>
                                 </div>
                             </div>
                         </div>

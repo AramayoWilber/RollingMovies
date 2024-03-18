@@ -171,10 +171,9 @@ export class CatalogoDB {
             publicado: objPelicula.publicado,
             destacada: objPelicula.destacada,
             img_portada: objPelicula.img_portada,
-            img_fondo: objPelicula.img_fondo,
+            img_banner: objPelicula.img_banner,
             url_trailer: objPelicula.url_trailer
         };
-        console.log(nuevaPelicula)
         let peliculasDB = this.establecerConexion();
 
         peliculasDB.push(nuevaPelicula);
