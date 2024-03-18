@@ -87,11 +87,10 @@ btnModalEliminar.addEventListener('click', (e) => {
 })
 
 
-
 // ----------------------MODAL AGREGAR ------------ 
-const formularioModal = document.getElementById('formulario_modal');
+const modalAgregar = document.getElementById('formulario_modal_agregar');
 
-formularioModal.addEventListener('submit', e => {
+modalAgregar.addEventListener('submit', e => {
     e.preventDefault()
     const titulo = document.getElementById('titulo_form').value;
     const genero = document.getElementById('genero_form').value;
@@ -100,11 +99,8 @@ formularioModal.addEventListener('submit', e => {
     const publicar = document.getElementById('publicar_form').value;
     const destacar = document.getElementById('destacar_form').value;
     const url_trailer = document.getElementById('validacionURL').value;
-    const url_portada = document.getElementById('url_portada_form')
-    const url_banner = document.getElementById('url_banner_form')
-
-
-
+    const url_portada = document.getElementById('url_portada_form').value;
+    const url_banner = document.getElementById('url_banner_form').value;
 
     const pelicula = new Pelicula(catalogo.obtenerCodigo(), titulo, categoria, genero, descripcion, publicar, destacar, url_portada, url_banner, url_trailer);
     catalogo.agregarContenido(pelicula);
@@ -112,5 +108,14 @@ formularioModal.addEventListener('submit', e => {
     setTimeout(() => {
         modalAdd.hide() // cierra el modal
     }, 500);
+
+})
+
+
+//-----------------------------MODAL EDITAR--------------------------------
+const modalEditar = document.getElementById('formulario_modal_editar');
+
+modalEditar.addEventListener('change', e => {
+    e.preventDefault()
 
 })
