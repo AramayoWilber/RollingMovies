@@ -161,6 +161,26 @@ export class CatalogoDB {
         return datos[ultimoElemento].codigo + 1;
     }
 
+    editatElementoDelCatalogo(id_pelicula, objPelicula) {
+        const id = parseInt(id_pelicula);
+        const catalogo = this.establecerConexion();
+        catalogo.forEach(elemet => {
+            if (elemet.codigo === id) {
+                elemet.codigo = objPelicula.codigo
+                elemet.nombre = objPelicula.nombre
+                elemet.categoria = objPelicula.categoria
+                elemet.genero = objPelicula.genero
+                elemet.descripcion = objPelicula.descripcion
+                elemet.publicado = objPelicula.publicado
+                elemet.destacada = objPelicula.destacada
+                elemet.img_portada = objPelicula.img_portada
+                elemet.img_banner = objPelicula.img_banner
+                elemet.url_trailer = objPelicula.url_trailer
+            }
+        })
+        localStorage.setItem('peliculas', JSON.stringify(catalogo));
+    }
+
     agregarContenido(objPelicula) {
         const nuevaPelicula = {
             codigo: objPelicula.codigo,

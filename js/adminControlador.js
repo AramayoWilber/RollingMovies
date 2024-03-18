@@ -9,6 +9,37 @@ const datosParaBorrar = {
     key: null
 }
 
+const ultimaFilaSeleccionada = {
+    key: null
+}
+//-------------------------------------------------------------
+
+function cargarModalEdit(e) {
+
+    if (e.target.name === "btn-opcion-editar") {
+        const key = parseInt(e.target.parentElement.parentElement.getAttribute('key'))
+        const catalogo = new CatalogoDB().establecerConexion();
+        ultimaFilaSeleccionada.key = key
+        let datosPelicula;
+        catalogo.forEach(element => {
+            if (element.codigo === key) {
+                datosPelicula = element;
+            }
+        });
+
+        document.getElementById('titulo_formEdit').value = datosPelicula.nombre;
+        document.getElementById('descripcion_formEdit').value = datosPelicula.descripcion;
+        document.getElementById('genero_formEdit').value = datosPelicula.genero;
+        document.getElementById('publicar_formEdit').value = datosPelicula.publicado;
+        document.getElementById('destacar_formEdit').value = datosPelicula.destacada;
+        document.getElementById('categoria_formEdit').value = datosPelicula.categoria;
+        document.getElementById('validacionURL_formEdit').value = datosPelicula.url_trailer;
+        document.getElementById('url_portada_formEdit').value = datosPelicula.img_portada;
+        document.getElementById('url_banner_formEdit').value = datosPelicula.img_banner;
+    }
+}
+
+
 function eventBotonPublicado(e) {
     if (e.target.name === "btn_publicado") {
         const key = e.target.parentElement.parentElement.getAttribute('key');
@@ -44,6 +75,7 @@ function eventBotonDestacados(e) {
     }
 }
 
+/////////////// EVENTO BORRAR ///////////////////////////
 function eventBorrar(e) {
     if (e.target.name === 'btn-opcion-borrar') {
         const key = e.target.parentElement.parentElement.getAttribute('key')
@@ -54,26 +86,7 @@ function eventBorrar(e) {
     }
 }
 
-
-////////////////////////    CARGAR TABLA  /////////////////////////////////////
-const tabla = document.getElementById('tabla');
-const bodyTabla = document.getElementById('body-tabla');
-const items_paginacion = document.getElementById('items-paginacion');
-const cantidadRegistros = document.getElementById('select_candidad_registros');
 const btnModalEliminar = document.getElementById('btn-modal-eliminar');
-const modalAdd = new bootstrap.Modal('#addBtnModal');
-
-cargarCatalogo(bodyTabla, items_paginacion, cantidadRegistros.value);
-
-/////////////////////ACTION LISTENERS////////////////////////////////
-
-tabla.addEventListener('click', eventBotonDestacados)
-tabla.addEventListener('click', eventBorrar)
-tabla.addEventListener('click', eventBotonPublicado)
-cantidadRegistros.addEventListener('change', e => {
-    const registros = document.getElementById('select_candidad_registros').value;
-    cargarCatalogo(bodyTabla, items_paginacion, registros)
-});
 
 btnModalEliminar.addEventListener('click', (e) => {
     const filaTabla = datosParaBorrar.filaTabla;
@@ -84,11 +97,36 @@ btnModalEliminar.addEventListener('click', (e) => {
 
     datosParaBorrar.filaTabla = null;
     datosParaBorrar.key = null;
+    cargarCatalogo(bodyTabla, items_paginacion, cantidadRegistros.value);
 })
+
+
+
+
+
+////////////////////////    CARGAR TABLA  /////////////////////////////////////
+const tabla = document.getElementById('tabla');
+const bodyTabla = document.getElementById('body-tabla');
+const items_paginacion = document.getElementById('items-paginacion');
+const cantidadRegistros = document.getElementById('select_candidad_registros');
+
+cargarCatalogo(bodyTabla, items_paginacion, cantidadRegistros.value);
+
+/////////////////////ACTION LISTENERS////////////////////////////////
+
+tabla.addEventListener('click', eventBotonDestacados)
+tabla.addEventListener('click', eventBorrar)
+tabla.addEventListener('click', eventBotonPublicado)
+tabla.addEventListener('click', cargarModalEdit)
+cantidadRegistros.addEventListener('change', e => {
+    const registros = document.getElementById('select_candidad_registros').value;
+    cargarCatalogo(bodyTabla, items_paginacion, registros)
+});
 
 
 // ----------------------MODAL AGREGAR ------------ 
 const modalAgregar = document.getElementById('formulario_modal_agregar');
+const modalAdd = new bootstrap.Modal('#addBtnModal');
 
 modalAgregar.addEventListener('submit', e => {
     e.preventDefault()
@@ -111,11 +149,25 @@ modalAgregar.addEventListener('submit', e => {
 
 })
 
+//////////////////// MODAL EDITAR /////////////////////////////
+const modalEditar = document.getElementById('editBtnModal');
 
-//-----------------------------MODAL EDITAR--------------------------------
-const modalEditar = document.getElementById('formulario_modal_editar');
+modalEditar.addEventListener('submit', e => {
+    e.preventDefault();
 
-modalEditar.addEventListener('change', e => {
-    e.preventDefault()
+    const key = ultimaFilaSeleccionada.key;
+    const titulo = document.getElementById('titulo_formEdit').value;
+    const genero = document.getElementById('genero_formEdit').value;
+    const descripcion = document.getElementById('descripcion_formEdit').value;
+    const categoria = document.getElementById('categoria_formEdit').value;
+    const publicar = document.getElementById('publicar_formEdit').value;
+    const destacar = document.getElementById('destacar_formEdit').value;
+    const url_trailer = document.getElementById('validacionURL_formEdit').value;
+    const url_portada = document.getElementById('url_portada_formEdit').value;
+    const url_banner = document.getElementById('url_banner_formEdit').value;
+
+    const nuevaPelicula = new Pelicula(key, titulo, categoria, genero, descripcion, publicar, destacar, url_portada, url_banner, url_trailer)
+    catalogo.editatElementoDelCatalogo(key, nuevaPelicula);
 
 })
+

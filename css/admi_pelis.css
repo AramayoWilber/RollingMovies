@@ -125,6 +125,10 @@ body{
     margin: 1px;
 }
 
+.btn-opcion-editar i{
+    pointer-events: none;
+}
+
 .btn-opcion-editar:hover {
     background: rgba(122, 120, 120, 0.5);
     color: #230ee2;
