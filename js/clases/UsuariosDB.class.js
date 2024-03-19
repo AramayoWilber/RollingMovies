@@ -1,37 +1,27 @@
 export class UsuariosDB {
 
-    constructor(){     
+    constructor() {
     }
 
-    establecerConexion(){
-        let usuariosDB;
-
+    establecerConexion() {
         const usuarios = JSON.parse(localStorage.getItem('usuarios'));
-
-        if (usuarios) {
-            usuariosDB = usuarios;
-    
-        } else {
+        if (!usuarios) {
             const nuevoUsuario = [
-                {id: 0, email: 'correo@correo.com', password: 'abc1234', apellido: 'last name', nombre: 'name', telefono: '123456789', sexo: 'otro'}   ];
-
+                { id: 0, estado: false, email: 'correo@correo.com', password: 'abc1234', apellido: 'last name', nombre: 'name', telefono: '123456789', sexo: 'otro' },
+                { id: 1, estado: false, email: 'prueba@prueba.com', password: '123456', apellido: 'last name', nombre: 'name', telefono: '123456789', sexo: 'otro' }];
             localStorage.setItem('usuarios', JSON.stringify(nuevoUsuario));
-            usuariosDB =JSON.parse(localStorage.getItem('usuarios'));
         }
-
-        return usuariosDB;
     }
 
 
-    obtenerId(){
-        let datos = this.establecerConexion();
-        let ultimoElemento = datos.length - 1;
-        return datos[ultimoElemento].id + 1;
+    obtenerNuevoId() {
+        this.establecerConexion();
+        const datosUsuarios = JSON.parse(localStorage.getItem('usuarios'));
+        const ultimoUsuario = datosUsuarios.length - 1;
+        return datosUsuarios[ultimoUsuario].id + 1;
     }
 
-
-
-    agregarUsuario(objUsuario){
+    agregarUsuario(objUsuario) {
 
         const usuario = {
             id: objUsuario.id_usuario,
@@ -43,7 +33,8 @@ export class UsuariosDB {
             sexo: objUsuario.sexo
         };
         //obtengo Based de Datos del localStorage
-        let usuariosDB = this.establecerConexion();
+        this.establecerConexion();
+        let usuariosDB = JSON.parse(localStorage.getItem('usuarios'));
         //agrego nuevo usuario en la variable local
         usuariosDB.push(usuario);
         //Actualizo la nueva base de datos
@@ -52,12 +43,13 @@ export class UsuariosDB {
     }
 
 
-    verificarCorreoValido(correo){
+    verificarCorreoValido(correo) {
+        this.establecerConexion();
         let usuariosDB = JSON.parse(localStorage.getItem("usuarios"));
         let usuarioEncontrado = false;
 
         usuariosDB.forEach(usuario => {
-            if(correo === usuario.email){
+            if (correo === usuario.email) {
                 usuarioEncontrado = true;
             }
         });
@@ -66,13 +58,13 @@ export class UsuariosDB {
     }
 
 
-    validarLogin(email, password){
+    validarLogin(email, password) {
+        this.establecerConexion();
+        let usuarios = JSON.parse(localStorage.getItem('usuarios'));
         let valido = false;
 
-        const usuarios = this.establecerConexion();
-
         usuarios.forEach(usuario => {
-            if(email === usuario.email && password === usuario.password){
+            if (email === usuario.email && password === usuario.password) {
                 valido = true;
             }
         });
