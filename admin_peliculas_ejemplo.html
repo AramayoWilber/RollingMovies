@@ -165,9 +165,10 @@
                                     <div class="row justify-content-between">
                                         <div class="col-6">
                                             <div class="mb-3">
+                                                <label for="publicar_form" class="form-label">Publicado</label>
                                                 <select id="publicar_form" class="form-select w-75" required
                                                     aria-label="select example">
-                                                    <option disabled selected value="">Publicar</option>
+                                                    <option disabled selected value="">...</option>
                                                     <option value="true">Si</option>
                                                     <option value="false">No</option>
                                                 </select>
@@ -176,9 +177,10 @@
                                         </div>
                                         <div class="col-6">
                                             <div class="mb-3">
+                                                <label for="destacar_form" class="form-label">Destacar</label>
                                                 <select id="destacar_form" class="form-select w-75" required
                                                     aria-label="select example">
-                                                    <option disabled selected value="">Destacar</option>
+                                                    <option disabled selected value="">...</option>
                                                     <option value="true">Si</option>
                                                     <option value="false">No</option>
                                                 </select>
@@ -187,9 +189,10 @@
                                         </div>
                                         <div class="col-8">
                                             <div class="mb-3">
+                                                <label for="categoria_form" class="form-label">Categoria</label>
                                                 <select id="categoria_form" class="form-select w-75" required
                                                     aria-label="select example">
-                                                    <option disabled selected value="">Categoria</option>
+                                                    <option disabled selected value="">...</option>
                                                     <option value="pelicula">Pelicula</option>
                                                     <option value="serie">Serie</option>
                                                 </select>
@@ -201,7 +204,7 @@
 
                                 <div class="mb-3">
                                     <label for="validacionURL" class="form-label">URL del video</label>
-                                    <input type="text" class="form-control" id="validacionURL" required>
+                                    <input type="url" class="form-control" id="validacionURL" required>
                                     <div class="valid-feedback">
                                         Todo bien!
                                     </div>
@@ -210,7 +213,7 @@
 
                                 <div class="mb-3">
                                     <label for="url_portada_form" class="form-label">URL imagen portada</label>
-                                    <input type="text" class="form-control" id="url_portada_form" required>
+                                    <input type="url" class="form-control" id="url_portada_form" required>
                                     <div class="valid-feedback">
                                         Todo bien!
                                     </div>
@@ -219,7 +222,7 @@
 
                                 <div class="mb-3">
                                     <label for="url_banner_form" class="form-label">URL imagen banner</label>
-                                    <input type="text" class="form-control" id="url_banner_form" required>
+                                    <input type="url" class="form-control" id="url_banner_form" required>
                                     <div class="valid-feedback">
                                         Todo bien!
                                     </div>
@@ -229,7 +232,7 @@
                                 <div class="mb-3 d-flex justify-content-end">
                                     <button type="button" class="btn btn-secondary mx-3"
                                         data-bs-dismiss="modal">Cancelar</button>
-                                    <button class="btn btn-primary" type="submit">Agregar al catalogo</button>
+                                    <button class="btn btn-primary" type="submit">Agregar</button>
                                 </div>
                             </form>
                         </div>
@@ -257,21 +260,25 @@
                                 <div class="modal-body bg-body-tertiary">
                                     <!-- ------- BODY MODAL ------ -->
                                     <div class="container">
-                                        <form class="was-validated" id="formulario_modal_editar">
-                                            <div class="mb-3">
-                                                <label for="titulo_formEdit" class="form-label">Titulo</label>
-                                                <input type="text" class="form-control" id="titulo_formEdit" required>
+                                        <form class="" id="formulario_modal_editar">
+                                            <div class="mb-3" id="group-titulo">
+                                                <label for="titulo_formEdit"
+                                                    class="form-label was-validated">Titulo</label>
+                                                <input type="text" class="form-control" id="titulo_formEdit"
+                                                    minlength="2" maxlength="50" required>
                                                 <div class="invalid-feedback">Escribe un titulo</div>
                                             </div>
-                                            <div class="mb-3">
+                                            <div class="mb-3" id="group-genero">
                                                 <label for="genero_formEdit" class="form-label">Genero</label>
-                                                <input type="text" class="form-control" id="genero_formEdit" required>
+                                                <input type="text" class="form-control" id="genero_formEdit"
+                                                    minlength="2" maxlength="25" required>
                                                 <div class="invalid-feedback">Escribe un genero</div>
                                             </div>
-                                            <div class="mb-3">
+                                            <div class="mb-3" id="group-descripcion">
                                                 <label for="descripcion_formEdit" class="form-label">Descripción</label>
-                                                <textarea class="form-control" id="descripcion_formEdit"
-                                                    placeholder="Resumen del breve del guion." required></textarea>
+                                                <textarea class="form-control" id="descripcion_formEdit" minlength="10"
+                                                    maxlength="500" placeholder="Resumen del breve del guion."
+                                                    required></textarea>
                                                 <div class="invalid-feedback">
                                                     Ingrese una sinopsis.
                                                 </div>
@@ -280,7 +287,7 @@
                                             <div class="container">
                                                 <div class="row justify-content-between">
                                                     <div class="col-6">
-                                                        <div class="mb-3">
+                                                        <div class="mb-3" id="group-publicar">
                                                             <label for="publicar_formEdit"
                                                                 class="form-label">Publicado</label>
                                                             <select id="publicar_formEdit" class="form-select w-75"
@@ -293,7 +300,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-6">
-                                                        <div class="mb-3">
+                                                        <div class="mb-3" id="group-descatar">
                                                             <label for="destacar_formEdit"
                                                                 class="form-label">Destacado</label>
                                                             <select id="destacar_formEdit" class="form-select w-75"
@@ -306,7 +313,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-8">
-                                                        <div class="mb-3">
+                                                        <div class="mb-3" id="group-categoria">
                                                             <label for="categoria_formEdit"
                                                                 class="form-label">Categoria</label>
                                                             <select id="categoria_formEdit" class="form-select w-75"
@@ -321,10 +328,10 @@
                                                 </div>
                                             </div>
 
-                                            <div class="mb-3">
+                                            <div class="mb-3" id="group-trailer">
                                                 <label for="validacionURL_formEdit" class="form-label">URL del
                                                     video</label>
-                                                <input type="text" class="form-control" id="validacionURL_formEdit"
+                                                <input type="url" class="form-control" id="validacionURL_formEdit"
                                                     required>
                                                 <div class="valid-feedback">
                                                     Todo bien!
@@ -332,10 +339,10 @@
                                                 <div class="invalid-feedback">Ingrese una URL del video</div>
                                             </div>
 
-                                            <div class="mb-3">
+                                            <div class="mb-3" id="group-portada">
                                                 <label for="url_portada_formEdit" class="form-label">URL imagen
                                                     portada</label>
-                                                <input type="text" class="form-control" id="url_portada_formEdit"
+                                                <input type="url" class="form-control" id="url_portada_formEdit"
                                                     required>
                                                 <div class="valid-feedback">
                                                     Todo bien!
@@ -343,10 +350,10 @@
                                                 <div class="invalid-feedback">Ingrese una URL para la portada</div>
                                             </div>
 
-                                            <div class="mb-3">
+                                            <div class="mb-3" id="group-banner">
                                                 <label for="url_banner_formEdit" class="form-label">URL imagen
                                                     banner</label>
-                                                <input type="text" class="form-control" id="url_banner_formEdit"
+                                                <input type="url" class="form-control" id="url_banner_formEdit"
                                                     required>
                                                 <div class="valid-feedback">
                                                     Todo bien!
@@ -356,7 +363,9 @@
                                             <div class="mb-3 d-flex justify-content-end">
                                                 <button type="button" class="btn btn-secondary mx-3"
                                                     data-bs-dismiss="modal">Cancelar</button>
-                                                <button class="btn btn-primary" type="submit">Guardar cambios</button>
+                                                <button id="btn-sutmit-guardar" class="btn btn-primary" type="submit"
+                                                    disabled>Guardar
+                                                    cambios</button>
                                             </div>
                                         </form>
                                     </div>

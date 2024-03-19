@@ -2,6 +2,14 @@ import { CatalogoDB } from './clases/CatalogoDB.class.js'
 import cargarCatalogo from './adicionales/cargarTabla.js';
 import { Pelicula } from './clases/Pelicula.class.js';
 
+const expresiones = {
+    titulo: /^[a-zA-ZÀ-ÿ\s]{2,50}$/, // Letras y espacios, pueden llevar acentos.
+    descripcion: /^[\s\S]{10,500}$/,
+    genero: /^[a-zA-ZÀ-ÿ\s]{2,25}$/,
+    checks: /^[a-zA-ZÀ-ÿ\s]{2,10}$/,
+    URL: /^(?:([A-Za-z]+):)?(\/{0,3})([0-9.\-A-Za-z]+)(?::(\d+))?(?:\/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/
+}
+
 const catalogo = new CatalogoDB();
 
 const datosParaBorrar = {
@@ -12,6 +20,51 @@ const datosParaBorrar = {
 const ultimaFilaSeleccionada = {
     key: null
 }
+
+const validarCampo = (expresion, input, campo) => {
+    if (expresion.test(input)) {
+        document.getElementById(`group-${campo}`).classList.add('was-validated');
+        btnGuardarCambios.disabled = false;
+    }
+    else {
+        btnGuardarCambios.disabled = true;
+    }
+};
+
+const validadFormulario = (e) => {
+    switch (e.target.id) { //obtiene el valor de la clase id en el Input
+        case 'titulo_formEdit':
+            validarCampo(expresiones.titulo, e.target.value, 'titulo')
+            break;
+        case 'genero_formEdit':
+            validarCampo(expresiones.genero, e.target.value, 'genero')
+            break;
+        case 'descripcion_formEdit':
+            validarCampo(expresiones.descripcion, e.target.value, 'descripcion')
+            break;
+        case 'validacionURL_formEdit':
+            validarCampo(expresiones.URL, e.target.value, 'trailer')
+            break;
+        case 'url_portada_formEdit':
+            validarCampo(expresiones.URL, e.target.value, 'portada')
+            break;
+        case 'url_banner_formEdit':
+            validarCampo(expresiones.URL, e.target.value, 'banner')
+            break;
+        case 'publicar_formEdit':
+            validarCampo(expresiones.checks, e.target.value, 'publicar')
+            break;
+        case 'destacar_formEdit':
+            validarCampo(expresiones.checks, e.target.value, 'descatar')
+            break;
+        case 'categoria_formEdit':
+            validarCampo(expresiones.checks, e.target.value, 'categoria')
+            break;
+
+    }
+}
+
+
 //-------------------------------------------------------------
 
 function cargarModalEdit(e) {
@@ -37,6 +90,7 @@ function cargarModalEdit(e) {
         document.getElementById('url_portada_formEdit').value = datosPelicula.img_portada;
         document.getElementById('url_banner_formEdit').value = datosPelicula.img_banner;
     }
+
 }
 
 
@@ -109,6 +163,7 @@ const tabla = document.getElementById('tabla');
 const bodyTabla = document.getElementById('body-tabla');
 const items_paginacion = document.getElementById('items-paginacion');
 const cantidadRegistros = document.getElementById('select_candidad_registros');
+const btnGuardarCambios = document.querySelector('#btn-sutmit-guardar')
 
 cargarCatalogo(bodyTabla, items_paginacion, cantidadRegistros.value, "");
 
@@ -185,3 +240,21 @@ buscarFormulario.addEventListener('submit', e => {
     cargarCatalogo(bodyTabla, items_paginacion, cantidadRegistros.value, search);
 })
 
+//////////////////////VALIDACION DEL FORMULARIO EDIT ////////////////////
+
+const inputs = document.querySelectorAll('#formulario_modal_editar input');
+const selects = document.querySelectorAll('#formulario_modal_editar select');
+const textTarea = document.querySelector('#descripcion_formEdit');
+
+inputs.forEach(input => {
+    input.addEventListener('keyup', validadFormulario); //evento al presionar tecla en el input
+    input.addEventListener('blur', validadFormulario); // evento clip fuera del input
+});
+
+selects.forEach(select => {
+    select.addEventListener('change', validadFormulario)
+    select.addEventListener('blur', validadFormulario);
+
+});
+textTarea.addEventListener('keyup', validadFormulario)
+textTarea.addEventListener('blur', validadFormulario)
