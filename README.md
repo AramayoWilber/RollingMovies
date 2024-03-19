@@ -1,6 +1,6 @@
 # JStream Movies
 
-![](img/logoJStream_movies.png)
+![](img/logoJStream_movies_100x100.png)
 
 Integrantes
 
