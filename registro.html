@@ -1,126 +1,167 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="bootstrap/bootstrap-5.3.3-dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="bootstrap/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css">
-        <link rel="stylesheet" href="css/formulario.css">
-        <title>Registro</title>
 
-    </head>
-    <body>
-        <div class="container w-75 my-5 bg-primary rounded shadow">
-            <div class="row align-content-stretch">
-                <div class="col bg d-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded-start">
+<head>
+    <meta charset="UTF-8">
+    <title>Iniciar sesíon · JStreamMovies</title>
+    <link rel="icon" href="img/logoJStream_movies_100x100.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="bootstrap/fontawesome-free-6.5.1-web/css/all.min.css">
+    <link rel="stylesheet" href="css/registro.css">
+    <title>Registro</title>
 
-                </div>
-                <div class="col bg-light p-5 rounded-end">
-                    <div class="text-center">
-                        <img class="bg-black rounded w-100" src="img/logo_rolling_blanco.png" alt="logo_rolling_blanco" >
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm mb-5">
+        <div class="container-fluid justify-content-between align-items-center">
+            <a class="navbar-brand" href="#">
+                <img src="img/logo_sin_fondo.png" alt="logoJStream_movies">
+            </a>
+            <button type="button" class="btn-login">Iniciar sesíon</button>
+        </div>
+    </nav>
+
+
+    <div class="container w-75 my-3 rounded">
+        <div class="row justify-content-center">
+            <div class="col-12 text-center">
+                <h2 class="fw-bold text-center py-3">Crea tu cuenta</h2>
+                <p>Continua con el registro para disfrutar de tus contenidos favoritos.</p>
+            </div>
+            <div class="col-12 col-md-8 col-lg-6 col-xl-6 justify-content-center my-2">
+                <!-- inicio Formulario  -->
+                <form action="#" id="formRegistro" class="formularioRegistro rounded" novalidate>
+                    <!-- Grupo Email  -->
+                    <div class="form_grupo mb-3" id="form-group-email">
+                        <label for="email_formRegistro" class="form-label">Email</label>
+                        <div class="form_grupo_input">
+                            <input type="email" class="form-control" autocomplete="off" id="email_formRegistro"
+                                name="email" required>
+                            <i class="icon-validacion bi bi-x-circle-fill"></i>
+                        </div>
+                        <div class="input-error">
+                            <p>Ingrese un correo valido</p>
+                        </div>
                     </div>
 
-                    <h2 class="fw-bold text-center py-3" >Bienvenido</h2>
+                    <div class="form_grupo mb-3" id="form-group-apellido">
+                        <label for="apellido_formRegistro" class="form-label">Apellido</label>
+                        <div class="form_grupo_input">
+                            <input type="text" class="form-control" autocomplete="off" id="apellido_formRegistro"
+                                name="apellido" required>
+                            <i class="icon-validacion bi bi-x-circle-fill"></i>
+                        </div>
+                        <div class="input-error">
+                            <p>Escribe tu apellido</p>
+                        </div>
+                    </div>
 
-                    <!-- Comienzo formulario  -->
-                    <form action="#" id="formRegistro" class="row g-3" novalidate>
 
-                        <!-- Grupo Email  -->
-                        <div class="col-12 form_grupo" id="form-group-email">
-                            <label for="email_formRegistro" class="form-label" >Email</label>
-                            <div class="form_grupo_input">
-                                <input type="email" class="form-control" autocomplete="off" id="email_formRegistro" name="email" placeholder="correo@correo.com" required>
-                                <i class="icon-validacion bi bi-x-circle-fill"></i>
-                            </div>
-                            <div class="input-error">
-                                <p>Ingrese un correo valido</p>
+                    <div class="form_grupo mb-3" id="form-group-nombre">
+                        <label for="nombre_formRegistro" class="form-label">Nombre</label>
+                        <div class="form_grupo_input">
+                            <input type="text" class="form-control" autocomplete="off" id="nombre_formRegistro"
+                                name="nombre" required>
+                            <i class="icon-validacion bi bi-x-circle-fill"></i>
+                        </div>
+                        <div class="input-error">
+                            <p>Escribe tu nombre</p>
+                        </div>
+                    </div>
+
+
+                    <div class="form_grupo mb-3" id="form-group-telefono">
+                        <label for="telefono_formRegistro" class="form-label">Telefono</label>
+                        <div class="form_grupo_input">
+                            <input type="number" class="form-control" autocomplete="off" id="telefono_formRegistro"
+                                name="telefono" required>
+                            <i class="icon-validacion bi bi-x-circle-fill"></i>
+                        </div>
+                        <div class="input-error">
+                            <p>telefono invalido</p>
+                        </div>
+                    </div>
+
+
+                    <div class="form_grupo mb-3" id="form-group-password">
+                        <label for="password_formRegistro" class="form-label">Contraseña</label>
+                        <div class="form_grupo_input">
+                            <input type="password" class="form-control" autocomplete="off" id="password_formRegistro"
+                                name="password" required>
+                            <i class="icon-validacion bi bi-x-circle-fill"></i>
+                        </div>
+                        <div class="input-error">
+                            <p>La contraseña debé tener entre 4 y 12 digitos</p>
+                        </div>
+                    </div>
+
+
+                    <!-- Select genero  -->
+                    <div class="form_grupo mb-3 form_grupo_genero_correcto" id="form-group-genero">
+                        <label for="genero_formRegistro" class="form-label">Genero</label>
+                        <select class="form-select" id="genero_formRegistro" name="genero" required>
+                            <option selected disabled value="">Seleccione</option>
+                            <option value="female">Femenino</option>
+                            <option value="male">Masculino</option>
+                            <option value="other">Otro</option>
+                        </select>
+                        <div class="input-error">
+                            Seleccione un genero.
+                        </div>
+                    </div>
+
+                    <!-- Terminos y condiciones  -->
+                    <div class="form_grupo mb-3" id="form-group-terminos">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="check-terminos" name="terminos"
+                                required>
+                            <label class="form-check-label" for="check-terminos">Acepto los Terminos y
+                                Condiciones</label>
+                            <div class="input-error-checked">
+                                Debes aceptar los terminos y condiciones.
                             </div>
                         </div>
+                    </div>
+                    <button type="submit" class="btn_submit">Registrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
-                        <div class="col-12 col-sm-12 col-md-5 form_grupo" id="form-group-apellido">
-                            <label for="apellido_formRegistro" class="form-label" >Apellido</label>
-                            <div class="form_grupo_input">
-                                <input type="text" class="form-control" autocomplete="off" id="apellido_formRegistro" name="apellido" required>
-                                <i class="icon-validacion bi bi-x-circle-fill"></i>
-                            </div>
-                            <div class="input-error">
-                                <p>Escribe tu apellido</p>
-                            </div>
-                        </div>
-
-
-                        <div class="col-md-7 form_grupo" id="form-group-nombre">
-                            <label for="nombre_formRegistro" class="form-label" >Nombre</label>
-                            <div class="form_grupo_input">
-                                <input type="text" class="form-control" autocomplete="off" id="nombre_formRegistro" name="nombre" required>
-                                <i class="icon-validacion bi bi-x-circle-fill"></i>
-                            </div>
-                            <div class="input-error">
-                                <p>Escribe tu nombre</p>
-                            </div>
-                        </div>
-
-
-                        <div class="col-md-6 form_grupo" id="form-group-telefono">
-                            <label for="telefono_formRegistro" class="form-label" >Telefono</label>
-                            <div class="form_grupo_input">
-                                <input type="number" class="form-control" autocomplete="off" id="telefono_formRegistro" name="telefono" placeholder="(011) XXX-XXXX" required>
-                                <i class="icon-validacion bi bi-x-circle-fill"></i>
-                            </div>
-                            <div class="input-error">
-                                <p>telefono invalido</p>
-                            </div>
-                        </div>
-
-
-                        <div class="col-md-12 form_grupo" id="form-group-password">
-                            <label for="password_formRegistro" class="form-label" >Contraseña</label>
-                            <div class="form_grupo_input">
-                                <input type="password" class="form-control" autocomplete="off" id="password_formRegistro" name="password" required>
-                                <i class="icon-validacion bi bi-x-circle-fill"></i>
-                            </div>
-                            <div class="input-error">
-                                <p>La contraseña debé tener entre 4 y 12 digitos</p>
-                            </div>
-                        </div>
-
-
-                        <!-- Select genero  -->
-                        <div class="col-12 form_grupo form_grupo_genero_correcto" id="form-group-genero">
-                            <label for="genero_formRegistro" class="form-label">Genero</label>
-                            <select class="form-select" id="genero_formRegistro" name="genero" required>
-                                <option selected disabled value="" >Seleccione</option>
-                                <option value="female">Femenino</option>
-                                <option value="male">Masculino</option>
-                                <option value="other">Otro</option>
-                            </select>
-                            <div class="input-error">
-                                Seleccione un genero.
-                            </div>
-                        </div>
-            
-                        <!-- Terminos y condiciones  -->
-                        <div class="col-12 form_grupo" id="form-group-terminos">
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="check-terminos" name="terminos" required>
-                                <label class="form-check-label" for="check-terminos">Acepto los Terminos y Condiciones</label>
-                                <div class="input-error-checked">
-                                    Debes aceptar los terminos y condiciones.
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- <div class="col-12">
-                    
-                        </div> -->
-                        <button type="submit" class="btn btn-outline-primary w-100">Registrar</button>
-                    </form>
-
+    <footer>
+        <div class="container-fluid">
+            <div class="row justify-content-between mb-1">
+                <div class="col-sm-8">
+                    <div class="social-icons-redes">
+                        <i class="fa-brands fa-x-twitter"></i>
+                        <i class="fa-brands fa-facebook"></i>
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                </div>
+                <div class="col">
+                    <h6>© 2024 JStreamMovies, LLC. Todos los derechos reservados.</h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="enlances-footer">
+                    <a href="#">Política de privacidad</a>
+                    <a href="#">Términos de uso</a>
+                    <a href="#">Administrar las preferencias de cookies</a>
+                    <a href="#">info</a>
                 </div>
             </div>
         </div>
+    </footer>
 
-        <script src="bootstrap/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
-        <script type="module" src="./js/registroControlador.js"></script>
-    </body>
+
+    <script src="bootstrap/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./js/registroControlador.js"></script>
+</body>
+
 </html>
