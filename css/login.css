@@ -1,53 +1,107 @@
 /* Efectos generales  */
-
-body{
-    background: url(/img/pexels-pixabay-39284.jpg) no-repeat;
-    background-position: center;
-    background-size: cover;
+:root {
+    --bg: #1e2345;
+    --violet: rgb(161, 132, 240);
+    --pink: #d60087;
+    --turquoise: #2fdabd;
 }
 
-footer{
-    margin-top: 2rem;
+::-ms-reveal {
+    filter: invert(100%);
+}
+body {
+    background: linear-gradient(to left, #020214, rgb(7, 5, 53));
+    background: cover;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+        sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+.navbar {
+    /* background: #141a32; */
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: rgb(50, 58, 58);
-    height: 4rem;
-    color: #fff;
-}
-.main-conteiner {
-    box-sizing: border-box;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
+.navbar img {
+    width: 7rem;
+    height: auto;
+}
 
-.remember label{
+.btn-registrar {
+    /* height: 2.3rem; */
+    font-weight: 600;
+    color: rgb(226, 216, 216);
+    border: none;
+    background: transparent;
+    border-radius: 0.4rem;
+    font-size: 1.15em;
+}
+.btn-registrar:hover {
+    background: #484f6e;
+}
+
+.social-icons-redes i {
+    color: rgb(201, 178, 178);
+    font-size: 1.3rem;
+    margin: 5px;
+}
+
+h6 {
+    color: rgb(201, 178, 178);
+    margin: 5px;
+    font-size: 0.8rem;
+}
+
+.enlances-footer a {
+    color: rgb(201, 178, 178);
+    margin: 10px;
+    font-size: 0.8rem;
+    text-decoration: none;
+}
+
+.form-control {
+    border: 1px solid rgba(225, 225, 255, 0.2);
+    color: rgb(209, 192, 192);
+    background: rgb(24, 24, 59);
+    border-radius: 0.3rem;
+    height: 3em;
+}
+.form-control i {
+    color: white;
+}
+.form-control:focus {
+    border: 1px solid rgba(225, 225, 255, 0.2);
+    color: rgb(209, 192, 192);
+    background: rgb(1, 1, 22);
+    border-radius: 0.3rem;
+}
+.remember label {
     display: flex;
     text-align: start;
 }
 
-.button-sumbit {
-    margin-top: 15px;
+.btn_submit {
+    height: 2.5rem;
+    width: 40%;
+    font-weight: 600;
+    color: rgb(29, 28, 28);
+    border: none;
+    background: rgb(212, 205, 205);
+    border-radius: 0.4rem;
+}
+.btn_submit:hover {
+    background: rgb(236, 232, 232);
 }
 
-.button-sumbit button{
-    width: 100%;
-    height: 100%;
-}
-
-.forgot {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.registro-link{
+.registro-link {
     display: flex;
     position: relative;
     flex-direction: column;
     align-items: center;
 }
 
-.registro-link a{
+.registro-link a {
     position: absolute;
     margin: 1.3rem;
 }
@@ -56,80 +110,41 @@ footer{
     font-size: 15px;
 }
 
-
-/* card-principal  */
-.img-card {
-    max-width: 100%;
-    height: auto;
+.body {
+    color: rgb(230, 219, 219);
 }
 
-.card-body {
-    padding: 1.5rem;
-    flex: 1 1 auto;
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: auto;
-
-}
-
-.card-header {
-    padding: .75rem 1.25rem;
-    margin-bottom: 0;
-    background-color: rgba(0, 0, 0, .03);
-    border-bottom: 1px solid rgba(0, 0, 0, .125);
-}
-
-.card-block {
-    display: block;
-}
-
-.card {
+.forgot:link,
+.forgot:visited {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    -webkit-background-clip: border-box;
-    background-clip: border-box;
-    border: 1px solid rgba(0, 0, 0, .125);
-}
-
-.main-conteiner {
-    margin-top: 5vh;
-    display: flex;
-    justify-content: center;
-}
-
-
-.forgot:link, .forgot:visited {
-    position: relative;
-    color: #3181FF;
+    color: #3181ff;
     text-decoration: none;
     padding-bottom: 2px;
 }
 
-.link-restablecer-password:link, .link-restablecer-password:visited {
-    color: #1e55eb;
-    position: relative;
-    text-decoration: none;    
-    padding-bottom: 2px;
-} 
-
-.link-restablecer-password:hover, .link-restablecer-password:hover {
-    text-decoration: underline;    
-
+.link-restablecer-password:link,
+.link-restablecer-password:visited {
+    color: #497aff;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
 }
 
-.link-registrarse:link, .link-registrarse:visited {
+.link-restablecer-password:hover,
+.link-restablecer-password:hover {
+    text-decoration: underline;
+}
+
+.link-registrarse:link,
+.link-registrarse:visited {
     color: #1e55eb;
-    text-decoration: none;    
+    text-decoration: none;
     padding-bottom: 2px;
-} 
+}
 
-.link-registrarse:hover, .link-registrarse:hover {
-    text-decoration: underline;    
-
+.link-registrarse:hover,
+.link-registrarse:hover {
+    text-decoration: underline;
 }
 
 .login-correcto {
@@ -140,31 +155,37 @@ footer{
     display: block;
 }
 
-
-.spinner-border{
-    position: absolute;
-    left: 15px;
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-    display: none;
+footer {
+    margin-top: 6rem;
 }
-
-.spinner-border-activo{
-    display: block;
-}
-
-@media screen and (max-width: 575px){
-    .card {
-        position: relative;
-        margin: 1.2rem;
-        display: flex;
-        flex-direction: column;
-        min-width: 0;
-        word-wrap: break-word;
-        background-color: #fff;
-        -webkit-background-clip: border-box;
-        background-clip: border-box;
-        border: 1px solid rgba(0, 0, 0, .125);
+@media screen and (max-width: 575px) {
+    .btn_submit {
+        height: 2.5rem;
+        width: 100%;
+        font-weight: 600;
+        color: rgb(29, 28, 28);
+        border: none;
+        background: rgb(212, 205, 205);
+        border-radius: 0.4rem;
     }
-} 
+
+    .navbar {
+        /* background: #141a32; */
+        display: flex;
+        margin-left: 0rem;
+        margin-right: 0rem;
+    }
+}
+
+@media screen and (max-width: 310px) {
+    .btn-registrar {
+        /* height: 2.3rem; */
+        margin-top: 0.5rem;
+        font-weight: 600;
+        color: rgb(255, 255, 255);
+        border: none;
+        background: transparent;
+        border-radius: 0.4rem;
+        font-size: 1.15em;
+    }
+}
