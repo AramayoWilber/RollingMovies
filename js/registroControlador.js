@@ -13,7 +13,7 @@ const expresiones = {
     fecha: /^(?:(?:(?:0?[1-9]|1\d|2[0-8])[/](?:0?[1-9]|1[0-2])|(?:29|30)[/](?:0?[13-9]|1[0-2])|31[/](?:0?[13578]|1[02]))[/](?:0{2,3}[1-9]|0{1,2}[1-9]\d|0?[1-9]\d{2}|[1-9]\d{3})|29[/]0?2[/](?:\d{1,2}(?:0[48]|[2468][048]|[13579][26])|(?:0?[48]|[13579][26]|[2468][048])00))$/,
     // valida la fecha de formato dd/mm/yyyy incluyendo los meses bisiestos.
     fecha2: /[1-9][0-9][0-9]{2}-([0][1-9]|[1][0-2])-([1-2][0-9]|[0][1-9]|[3][0-1])/gm
-    
+
 }
 
 const camposValidados = {
@@ -28,61 +28,61 @@ const camposValidados = {
 
 
 const validarCampo = (expresion, input, campo) => {
-    if(expresion.test(input)){
+    if (expresion.test(input)) {
         document.getElementById(`form-group-${campo}`).classList.remove('form_grupo_incorrecto');
         document.getElementById(`form-group-${campo}`).classList.add('form_grupo_correcto');
         document.querySelector(`#form-group-${campo} i`).classList.remove('bi-x-circle-fill');
         document.querySelector(`#form-group-${campo} i`).classList.add('bi-check-circle-fill');
-        document.querySelector(`#form-group-${campo} .input-error`).classList.remove('input-error-activo');  
-        camposValidados[campo]= true;
+        document.querySelector(`#form-group-${campo} .input-error`).classList.remove('input-error-activo');
+        camposValidados[campo] = true;
     }
-    else{
+    else {
         document.getElementById(`form-group-${campo}`).classList.add('form_grupo_incorrecto');
         document.querySelector(`#form-group-${campo} i`).classList.remove('bi-check-circle-fill');
         document.querySelector(`#form-group-${campo} i`).classList.add('bi-x-circle-fill');
         document.querySelector(`#form-group-${campo} .input-error`).classList.add('input-error-activo');
-        camposValidados[campo]= false;
+        camposValidados[campo] = false;
     }
 };
 
 const validadFormulario = (e) => {
-    switch (e.target.name){ //obtiene el valor de la clase name en el Input
+    switch (e.target.name) { //obtiene el valor de la clase name en el Input
         case 'email':
             validarCampo(expresiones.correo, e.target.value, 'email')
-        break;
-            
+            break;
+
         case 'apellido':
             validarCampo(expresiones.nombre, e.target.value, e.target.name);
-        break;
-        
+            break;
+
         case 'nombre':
             validarCampo(expresiones.nombre, e.target.value, e.target.name);
-        break;
-        
+            break;
+
         case 'telefono':
             validarCampo(expresiones.telefono, e.target.value, e.target.name);
-        break;
+            break;
 
         case 'password':
             validarCampo(expresiones.password, e.target.value, e.target.name);
-        break;
+            break;
 
     }
 }
 
-function validarSelect(e){
-        if(e.target.name === 'genero'){
-            if(e.target.value !== ""){
-                document.getElementById('form-group-genero').classList.remove('form-grupo-genero');
-                document.getElementById('form-group-genero').classList.add('form_grupo_genero_correcto');
-                camposValidados.genero = true;
-            }
-            else{
-                document.getElementById('form-group-genero').classList.add('form_grupo_genero_correcto');
-                document.getElementById('form-group-genero').classList.add('form-grupo-genero'); 
-                camposValidados.genero = false;
-            }
+function validarSelect(e) {
+    if (e.target.name === 'genero') {
+        if (e.target.value !== "") {
+            document.getElementById('form-group-genero').classList.remove('form-grupo-genero');
+            document.getElementById('form-group-genero').classList.add('form_grupo_genero_correcto');
+            camposValidados.genero = true;
         }
+        else {
+            document.getElementById('form-group-genero').classList.add('form_grupo_genero_correcto');
+            document.getElementById('form-group-genero').classList.add('form-grupo-genero');
+            camposValidados.genero = false;
+        }
+    }
 }
 
 
@@ -94,7 +94,7 @@ inputs.forEach(input => {
 selects.forEach(select => {
     select.addEventListener('click', validarSelect)
     select.addEventListener('blur', validarSelect);
- 
+
 });
 
 
@@ -104,16 +104,16 @@ formRegistro.addEventListener('submit', e => {
 
     const valorSelect = document.getElementById('genero_formRegistro').value;
 
-    if(valorSelect === ""){
+    if (valorSelect === "") {
         document.getElementById('form-group-genero').classList.add('form_grupo_genero_correcto');
-        document.getElementById('form-group-genero').classList.add('form-grupo-genero');    
+        document.getElementById('form-group-genero').classList.add('form-grupo-genero');
     }
 
     const keyss = Object.keys(camposValidados);
 
-    for(let i = 0; i < keyss.length - 2 ; i++){
+    for (let i = 0; i < keyss.length - 2; i++) {
         const clave = keyss[i]
-        if(camposValidados[clave] === false){
+        if (camposValidados[clave] === false) {
             document.getElementById(`form-group-${clave}`).classList.add('form_grupo_incorrecto');
             document.querySelector(`#form-group-${clave} i`).classList.remove('bi-check-circle-fill');
             document.querySelector(`#form-group-${clave} i`).classList.add('bi-x-circle-fill');
@@ -122,22 +122,22 @@ formRegistro.addEventListener('submit', e => {
     }
 
 
-    if(document.getElementById('check-terminos').checked ){
+    if (document.getElementById('check-terminos').checked) {
         document.querySelector('#form-group-terminos .input-error-checked').classList.remove('input-error-checked-activo');
         document.getElementById('form-group-terminos').classList.remove('form-grupo-checke-incorrecto');
         camposValidados.terminos = true;
 
     }
-    else{
+    else {
         document.querySelector('#form-group-terminos .input-error-checked').classList.add('input-error-checked-activo');
         document.getElementById('form-group-terminos').classList.add('form-grupo-checke-incorrecto');
-        camposValidados.terminos= false;
+        camposValidados.terminos = false;
     }
 
-    
-    if(camposValidados.email && camposValidados.email && camposValidados.nombre && camposValidados.apellido && camposValidados.telefono && camposValidados.password && camposValidados.genero && camposValidados.terminos ){
 
-        const usuarioDB= new UsuariosDB();
+    if (camposValidados.email && camposValidados.email && camposValidados.nombre && camposValidados.apellido && camposValidados.telefono && camposValidados.password && camposValidados.genero && camposValidados.terminos) {
+
+        const usuarioDB = new UsuariosDB();
 
         const form_email = document.getElementById('email_formRegistro').value;
         const form_nombre = document.getElementById('nombre_formRegistro').value;
@@ -145,9 +145,9 @@ formRegistro.addEventListener('submit', e => {
         const form_password = document.getElementById('password_formRegistro').value;
         const form_telefono = document.getElementById('telefono_formRegistro').value;
         const form_genero = document.getElementById('genero_formRegistro').value;
-    
-        const nuevoUsuario = new Usuario(form_nombre, form_apellido, form_genero, usuarioDB.obtenerId(), form_email, form_password, form_telefono);
-        
+
+        const nuevoUsuario = new Usuario(form_nombre, form_apellido, form_genero, usuarioDB.obtenerNuevoId(), form_email, form_password, form_telefono);
+
         usuarioDB.agregarUsuario(nuevoUsuario);
 
         window.location.href = '../error404.html';
