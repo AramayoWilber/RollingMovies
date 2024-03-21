@@ -1,4 +1,4 @@
-import { UsuariosDB } from './clases/UsuariosDB.class';
+import { UsuariosDB } from './clases/UsuariosDB.class.js';
 
 const formulario = document.getElementById('formulario');
 const input = document.querySelector('#formulario input');
@@ -10,13 +10,13 @@ let emailValido = false;
 let emailValidoEncontrado = false;
 
 const validarCorreo = (e) => {
-    if(expReg_correo.test(e.target.value)){
+    if (expReg_correo.test(e.target.value)) {
         document.getElementById('formulario').classList.remove('email-no-valido');
         document.getElementById('formulario').classList.remove('form-email-incorrecto');
         document.getElementById('formulario').classList.add('form-email-correcto');
         emailValido = true;
     }
-    else{
+    else {
         document.getElementById('formulario').classList.remove('email-no-valido');
         document.getElementById('formulario').classList.add('form-email-incorrecto');
         emailValido = false;
@@ -27,10 +27,10 @@ const validarCorreo = (e) => {
 const verificarEmailDB = () => {
     const usuarios = new UsuariosDB();
     const campo_input = document.getElementById('form_email').value;
-    if(usuarios.verificarCorreoValido(campo_input)){
+    if (usuarios.verificarCorreoValido(campo_input)) {
         emailValidoEncontrado = true;
     }
-    else{
+    else {
         document.getElementById('formulario').classList.add('email-no-valido');
         emailValidoEncontrado = false;
     }
@@ -45,13 +45,13 @@ formulario.addEventListener('submit', e => {
 
     verificarEmailDB();
 
-    if(!emailValido){
+    if (!emailValido) {
         document.getElementById('formulario').classList.add('form-email-incorrecto');
-    }else{
-        if(!emailValidoEncontrado){
+    } else {
+        if (!emailValidoEncontrado) {
             document.getElementById('formulario').classList.add('email-no-valido');
         }
-        else{
+        else {
             window.location.href = '/Proyecto/resetSuccess.html';
         }
     }
