@@ -20,11 +20,57 @@
             </a>
         </div>
     </nav>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <table id="tabla" class="container-fluid">
+                    <thead class="text-center">
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center" id="body-tabla">
 
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-8 offset-2">
+                <!-- -------------Paginacion------------- -->
+                <div class="d-flex justify-content-center">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <button class="page-link" onclick="previusPage()" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </button>
+                            </li>
+                            <!-- items de pagination -->
+                            <div id="items-paginacion" class="d-flex"></div>
+
+                            <li class="page-item">
+                                <button class="page-link" onclick="nextPage()" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
     <main>
 
     </main>
-    <footer>
+    <footer class="mt-5">
         <div class="container-fluid">
             <div class="row justify-content-between mb-1">
                 <div class="col-sm-8">
@@ -52,7 +98,7 @@
     </footer>
 
     <script src="bootstrap/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
-    <script type="module" src=""></script>
+    <script type="module" src="js/adminUsuarios.js"></script>
 </body>
 
 </html>

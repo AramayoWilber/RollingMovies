@@ -1,0 +1,121 @@
+body {
+    background: linear-gradient(to left, #020214, rgb(7, 5, 53));
+    background: cover;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+        sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    color: rgb(230, 219, 219);
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
+}
+/* -------------CONTAINER ------------------- */
+.container {
+    padding: 2rem;
+    border: 1px solid rgb(230, 219, 219, 0.2);
+    border-radius: 10px;
+}
+
+/* --------------------NAV BAR------------------ */
+.navbar img {
+    width: 7rem;
+    height: auto;
+}
+
+/* -----------------TABLA------------------ */
+table {
+    color: #fff;
+    font-size: 1em;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: rgba(215, 219, 235, 0.4);
+}
+
+th {
+    padding: 1.2em 1em;
+    font-weight: 700;
+}
+th {
+    border-bottom: 1px solid rgba(211, 205, 209, 0.4);
+}
+
+td {
+    padding: 1em;
+    border-bottom: 1px solid rgba(211, 205, 209, 0.4);
+}
+
+tbody tr:hover {
+    background: rgba(131, 125, 129, 0.4);
+}
+
+/* --------------------BOTONES/ICONOS------------------ */
+.btn-validado {
+    background: transparent;
+    border: none;
+    border-radius: 0.31em;
+    font-size: 1.16em;
+    transition: 0.3s ease all;
+    padding: 0.08em 0.5em;
+    margin: 1px;
+}
+.btn-validado i {
+    color: rgb(8, 155, 45);
+    pointer-events: none;
+}
+
+.btn-no-validado {
+    background: transparent;
+    border: none;
+    border-radius: 0.31em;
+    font-size: 1.16em;
+    transition: 0.3s ease all;
+    padding: 0.08em 0.5em;
+    margin: 1px;
+}
+
+.btn-no-validado i {
+    color: #cc105f;
+    pointer-events: none;
+}
+
+.btn-opcion-borrar {
+    background: transparent;
+    border: none;
+    border-radius: 0.31em;
+    color: #e7e0e0;
+    font-size: 1.16em;
+    transition: 0.3s ease all;
+    padding: 0.08em 0.5em;
+    margin: 1px;
+}
+
+.btn-opcion-borrar i {
+    pointer-events: none;
+}
+
+.btn-opcion-borrar:hover {
+    background: rgb(204, 194, 194);
+    color: #ff0000;
+}
+
+/* --------------------FOOTER-------------- */
+.social-icons-redes i {
+    color: rgb(201, 178, 178);
+    font-size: 1.3rem;
+    margin: 5px;
+}
+
+h6 {
+    color: rgb(201, 178, 178);
+    margin: 5px;
+    font-size: 0.8rem;
+}
+
+.enlances-footer a {
+    color: rgb(201, 178, 178);
+    margin: 10px;
+    font-size: 0.8rem;
+    text-decoration: none;
+}
