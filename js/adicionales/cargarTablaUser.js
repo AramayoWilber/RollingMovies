@@ -6,31 +6,40 @@ import { UsuariosDB } from '../clases/UsuariosDB.class.js';
 // 3. cantidad de registros que se quieren mostar en la tabla
 // 4. filtro por nombre de un array
 
-export const loadUsers = (id_bodyTabla, id_item_paginacion, cantidadRegistros, filtro) => {
-
-    //variables para la paginacion
-    const usuarios = new UsuariosDB().filtrarNombre(filtro);
+export const loadUsers = (id_bodyTabla, id_item_paginacion, cantidadRegistros, filtroNombre, mostrar) => {
     let limite = cantidadRegistros;
     let desde = 0;
-    let paginas = usuarios.length / limite;
+    let paginas;
     let paginaActiva = 1;
+    let datosUsuarios;
+    let usuarios = [];
+
+    datosUsuarios = new UsuariosDB().filtrarEstado(mostrar);
+    usuarios = datosUsuarios.filter(element => {
+        if (element.apellido.toLowerCase().indexOf(filtroNombre) > -1)
+            return element;
+        if (element.nombre.toLowerCase().indexOf(filtroNombre) > -1)
+            return element;
+    })
+
+    paginas = usuarios.length / limite;
+    paginaActiva = 1;
 
     let arreglo = usuarios.slice(desde, limite); ///slice me permite crear arreglos hasta un numero personalizado
-
     const cargarUsuarios = () => {
 
         id_bodyTabla.innerHTML = ""; //limpio tabla
         arreglo.forEach(element => {
             let usuarioValidado;
 
-            if (element.validado) {
-                usuarioValidado = `<button name="btn_publicado" id="icono_boton_publicado_${element.id}" class="btn-validado"><i class="fa-solid fa-circle-check"></i></button>`;
+            if (element.validado === 'true') {
+                usuarioValidado = `<button name="validado" id="icono_boton_validado_${element.id}" class="btn-validado"><i class="fa-solid fa-circle-check"></i></button>`;
             } else
-                usuarioValidado = `<button name="btn_publicado" id="icono_boton_publicado_${element.id}" class="btn-no-validado"><i class="fa-solid fa-circle-xmark"></i></button>`;
+                usuarioValidado = `<button name="validado" id="icono_boton_validado_${element.id}" class="btn-no-validado"><i class="fa-solid fa-circle-xmark"></i></button>`;
 
 
             const filaTabla = `
-            <th scope="row">${element.id}</th>
+            <th>${element.id}</th>
             <td>${element.apellido}</td>
             <td>${element.nombre}</td>
             <td>${element.email}</td>
@@ -68,7 +77,10 @@ export const loadUsers = (id_bodyTabla, id_item_paginacion, cantidadRegistros, f
     }
 
     const moficarArregloCatalogo = () => {
-        const usuariosActualizados = new UsuariosDB().filtrarNombre(filtro);
+        const datosUsuarios = new UsuariosDB().filtrarEstado(mostrar);
+        const usuariosActualizados = datosUsuarios.filter(element => {
+            return element.nombre.toLowerCase().indexOf(filtroNombre) > -1
+        })
         arreglo = usuariosActualizados.slice(desde, paginaActiva * limite);
         cargarUsuarios();
     }
