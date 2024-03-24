@@ -1,13 +1,13 @@
 export class Usuario {
-    constructor(id, apellido, email, password, apellido, nombre, telefono, sexo) {
+    constructor(id, apellido, email, password, nombre, telefono, genero) {
         this.id = id;
-        this.validado = false;
+        this.validado = "false";
         this.email = email;
         this.password = password;
         this.apellido = apellido;
         this.nombre = nombre;
         this.telefono = telefono;
-        this.sexo = sexo;
+        this.genero = genero;
     }
 
     agregar() {

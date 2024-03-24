@@ -146,7 +146,7 @@ formRegistro.addEventListener('submit', e => {
         const form_telefono = document.getElementById('telefono_formRegistro').value;
         const form_genero = document.getElementById('genero_formRegistro').value;
 
-        const nuevoUsuario = new Usuario(form_nombre, form_apellido, form_genero, usuarioDB.obtenerNuevoId(), form_email, form_password, form_telefono);
+        const nuevoUsuario = new Usuario(usuarioDB.obtenerNuevoId(), form_apellido, form_email, form_password, form_nombre, form_telefono, form_genero);
 
         usuarioDB.agregarUsuario(nuevoUsuario);
 

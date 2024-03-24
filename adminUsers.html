@@ -13,63 +13,134 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm mb-5">
+    <nav class="navbar navbar-expand-sm mb-2">
         <div class="container-fluid justify-content-between align-items-center">
             <a class="navbar-brand" href="#">
                 <img src="img/logo_sin_fondo.png" alt="logoJStream_movies">
             </a>
         </div>
     </nav>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12">
-                <table id="tabla" class="container-fluid">
-                    <thead class="text-center">
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Apellido</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Estado</th>
-                            <th scope="col">Opciones</th>
-                        </tr>
-                    </thead>
-                    <tbody class="text-center" id="body-tabla">
 
-                    </tbody>
-                </table>
+
+    <main>
+        <div class="container">
+            <div class="row justify-content-end">
+                <div class="col-3">
+                    <p class="mb-2">Mostrar usuarios</p>
+                    <select id="select_validos" class="form-select" aria-label="Default select example">
+                        <option selected value="false">No validados</option>
+                        <option value="true">Validados</option>
+                        <option value="">Todos</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row my-3 justify-content-between">
+                <!-- ----------Select------- -->
+                <div class="col-12 col-sm-6 col-md-5 col-lg-3 col-xl-3 d-flex justify-content-start">
+                    <p class="m-2">Visualizar</p>
+                    <select id="select_candidad_registros" class="form-select" aria-label="Default select example">
+                        <option value="3">3</option>
+                        <option selected="5">5</option>
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                    </select>
+                    <p class="m-2">registros</p>
+                </div>
+                <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-3">
+                    <!-- -----Buscar----- -->
+                    <form class="d-flex" role="search" id="filtrar_nombres">
+                        <input class="form-control me-2" id="input-search" type="search" placeholder="Nombre"
+                            aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Buscar</button>
+                    </form>
+                </div>
+            </div>
+            <div class="row justify-content-center border-tabla">
+                <div class="col-12">
+                    <!-- ----------------TABLA---------------- -->
+                    <div class="table-responsive">
+                        <table id="tabla" class="my-4" style="width: 100%;">
+                            <caption>Lista de usuarios</caption>
+                            <thead>
+                                <tr class="text-center">
+                                    <th scope="col">Codigo</th>
+                                    <th>Apellido</th>
+                                    <th>Nombre</th>
+                                    <th>Email</th>
+                                    <th>Validado</th>
+                                    <th>Opciones</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-center table-group-divider" id="body-tabla">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row mt-4">
+                <div class="col-8 offset-2">
+                    <!-- -------------Paginacion------------- -->
+                    <div class="d-flex justify-content-center">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a class="page-link" onclick="previusPage()" href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <!-- items de pagination -->
+                                <div id="items-paginacion" class="d-flex items-paginacion"></div>
+
+                                <li class="page-item">
+                                    <button class="page-link" onclick="nextPage()" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
             </div>
         </div>
+    </main>
 
-
-        <div class="row">
-            <div class="col-8 offset-2">
-                <!-- -------------Paginacion------------- -->
-                <div class="d-flex justify-content-center">
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination">
-                            <li class="page-item">
-                                <button class="page-link" onclick="previusPage()" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                </button>
-                            </li>
-                            <!-- items de pagination -->
-                            <div id="items-paginacion" class="d-flex"></div>
-
-                            <li class="page-item">
-                                <button class="page-link" onclick="nextPage()" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                </button>
-                            </li>
-                        </ul>
-                    </nav>
+    <!-- Modal DELETE-->
+    <div class="modal fade" id="deteleBtnModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="deteleBtnModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                            </div>
+                            <div class="col-12 text-center mt-4">
+                                <p class="advertencia">¿Estas seguro?</p>
+                                <p class="advertencia-contenido">Este proceso es inrreversive, si continuan los
+                                    elementos ya no se podran recuperar.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row justify-content-between text-center">
+                            <div class="col-6">
+                                <button type="button" class="w-100" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                            <div class="col-6">
+                                <button id="btn-modal-eliminar" type="button" class="w-100"
+                                    data-bs-dismiss="modal">Eliminar</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <main>
 
-    </main>
+
     <footer class="mt-5">
         <div class="container-fluid">
             <div class="row justify-content-between mb-1">
