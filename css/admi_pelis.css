@@ -21,7 +21,7 @@ body {
     border-radius: 10px;
 }
 
-/* nav bar  */
+/* --------------------nav bar ------------------- */
 
 .bg-navbar {
     background: #202649;
@@ -55,7 +55,7 @@ body {
 .ancho {
     width: 90%;
 }
-
+/* -------------------------FORMULARIO------------------- */
 .form-search {
     position: relative;
 }
@@ -81,12 +81,14 @@ body {
     background: transparent;
     color: #080f28;
 }
-
+.form-select {
+    width: 30%;
+}
 .form-search input {
     border-radius: 1.2em;
 }
 
-/* botones  */
+/* ---------------------------botones--------------------*/
 
 .btn-opcion-borrar {
     background: transparent;
@@ -215,26 +217,86 @@ body {
     border: 1px solid blue;
 }
 
-.modal-body .fa-circle-xmark {
-    font-size: 5rem;
-    padding: 1rem;
-    margin-bottom: 0.8rem;
-    color: red;
-}
-
-.modal-body p {
-    font-family: "Times New Roman", Times, serif;
-    font-size: 1.3rem;
-}
-
-.form-select {
-    width: 30%;
-}
+/* -------------------MODAL-------------------- */
 
 .bg-modal-add {
     color: #e9dcdc;
     background: #1c2553;
 }
+.modal-content {
+    border: 2px solid red;
+    background: rgb(134, 46, 46) !important;
+}
+.modal-body {
+    border-radius: 10px;
+}
+
+.btn-close-modal {
+    position: absolute;
+    right: 15px;
+    top: 8px;
+    font-size: 1.7em;
+    border: none;
+    background: transparent;
+}
+.btn-close-modal i {
+    color: #505353;
+    background: transparent;
+}
+
+/* -------------------MODAL DELETE--------------- */
+.modal-content {
+    background: transparent;
+    border-bottom: none;
+    border: none;
+}
+.modal-body-delete {
+    position: relative;
+    height: 15rem;
+    background: #ffffff;
+    border-radius: 10px;
+    border: none;
+}
+
+.modal-body-delete i {
+    position: absolute;
+    bottom: 13rem;
+    left: 13rem;
+    border-radius: 10px;
+    width: 6rem;
+    height: max-content;
+    background: #ffb200;
+    color: #fff;
+    font-size: 5rem;
+}
+
+.modal-body-delete button {
+    border: 2px solid #ffb200;
+    border-radius: 10px;
+    height: 3em;
+    font-weight: 600;
+    color: #ffb200;
+    background: #fff;
+}
+.modal-body-delete button:hover {
+    border: 2px solid #ffb200;
+    border-radius: 10px;
+    background: #ffb200;
+    height: 3em;
+    font-weight: 600;
+    color: #ffffff;
+}
+.modal-body-delete .advertencia {
+    color: #020214;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.modal-body-delete .advertencia-contenido {
+    color: #545458;
+    font-size: 1rem;
+}
+
 /* -----------------TABLA------------------ */
 .tabla-contenedor {
     border: 1px solid #545458;
@@ -301,4 +363,8 @@ h6 {
     margin: 10px;
     font-size: 0.8rem;
     text-decoration: none;
+}
+
+/* -------------MEDIA QUERIE------------ */
+@media screen and (max-width: 576px) {
 }
