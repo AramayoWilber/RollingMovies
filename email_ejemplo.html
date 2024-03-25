@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Iniciar sesíon · JStreamMovies</title>
+    <link rel="icon" href="img/logoJStream_movies_100x100.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="bootstrap/fontawesome-free-6.5.1-web/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(to left, #020214, rgb(7, 5, 53));
+            background: cover;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+                sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            color: rgb(230, 219, 219);
+            display: grid;
+            min-height: 100vh;
+            grid-template-rows: auto 1fr auto;
+        }
+
+        .navbar img {
+            width: 7rem;
+            height: auto;
+        }
+
+        .p-parrafo {
+            font-size: 1rem;
+            line-height: 24px;
+            font-weight: 500;
+            color: rgb(189, 195, 204);
+            margin-bottom: 10px;
+            text-align: left;
+            width: 100%;
+        }
+
+        .form-control {
+            height: 48px;
+            transition: 0.3s ease all;
+        }
+
+        .form-text {
+            display: none;
+            margin-bottom: 0;
+        }
+
+        .btn_submit {
+            font-family: Raleway, Helvetica, sans-serif;
+            height: 2.5rem;
+            width: 40%;
+            font-weight: 600;
+            color: rgb(29, 28, 28);
+            border: none;
+            background: rgb(212, 205, 205);
+            border-radius: 0.4rem;
+        }
+
+        .btn_submit:hover {
+            background: rgb(236, 232, 232);
+        }
+
+        .icon-link {
+            color: rgb(209, 192, 192);
+            padding-bottom: 2px;
+            text-decoration: none;
+        }
+
+        .icon-link:link,
+        .icon-link:visited {
+            color: rgb(209, 192, 192);
+            padding-bottom: 2px;
+        }
+
+        .icon-link:hover,
+        .icon-link:hover {
+            text-decoration: underline;
+        }
+
+        .form-control {
+            border: 1px solid rgba(225, 225, 255, 0.2);
+            color: rgb(209, 192, 192);
+            background: rgb(24, 24, 59);
+            border-radius: 0.3rem;
+            height: 3.5em;
+        }
+
+
+        /* --------------------FOOTER-------------- */
+        .social-icons-redes i {
+            color: rgb(201, 178, 178);
+            font-size: 1.3rem;
+            margin: 5px;
+        }
+
+        h6 {
+            color: rgb(201, 178, 178);
+            margin: 5px;
+            font-size: 0.8rem;
+        }
+
+        .enlances-footer a {
+            color: rgb(201, 178, 178);
+            margin: 10px;
+            font-size: 0.8rem;
+            text-decoration: none;
+        }
+
+        .btn-submit {
+            height: 3em;
+            width: 100%;
+            font-weight: 600;
+            color: rgb(29, 28, 28);
+            border: none;
+            background: rgb(212, 205, 205);
+            border-radius: 0.4rem;
+        }
+
+        .main-container {
+            padding: 10px;
+            width: 75%;
+        }
+
+        @media screen and (max-width: 575px) {
+            h4 {
+                font-size: 1.8rem;
+                line-height: 30px;
+                color: rgb(189, 195, 204);
+                margin-bottom: 20px;
+                text-align: left;
+                width: 100%;
+            }
+
+            .navbar {
+                /* background: #141a32; */
+                display: flex;
+                margin: 0px 0px;
+            }
+
+            .main-container {
+                width: 100%;
+                margin-top: 4em;
+            }
+
+            .btn-registrar {
+                /* height: 2.3rem; */
+                margin-top: 0.5rem;
+                font-weight: 600;
+                color: rgb(255, 255, 255);
+                border: none;
+                background: transparent;
+                border-radius: 0.4rem;
+                font-size: 1.15em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm mb-5">
+        <div class="container-fluid justify-content-between align-items-center">
+            <a class="navbar-brand" href="#">
+                <img src="https://drive.google.com/file/d/1Dw81FgIGUpF3HNB8fGiddm94G4ukduTD/view?usp=sharing"
+                    alt="logoJStream_movies">
+            </a>
+        </div>
+    </nav>
+
+    <div class="container main-container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-sm-12 col-md-6">
+                <h2 class="text-center mb-2">Restablecer contraseña</h2>
+                <p class="p-parrafo mt-3">Estas recibiendo este correo que hiciste una solicitud para recupecion de
+                    contraseña para tu cuenta</p>
+                <a href="#"><button type="submit" class="btn-submit w-100 my-2">Restablecer contraseña</button></a>
+                <p class="p-parrafo mt-3">Sino realizaste esta solicitud, no se requiere realizar ninguna acción.
+                    Saludos. JStreamMovies
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container-fluid">
+            <div class="row justify-content-between mb-1">
+                <div class="col-sm-8">
+                    <div class="social-icons-redes">
+                        <i class="fa-brands fa-x-twitter"></i>
+                        <i class="fa-brands fa-facebook"></i>
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                </div>
+                <div class="col">
+                    <h6>© 2024 JStreamMovies, LLC. Todos los derechos reservados.</h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="enlances-footer">
+                    <a href="#">Política de privacidad</a>
+                    <a href="#">Términos de uso</a>
+                    <a href="#">Administrar las preferencias de cookies</a>
+                    <a href="#">info</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script type="module" src="js/resetPasswordControlador.js"></script>
+</body>
+
+</html>

@@ -86,7 +86,7 @@ tbody tr:hover {
     margin: 1px;
 }
 .btn-no-validado i {
-    color: rgba(255, 19, 19, 0.589);
+    color: #cc105f;
     pointer-events: none;
 }
 
@@ -201,3 +201,20 @@ h6 {
     background: fixed;
     color: #f0ebeb !important;
 } */
+
+.tabla-contenedor {
+    border: 1px solid #545458;
+    width: 100%;
+    justify-content: center;
+    padding: 2em;
+}
+
+.table-responsive {
+    padding: 1em;
+}
+
+@media screen and (max-width: 576px) {
+    .modal-body i {
+        display: none;
+    }
+}

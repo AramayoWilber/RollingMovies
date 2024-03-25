@@ -150,10 +150,8 @@ formRegistro.addEventListener('submit', e => {
 
         usuarioDB.agregarUsuario(nuevoUsuario);
 
-        window.location.href = '../error404.html';
+        window.location.href = '/registroSuccess.html';
     }
-
-
 });
 
 
