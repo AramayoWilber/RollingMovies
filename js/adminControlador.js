@@ -1,6 +1,6 @@
-import { CatalogoDB } from './clases/CatalogoDB.class.js'
-import cargarCatalogo from './adicionales/cargarTabla.js';
-import { Pelicula } from './clases/Pelicula.class.js';
+import { CatalogoDB } from '../clases/CatalogoDB.class.js'
+import cargarCatalogo from '../adicionales/cargarTabla.js';
+import { Pelicula } from '../clases/Pelicula.class.js';
 
 const expresiones = {
     titulo: /^[a-zA-ZÀ-ÿ\s]{2,50}$/, // Letras y espacios, pueden llevar acentos.

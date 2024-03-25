@@ -1,5 +1,5 @@
-import loadUsers from './adicionales/cargarTablaUser.js';
-import { UsuariosDB } from './clases/UsuariosDB.class.js';
+import loadUsers from '../adicionales/cargarTablaUser.js';
+import { UsuariosDB } from '../clases/UsuariosDB.class.js';
 
 /////////////////CARGAR TABLA/////////////
 
