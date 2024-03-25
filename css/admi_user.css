@@ -8,12 +8,6 @@ body {
     min-height: 100vh;
     grid-template-rows: auto 1fr auto;
 }
-/* -------------CONTAINER ------------------- */
-/* .container {
-    padding: 2rem;
-    border: 1px solid rgb(230, 219, 219, 0.2);
-    border-radius: 10px;
-} */
 
 /* --------------------NAV BAR------------------ */
 .navbar img {
@@ -188,19 +182,6 @@ h6 {
     border-top: none;
 }
 /* ----------------PAGINACION------------ */
-
-/* .items-paginacion .page-link {
-    border-radius: 0px;
-    border: 1px solid #171431;
-    background: transparent;
-    color: #f0ebeb !important;
-}
-
-.items-paginacion .active {
-    border-end-radius: 10px;
-    background: fixed;
-    color: #f0ebeb !important;
-} */
 
 .tabla-contenedor {
     border: 1px solid #545458;

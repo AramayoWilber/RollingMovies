@@ -1,16 +1,19 @@
-
 /* background-color: #080f28; */
-body{
-    font-size: 16px;
-    position: relative;
-    background: #eeeeee;
+body {
+    background: linear-gradient(to left, #020214, rgb(7, 5, 53));
+    background: cover;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+        sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    color: rgb(230, 219, 219);
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
     margin: 0;
     padding-bottom: 4em;
     min-height: 100vh;
 }
 
 .borde-contenedor {
-
     background: transparent;
     border: 1px solid #202649;
     padding: 1em;
@@ -20,40 +23,34 @@ body{
 
 /* nav bar  */
 
-.bg-navbar{
-    background:  #202649 ;
-
+.bg-navbar {
+    background: #202649;
 }
 
 .navbar-nav {
     font-size: 1.1em;
 }
-.nav-link{
+.nav-link {
     color: azure;
-    
 }
 
-.nav-link:hover{
+.nav-link:hover {
     color: #8da0bc;
 }
 
-.navbar-toggler{
+.navbar-toggler {
     border: 1px solid #8da0bc;
     color: #8da0bc;
 }
 
-
-
-.navbar-toggler span{
+.navbar-toggler span {
     color: aqua;
 }
 
-.navbar-brand img{
+.navbar-brand img {
     height: 25%;
     width: 7rem;
 }
-
-
 
 .ancho {
     width: 90%;
@@ -63,49 +60,46 @@ body{
     position: relative;
 }
 
-.form-search .btn{
+.form-search .btn {
     width: 3rem;
     height: 2.4rem;
     position: absolute;
-    right: .2em;
-    bottom: 0.0em;
+    right: 0.2em;
+    bottom: 0em;
     z-index: 100;
     background: #8da0bc;
-    border-radius:  0% 45% 45% 0%;
+    border-radius: 0% 45% 45% 0%;
 }
 
-.btn-outline-light{
+.btn-outline-light {
     border: transparent;
 }
 
-.form-search i{
+.form-search i {
     /* falta modificar para lograr lo deseado  */
-    font-size: .9rem;
+    font-size: 0.9rem;
     background: transparent;
     color: #080f28;
 }
 
-
-.form-search input{
+.form-search input {
     border-radius: 1.2em;
 }
 
-
 /* botones  */
-
 
 .btn-opcion-borrar {
     background: transparent;
     border: none;
     border-radius: 0.31em;
-    color: #030303;
+    color: #e70b72;
     font-size: 1.16em;
-    transition: .3s ease all;
+    transition: 0.3s ease all;
     padding: 0.08em 0.5em;
     margin: 1px;
 }
 
-.btn-opcion-borrar i{
+.btn-opcion-borrar i {
     pointer-events: none;
 }
 
@@ -118,20 +112,20 @@ body{
     background: transparent;
     border: none;
     border-radius: 0.31em;
-    color: #030303;
+    color: #ffffff;
     font-size: 1.16em;
-    transition: .3s ease all;
+    transition: 0.3s ease all;
     padding: 0.08em 0.5em;
     margin: 1px;
 }
 
-.btn-opcion-editar i{
+.btn-opcion-editar i {
     pointer-events: none;
 }
 
 .btn-opcion-editar:hover {
-    background: rgba(122, 120, 120, 0.5);
-    color: #230ee2;
+    background: rgba(185, 185, 185, 0.5);
+    color: #000000;
 }
 
 .btn-destacado {
@@ -140,13 +134,13 @@ body{
     border-radius: 0.31em;
     color: transparent;
     font-size: 1.16em;
-    transition: .3s ease all;
+    transition: 0.3s ease all;
     padding: 0.08em 0.5em;
     margin: 1px;
 }
 
 .btn-destacado i {
-    color: rgb(236,253,24) ;
+    color: rgb(236, 253, 24);
     pointer-events: none;
 }
 
@@ -156,12 +150,12 @@ body{
     color: transparent;
     border-radius: 0.31em;
     font-size: 1.16em;
-    transition: .3s ease all;
+    transition: 0.3s ease all;
     padding: 0.08em 0.5em;
     margin: 1px;
 }
 
-.btn-no-destacado i{
+.btn-no-destacado i {
     color: #3d3737;
     pointer-events: none;
 }
@@ -171,68 +165,57 @@ body{
     border: none;
     border-radius: 0.31em;
     font-size: 1.16em;
-    transition: .3s ease all;
+    transition: 0.3s ease all;
     padding: 0.08em 0.5em;
     margin: 1px;
 }
 
 .btn-publicado i {
-    color: rgb(8, 155, 45) ;
+    color: rgb(8, 155, 45);
     pointer-events: none;
 }
-
-/* .btn-publicado:hover{
-    background: rgb(204, 194, 194);
-}  */
 
 .btn-no-publicado {
     background: transparent;
     border: none;
     border-radius: 0.31em;
     font-size: 1.16em;
-    transition: .3s ease all;
+    transition: 0.3s ease all;
     padding: 0.08em 0.5em;
     margin: 1px;
 }
 
-.btn-no-publicado i{
+.btn-no-publicado i {
     color: #cc105f;
     pointer-events: none;
 }
 
-/* .btn-no-publicado:hover {
-    background: rgb(204, 194, 194);
-    pointer-events: none;
-}  */
-
-
-.boton-add{
+.boton-add {
     background: #202649;
     border: 1px solid transparent;
     border-radius: 0.6em;
     color: #fff;
     font-size: 1em;
     padding: 0.6rem 1.3rem;
-    transition: .3s ease all;
+    transition: 0.3s ease all;
 }
 
-.fa-circle-user{
+.fa-circle-user {
     font-size: 1.8em;
     margin-left: 0.3em;
 }
 
-.boton-add i{
+.boton-add i {
     margin-right: 0.4em;
 }
 
-.boton-add:hover{
+.boton-add:hover {
     background: transparent;
     color: #1100ff;
     border: 1px solid blue;
 }
 
-
-.modal-body .fa-circle-xmark{
+.modal-body .fa-circle-xmark {
     font-size: 5rem;
     padding: 1rem;
     margin-bottom: 0.8rem;
@@ -240,25 +223,82 @@ body{
 }
 
 .modal-body p {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: "Times New Roman", Times, serif;
     font-size: 1.3rem;
 }
 
-footer{
-    width: 100%;
-    bottom: 0;
-    padding: 1em;
-    position: absolute;
-    text-align: center;
-    background-color: rgb(50, 58, 58);
-    color: #fff;
-}
-
-.form-select{
+.form-select {
     width: 30%;
 }
 
-.bg-modal-add{
+.bg-modal-add {
     color: #e9dcdc;
     background: #1c2553;
+}
+/* -----------------TABLA------------------ */
+.tabla-contenedor {
+    border: 1px solid #545458;
+    width: 100%;
+    justify-content: center;
+    padding: 2em;
+}
+
+.table-responsive {
+    padding: 1em;
+}
+
+.border-tabla {
+    padding: 0.5rem;
+    border: 1px solid rgb(230, 219, 219, 0.2);
+    border-radius: 10px;
+}
+
+caption {
+    color: #fff;
+}
+
+table {
+    color: #fff;
+    font-size: 1em;
+}
+
+thead {
+    background-color: rgba(218, 218, 233, 0.2);
+}
+
+th {
+    padding: 1.2em 1em;
+    font-weight: 700;
+}
+th {
+    border-bottom: 1px solid rgba(211, 205, 209, 0.4);
+}
+
+td {
+    padding: 1em;
+    border-bottom: 1px solid rgba(211, 205, 209, 0.4);
+}
+
+tbody tr:hover {
+    background: rgba(58, 58, 61, 0.2);
+}
+
+/* --------------------FOOTER-------------- */
+.social-icons-redes i {
+    color: rgb(201, 178, 178);
+    font-size: 1.3rem;
+    margin: 5px;
+}
+
+h6 {
+    color: rgb(201, 178, 178);
+    margin: 5px;
+    font-size: 0.8rem;
+}
+
+.enlances-footer a {
+    color: rgb(201, 178, 178);
+    margin: 10px;
+    font-size: 0.8rem;
+    text-decoration: none;
 }
