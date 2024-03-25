@@ -1,0 +1,100 @@
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    color: black;
+    background: linear-gradient(to left, #020214, rgb(7, 5, 53));
+    background: cover;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+        sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    color: rgb(230, 219, 219);
+}
+
+.navbars{
+    background-image: url(../img/index/1014.jpg);
+}
+
+.imgbanner{
+    filter: brightness(0.5);
+}
+.imghov{
+    transition: all 0.3s;
+}
+
+.imghov:hover{
+    transform: scale(1.15);
+}
+.container-background{
+    background-image: url("../img/index/suscríbete.jpg");
+    background-size: cover; 
+}
+
+#video {
+width: 1280px;
+padding-top: 10px;
+}
+
+.banner {
+    width: 1280px;
+    height:auto;
+    padding-top: 50px;
+}
+
+h4 {
+    color: aliceblue;
+    padding: 10px;
+    align-content: center;
+}
+
+.galeria {
+    padding: 160px;
+}
+
+.lista-imagenes img {
+    width: 100%;
+    object-fit: cover;
+    width: 200px;
+    height: 200%;
+    margin-right: 10%;
+}
+
+.lista-imagenes {
+    display: flex;
+    overflow-y: auto;
+}
+
+.carousel-inner{
+    /*height: 650px;*/
+    overflow: hidden;
+}
+
+.carousel-item img {
+    object-fit: cover; /* Esto asegura que las imágenes se redimensionen correctamente */
+}
+
+
+@media (max-width: 750px) {
+    .textnone {
+       display: none; 
+    } 
+}
+
+
+.carousel-item .imgbanner{
+    height: 100%;
+    object-fit: cover;
+  }
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+.video-container video {
+    width: 80%;
+}
+
+.neon-border-2{
+    box-shadow: 0 0 0px #68e6f7, 0 0 1px #68e6f7, 0 0 25px #68e6f7, 0 0 30px #68e6f7;
+    padding: 5px;
+  }
