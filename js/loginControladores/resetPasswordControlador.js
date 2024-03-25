@@ -1,4 +1,4 @@
-import { UsuariosDB } from './clases/UsuariosDB.class.js';
+import { UsuariosDB } from '../clases/UsuariosDB.class.js';
 
 const formulario = document.getElementById('formulario');
 const input = document.querySelector('#formulario input');
@@ -52,7 +52,7 @@ formulario.addEventListener('submit', e => {
             document.getElementById('formulario').classList.add('email-no-valido');
         }
         else {
-            window.location.href = '/Proyecto/resetSuccess.html';
+            window.location.href = '/html/login/resetPasswordEmail.html';
         }
     }
 

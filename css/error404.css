@@ -1,0 +1,48 @@
+body {
+    text-align: center;
+    padding: 50px; /* Reducido el padding */
+    font-family: 'Helvetica', sans-serif;
+    background-image: url('https://i.pinimg.com/originals/e8/37/f5/e837f5481a13a1f0e1e46908f78c6fbc.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+  }
+
+  h1 {
+    font-size: 3em; 
+    color: #fdfcfc;
+  }
+
+  .error-container {
+    margin-top: 30px; 
+  }
+
+  .error-container span {
+    display: block;
+  }
+
+  .error-number {
+    font-size: 4em; 
+    font-weight: bold;
+    color: #fcf8f8;
+  }
+
+  .error-message {
+    font-size: 1.5em; 
+    color: #fcfbfb;
+  }
+
+  a {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 10px 20px;
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    color: #333;
+  }
+
+  a:hover {
+    background-color: #e7e7e7;
+  }

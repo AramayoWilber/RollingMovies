@@ -256,6 +256,11 @@ h6 {
     text-decoration: none;
 }
 
+.container {
+    display: flex;
+    width: 75%;
+}
+
 /* quitar fechas de etiqueta input type=numer  */
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -282,5 +287,20 @@ input[type="number"]::-webkit-outer-spin-button {
         display: flex;
         margin-left: 0rem;
         margin-right: 0rem;
+    }
+    .container {
+        display: flex;
+        width: 90%;
+    }
+
+    .formularioRegistro {
+        width: 100%;
+    }
+
+    .formularioRegistro {
+        /* background: #beb4b427;
+    backdrop-filter: blur(0.3rem); */
+        border: none;
+        padding: 0px;
     }
 }

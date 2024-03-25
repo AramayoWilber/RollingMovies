@@ -1,5 +1,5 @@
-import { Usuario } from './clases/Usuario.class.js';
-import { UsuariosDB } from './clases/UsuariosDB.class.js';
+import { Usuario } from '../clases/Usuario.class.js';
+import { UsuariosDB } from '../clases/UsuariosDB.class.js';
 
 const formRegistro = document.getElementById('formRegistro');
 const inputs = document.querySelectorAll('#formRegistro input');
@@ -146,14 +146,12 @@ formRegistro.addEventListener('submit', e => {
         const form_telefono = document.getElementById('telefono_formRegistro').value;
         const form_genero = document.getElementById('genero_formRegistro').value;
 
-        const nuevoUsuario = new Usuario(form_nombre, form_apellido, form_genero, usuarioDB.obtenerNuevoId(), form_email, form_password, form_telefono);
+        const nuevoUsuario = new Usuario(usuarioDB.obtenerNuevoId(), form_apellido, form_email, form_password, form_nombre, form_telefono, form_genero);
 
         usuarioDB.agregarUsuario(nuevoUsuario);
 
-        window.location.href = '../error404.html';
+        window.location.href = '/html/login/registroSuccess.html';
     }
-
-
 });
 
 

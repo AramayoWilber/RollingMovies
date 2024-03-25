@@ -1,15 +1,14 @@
-import { Persona } from './Persona.class.js';
-
-export class Usuario extends Persona {
-    constructor(nombre, apellido, sexo, id_usuario, email, password, telefono) {
-        super(nombre, apellido, sexo);
-        this.id_usuario = id_usuario;
-        this.estado = false;
+export class Usuario {
+    constructor(id, apellido, email, password, nombre, telefono, genero) {
+        this.id = id;
+        this.validado = "false";
         this.email = email;
         this.password = password;
+        this.apellido = apellido;
+        this.nombre = nombre;
         this.telefono = telefono;
+        this.genero = genero;
     }
-
 
     agregar() {
 
