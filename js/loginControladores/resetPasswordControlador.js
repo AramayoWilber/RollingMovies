@@ -1,4 +1,4 @@
-import { UsuariosDB } from './clases/UsuariosDB.class.js';
+import { UsuariosDB } from '../clases/UsuariosDB.class.js';
 
 const formulario = document.getElementById('formulario');
 const input = document.querySelector('#formulario input');

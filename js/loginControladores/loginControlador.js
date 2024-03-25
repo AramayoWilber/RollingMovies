@@ -1,5 +1,5 @@
-import { UsuariosDB } from "./clases/UsuariosDB.class.js";
-import { AdministradoresDB } from "./clases/AdministradoresDB.class.js"
+import { UsuariosDB } from "../clases/UsuariosDB.class.js";
+import { AdministradoresDB } from "../clases/AdministradoresDB.class.js"
 
 const formulario = document.getElementById('formLogin');
 const parrafo_alert = document.getElementById('parrafo-alert'); //trae el primer parrafor de la card-body
