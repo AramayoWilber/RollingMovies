@@ -3,7 +3,14 @@ import { AdministradoresDB } from "../clases/AdministradoresDB.class.js"
 
 const formulario = document.getElementById('formLogin');
 const parrafo_alert = document.getElementById('parrafo-alert'); //trae el primer parrafor de la card-body
+const inputs = document.querySelectorAll('#formLogin input');
 
+inputs.forEach(input => {
+    input.addEventListener('keyup', e => {
+        parrafo_alert.classList.remove('login-incorrecto');
+        parrafo_alert.classList.add('login-correcto');
+    })
+})
 
 formulario.addEventListener('submit', e => {
     e.preventDefault();
@@ -12,7 +19,6 @@ formulario.addEventListener('submit', e => {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
-    //login como administrador o 
     if (usuarios.validarLogin(email, password)) { // metodo de la clase usuariosDB.class para validad el Login}
         setTimeout(() => {
             window.location.href = '/error404.html';
