@@ -23,7 +23,7 @@ export class CatalogoDB {
                     destacada: true,
                     img_portada: '/https://image.tmdb.org/t/p/original/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg',
                     img_banner: 'https://image.tmdb.org/t/p/original/ycnO0cjsAROSGJKuMODgRtWsHQw.jpg',
-                    url_trailer: 'https://youtu.be/yLYbOe914ZU?si=s86bPU_fgA0AjQi1'
+                    url_trailer: 'https://www.youtube.com/embed/yLYbOe914ZU?si=jVsUrKj7FUtGCFW3'
                 },
                 {
                     codigo: 1,
@@ -35,7 +35,7 @@ export class CatalogoDB {
                     destacada: true,
                     img_portada: 'https://image.tmdb.org/t/p/original/kDp1vUBnMpe8ak4rjgl3cLELqjU.jpg',
                     img_banner: 'https://image.tmdb.org/t/p/original/3CZkoreoWflCGmpXLm7CTX1vBrT.jpg',
-                    url_trailer: 'https://youtu.be/78jhetZy5Vk'
+                    url_trailer: 'https://www.youtube.com/embed/78jhetZy5Vk?si=7L25_jSpUYvsLlVj'
 
                 },
                 {
@@ -48,7 +48,7 @@ export class CatalogoDB {
                     destacada: false,
                     img_portada: 'https://image.tmdb.org/t/p/original/iB64vpL3dIObOtMZgX3RqdVdQDc.jpg',
                     img_banner: 'https://image.tmdb.org/t/p/original/c0cqEKcvx6a9Hx0i9H1WjHOy51k.jpg',
-                    url_trailer: 'https://youtu.be/yLYbOe914ZU?si=s86bPU_fgA0AjQi1'
+                    url_trailer: 'https://www.youtube.com/embed/EPF_xTWbUs0?si=Ft1ZZTNgxLGNgxWn'
 
                 },
                 {
@@ -61,7 +61,7 @@ export class CatalogoDB {
                     destacada: true,
                     img_portada: 'https://image.tmdb.org/t/p/original/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg',
                     img_banner: 'https://image.tmdb.org/t/p/original/4eylxg940ocgdkHjab2Tm8jv2hb.jpg',
-                    url_trailer: 'https://youtu.be/F2RnxZnubCM?si=WLm3_j3Nb8oqkCM9'
+                    url_trailer: 'https://www.youtube.com/embed/F2RnxZnubCM?si=WCG0t6qfRmmfnhGn'
                 },
                 {
                     codigo: 4,
@@ -73,7 +73,7 @@ export class CatalogoDB {
                     destacada: false,
                     img_portada: 'https://image.tmdb.org/t/p/original/7dAh80ydoWvUaBE8uFYkp9WsoSC.jpg',
                     img_banner: 'https://image.tmdb.org/t/p/original/3s9O5af2xWKWR5JzP2iJZpZeQQg.jpg',
-                    url_trailer: 'https://youtu.be/MOblcRRCSYU?si=j32BFXasOEIhwuJy'
+                    url_trailer: 'https://www.youtube.com/embed/MOblcRRCSYU?si=_OSnRDWbNNyOruYx'
                 },
                 {
                     codigo: 5,
@@ -85,7 +85,7 @@ export class CatalogoDB {
                     destacada: true,
                     img_portada: 'https://image.tmdb.org/t/p/original/jltsWuPiQhXK8bDdQubUU8xb7UY.jpg',
                     img_banner: 'https://image.tmdb.org/t/p/original/t3LicFpYHeYpwqm7L5wDpd22hL5.jpg',
-                    url_trailer: 'https://youtu.be/ZgrCZVjPg9g?si=03uV6u5NgdIUPBM1'
+                    url_trailer: 'https://www.youtube.com/embed/ZgrCZVjPg9g?si=LtRLAd_EMf9Fmawu'
                 },
                 {
                     codigo: 6,
@@ -97,7 +97,7 @@ export class CatalogoDB {
                     destacada: false,
                     img_portada: 'https://image.tmdb.org/t/p/original/cDkMUi0i85qgjlRqq92k2yzRHA2.jpg',
                     img_banner: 'https://image.tmdb.org/t/p/original/yyFc8Iclt2jxPmLztbP617xXllT.jpg',
-                    url_trailer: 'https://youtu.be/Fr1tOQIlUcw?si=XYnb3N8pKe02Vv9a'
+                    url_trailer: 'https://www.youtube.com/embed/Fr1tOQIlUcw?si=jkFP6QeDCe1iqzTq'
                 },
                 {
                     codigo: 7,
@@ -109,7 +109,7 @@ export class CatalogoDB {
                     destacada: false,
                     img_portada: 'https://image.tmdb.org/t/p/original/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg',
                     img_banner: 'https://image.tmdb.org/t/p/original/8qQmKfcowF34ZLKilPGJGsNd4FW.jpg',
-                    url_trailer: 'https://youtu.be/gH2mRECr6y4?si=7d-572X4UPVS2j_s'
+                    url_trailer: 'https://www.youtube.com/embed/gH2mRECr6y4?si=4lXjktRHk8ox2tLc'
                 },
                 {
                     codigo: 8,
@@ -121,7 +121,7 @@ export class CatalogoDB {
                     destacada: true,
                     img_portada: 'https://image.tmdb.org/t/p/original/imekS7f1OuHyUP2LAiTEM0zBzUz.jpg',
                     img_banner: 'https://image.tmdb.org/t/p/original/mcmqAqJtM8OXdNQfAdpfQNB6Fo6.jpg',
-                    url_trailer: 'https://youtu.be/eyt29sHDc9M?si=sgNurGDrV_77rzX6'
+                    url_trailer: 'https://www.youtube.com/embed/eyt29sHDc9M?si=RbVyehYayn2gPvUq'
                 },
                 {
                     codigo: 9,
@@ -133,7 +133,7 @@ export class CatalogoDB {
                     destacada: true,
                     img_portada: 'https://image.tmdb.org/t/p/original/or06FN3Dka5tukK1e9sl16pB3iy.jpg',
                     img_banner: 'https://image.tmdb.org/t/p/original/vfCYyWwujI5EE160GhKJx80cZ4f.jpg',
-                    url_trailer: 'https://youtu.be/Oy_SER6dfK4?si=u_V0yzTd9tTJ8w58'
+                    url_trailer: 'https://www.youtube.com/embed/Oy_SER6dfK4?si=zzgEaekSg3HLpQo2'
                 },
                 {
                     codigo: 10,
@@ -145,7 +145,7 @@ export class CatalogoDB {
                     destacada: false,
                     img_portada: 'https://image.tmdb.org/t/p/original/nNVvqKiIFUoSTjP9rZp812uV93u.jpg',
                     img_banner: 'https://image.tmdb.org/t/p/original/thcPZNTWOR0SIpHKqof4Jgokkp6.jpg',
-                    url_trailer: 'https://youtu.be/SvJwEiy2Wok?si=Joeg13ffK98YSPUk'
+                    url_trailer: 'https://www.youtube.com/embed/SvJwEiy2Wok?si=pPNy3vGG-QTD05br'
                 },
                 {
                     codigo: 10,
@@ -157,7 +157,7 @@ export class CatalogoDB {
                     destacada: false,
                     img_portada: 'https://image.tmdb.org/t/p/original/sMp34cNKjIb18UBOCoAv4DpCxwY.jpg',
                     img_banner: 'https://image.tmdb.org/t/p/original/lJTlq4rjRa9vmMuRGvgfYB5q6hU.jpg',
-                    url_trailer: 'https://youtu.be/dK90jfoEl0k?si=-I8XTFgbc4xaFIBz'
+                    url_trailer: 'https://www.youtube.com/embed/dK90jfoEl0k?si=0BhzYyVezCh9BDxx'
                 },
                 {
                     codigo: 11,
@@ -169,7 +169,7 @@ export class CatalogoDB {
                     destacada: false,
                     img_portada: 'https://image.tmdb.org/t/p/original/oEyIhY1WzoFHUDE7U3p1AWwyoSN.jpg',
                     img_banner: 'https://image.tmdb.org/t/p/original/iXOOGQrR2aVGJ2oSbJtOvnPWMb5.jpg',
-                    url_trailer: 'https://youtu.be/VpRfvwnq8b0?si=hT-Jkj5MbyW754la'
+                    url_trailer: 'https://www.youtube.com/embed/VpRfvwnq8b0?si=E0XYSNzuFytADw2s'
                 },
                 {
                     codigo: 12,
@@ -181,7 +181,7 @@ export class CatalogoDB {
                     destacada: false,
                     img_portada: 'https://image.tmdb.org/t/p/original/aAngiE34BMFDTOXpjc04Lr8zsX1.jpg',
                     img_banner: 'https://image.tmdb.org/t/p/original/iAFO26JzdXNE20xkpl2fJBQr5Jy.jpg',
-                    url_trailer: 'https://youtu.be/cgHFwv1uMWE?si=Dly6_EX7ASQpMMwB'
+                    url_trailer: 'https://www.youtube.com/embed/cgHFwv1uMWE?si=AEHPpV2l1jhyXMGL'
                 },
                 {
                     codigo: 13,
@@ -193,7 +193,7 @@ export class CatalogoDB {
                     destacada: false,
                     img_portada: 'https://image.tmdb.org/t/p/original/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg',
                     img_banner: 'https://image.tmdb.org/t/p/original/198vrF8k7mfQ4FjDJsBmdQcaiyq.jpg',
-                    url_trailer: 'https://youtu.be/u0hxjdWG84k?si=m7UQJZdo5Z_ABIJS'
+                    url_trailer: 'https://www.youtube.com/embed/u0hxjdWG84k?si=LBB6jytMWlvqma3l'
                 },
                 {
                     codigo: 14,
@@ -205,7 +205,7 @@ export class CatalogoDB {
                     destacada: false,
                     img_portada: 'https://image.tmdb.org/t/p/original/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg',
                     img_banner: 'https://image.tmdb.org/t/p/original/4HodYYKEIsGOdinkGi2Ucz6X9i0.jpg',
-                    url_trailer: 'https://youtu.be/rVLFOx7AQp0?si=ifoJO7_i8KXq0_jA'
+                    url_trailer: 'https://www.youtube.com/embed/rVLFOx7AQp0?si=LSw_YJu4-btHxI15'
                 },
                 {
                     codigo: 15,
@@ -217,7 +217,7 @@ export class CatalogoDB {
                     destacada: false,
                     img_portada: 'https://image.tmdb.org/t/p/original/kuf6dutpsT0vSVehic3EZIqkOBt.jpg',
                     img_banner: 'https://image.tmdb.org/t/p/original/tGwO4xcBjhXC0p5qlkw37TrH6S6.jpg',
-                    url_trailer: 'https://youtu.be/QaiUm8jNiCk?si=ThrVX4R4DzwnRYBp'
+                    url_trailer: 'https://www.youtube.com/embed/QaiUm8jNiCk?si=iaikTW_Btt8V0tKR'
                 },
                 {
                     codigo: 16,
@@ -229,7 +229,7 @@ export class CatalogoDB {
                     destacada: false,
                     img_portada: 'https://image.tmdb.org/t/p/original/xeqXXTE1Cd3qNaAEOT6qbhhCsgJ.jpg',
                     img_banner: 'https://image.tmdb.org/t/p/original/7gEfOcnoP2wAgtd7FYPsJopvJZ1.jpg',
-                    url_trailer: 'https://youtu.be/h1zWcdpH62g?si=HLNBjd4qbod_e8yM'
+                    url_trailer: 'https://www.youtube.com/embed/h1zWcdpH62g?si=fpoZYJt7NTps9uXH'
                 },
                 {
                     codigo: 17,
@@ -241,7 +241,7 @@ export class CatalogoDB {
                     destacada: false,
                     img_portada: 'https://image.tmdb.org/t/p/original/74xTEgt7R36Fpooo50r9T25onhq.jpg',
                     img_banner: 'https://image.tmdb.org/t/p/original/e66tM5YOawXLxhDAfWkR7sxpb3h.jpg',
-                    url_trailer: 'https://youtu.be/cFZbgCGI9P0?si=zBQZIc0-MQV-z_RS'
+                    url_trailer: 'https://www.youtube.com/embed/cFZbgCGI9P0?si=o8Gk1EGBaew4z3Yc'
                 },
                 {
                     codigo: 18,
@@ -253,7 +253,7 @@ export class CatalogoDB {
                     destacada: false,
                     img_portada: 'https://image.tmdb.org/t/p/original/to0spRl1CMDvyUbOnbb4fTk3VAd.jpg',
                     img_banner: 'https://image.tmdb.org/t/p/original/3P52oz9HPQWxcwHOwxtyrVV1LKi.jpg',
-                    url_trailer: 'https://youtu.be/4i6ZePa8jz4?si=vG5h3aotrpmkjR9r'
+                    url_trailer: 'https://www.youtube.com/embed/4i6ZePa8jz4?si=waHTAFacRFqX3b7A'
                 },
                 {
                     codigo: 19,
@@ -265,7 +265,7 @@ export class CatalogoDB {
                     destacada: false,
                     img_portada: 'https://image.tmdb.org/t/p/original/Ia3dzj5LnCj1ZBdlVeJrbKJQxG.jpg',
                     img_banner: 'https://image.tmdb.org/t/p/original/3WK7p9EdZmmvB1IbB2Vw9Rf4lXH.jpg',
-                    url_trailer: 'https://youtu.be/FRrc2X4Uzm4?si=Zwierc45-oEkgEDs'
+                    url_trailer: 'https://www.youtube.com/embed/FRrc2X4Uzm4?si=ZCsI_ZfyDnGXVhye'
                 },
                 {
                     codigo: 20,
@@ -277,7 +277,7 @@ export class CatalogoDB {
                     destacada: false,
                     img_portada: 'https://image.tmdb.org/t/p/original/4jeFXQYytChdZYE9JYO7Un87IlW.jpg',
                     img_banner: 'https://image.tmdb.org/t/p/original/rRpAZOPY3XxMJY65AJ396IWyjU4.jpg',
-                    url_trailer: 'https://youtu.be/fvT7W5LHxF4?si=08FUS0_d9fdXsd3o'
+                    url_trailer: 'https://www.youtube.com/embed/fvT7W5LHxF4?si=pnJ1iRK_1--gbuqz'
                 }
             ];
 
