@@ -237,18 +237,14 @@
                     tabindex="-1" aria-labelledby="editBtnModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
-                            <div class="modal-header bg-dark-subtle container shadow">
-                                <h1 class="modal-title fs-5" id="editBtnModalLabel">Editar elementos</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-
-
                             <div class="modal-body bg-body-tertiary">
                                 <!-- ------- BODY MODAL ------ -->
                                 <div class="container">
-                                    <form class="" id="formulario_modal_editar">
-                                        <div class="mb-3" id="group-titulo">
+                                    <button type="button" class="btn-close-modal" data-bs-dismiss="modal">
+                                        <i class="fa-solid fa-x"></i>
+                                    </button>
+                                    <form class="my-4" id="formulario_modal_editar">
+                                        <div class="my-3" id="group-titulo">
                                             <label for="titulo_formEdit" class="form-label was-validated">Titulo</label>
                                             <input type="text" class="form-control" id="titulo_formEdit" minlength="2"
                                                 maxlength="50" required>
@@ -364,28 +360,29 @@
             aria-labelledby="deteleBtnModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
-                    <div class="modal-header text-center bg-danger-subtle">
-                        <h1 class="modal-title fs-5" id="deteleBtnModalLabel">
-                            ¿ESTAS SEGURO?
-                        </h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
+                    <div class="modal-body modal-body-delete">
                         <div class="container">
                             <div class="row">
                                 <div class="col-12 text-center">
-                                    <i class="fa-regular fa-circle-xmark"></i>
+                                    <i class="fa-solid fa-triangle-exclamation"></i>
                                 </div>
-                                <div class="col-12 text-center">
-                                    <p>Este proceso no se puede desahacer</p>
+                                <div class="col-12 text-center mt-3">
+                                    <p class="advertencia">¿Estas seguro?</p>
+                                    <p class="advertencia-contenido">Este proceso es inrreversive, si continuan los
+                                        elementos ya no se podran recuperar.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row justify-content-between text-center">
+                                <div class="col-6">
+                                    <button type="button" class="w-100" data-bs-dismiss="modal">Cerrar</button>
+                                </div>
+                                <div class="col-6">
+                                    <button id="btn-modal-eliminar" type="button" class="w-100"
+                                        data-bs-dismiss="modal">Eliminar</button>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="modal-footer justify-content-evenly">
-                        <button type="button" class="btn btn-secondary w-25" data-bs-dismiss="modal">Cerrar</button>
-                        <button id="btn-modal-eliminar" type="button" class="btn btn-danger w-25"
-                            data-bs-dismiss="modal">Eliminar</button>
                     </div>
                 </div>
             </div>
