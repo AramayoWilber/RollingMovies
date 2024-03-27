@@ -21,12 +21,12 @@ formulario.addEventListener('submit', e => {
 
     if (usuarios.validarLogin(email, password)) { // metodo de la clase usuariosDB.class para validad el Login}
         setTimeout(() => {
-            window.location.href = '/error404.html';
+            window.location.href = '../../index.html';
         }, 200);
         console.log('logueado como usuario');
     } else {
         if (administradores.validarLogin(email, password)) {
-            window.location.href = '/error404.html';
+            window.location.href = '../../index.html';
             console.log('logueado como administrador');
         }
         else {
