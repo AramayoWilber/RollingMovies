@@ -52,7 +52,7 @@ formulario.addEventListener('submit', e => {
             document.getElementById('formulario').classList.add('email-no-valido');
         }
         else {
-            window.location.href = '/html/login/resetPasswordEmail.html';
+            window.location.href = '../../html/login/resetPasswordEmail.html';
         }
     }
 
