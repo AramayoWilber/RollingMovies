@@ -1,0 +1,181 @@
+body {
+    background: linear-gradient(#000000, rgb(0, 0, 0));
+    background: cover;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+        sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    color: rgb(230, 219, 219);
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
+    margin: 0;
+    padding-bottom: 4em;
+    min-height: 100vh;
+    position: relative;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* --------------------Navbar------------------- */
+/* .navbar {
+    position: absolute;
+    z-index: 10;
+    background: transparent;
+    top: 0;
+    display: flex;
+    width: 100%;
+} */
+
+/* -----------pelicula principal-------------- */
+.principal {
+    font-size: 16px;
+    /* background: linear-gradient(rgba(2, 2, 20, 0), rgb(0, 0, 0, 1)),
+        url(/img/peliculas/banners/Titanic_banner.jpg); */
+    /* background-size: cover;
+    background-position: center center;
+    background-size: cover; */
+    margin-bottom: 10.65em;
+}
+
+.principal .descripcion {
+    font-weight: normal;
+    font-size: 1.04em;
+    line-height: 1.75em;
+    width: 75%;
+}
+/* -----------CONTENEDOR----------- */
+.principal .content {
+    margin-left: 2em;
+}
+/* -----------LOGO/TITULO-------------- */
+
+.principal .img-container img {
+    width: 20em;
+    height: auto;
+}
+/* ------------------VIDEO---------------- */
+.container-video {
+    position: relative;
+    margin-top: 4em;
+    height: 40em;
+    display: flex;
+    width: 85%;
+}
+
+.container-video iframe {
+    width: 100%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.08),
+        0 0 20px rgba(255, 255, 255, 0.08), 0 0 40px rgba(255, 255, 255, 0.08);
+}
+/* --------------BTN SUTMID--------- */
+.btn_submit {
+    height: 2.5rem;
+    width: 25%;
+    font-weight: 600;
+    color: rgb(29, 28, 28);
+    border: none;
+    background: rgb(212, 205, 205);
+    border-radius: 0.4rem;
+}
+.btn_submit:hover {
+    background: rgb(236, 232, 232);
+}
+/* --------------------Footer--------------- */
+footer {
+    margin-top: 6rem;
+}
+
+.social-icons-redes i {
+    color: rgb(201, 178, 178);
+    font-size: 1.3rem;
+    margin: 5px;
+}
+
+h6 {
+    color: rgb(201, 178, 178);
+    margin: 5px;
+    font-size: 0.8rem;
+}
+
+.enlances-footer a {
+    color: rgb(201, 178, 178);
+    margin: 10px;
+    font-size: 0.8rem;
+    text-decoration: none;
+}
+@media screen and (max-width: 768px) {
+    .principal {
+        font-size: 13px;
+        background: linear-gradient(rgba(2, 2, 20, 0), rgb(0, 0, 0, 1)),
+            url(/img/peliculas/banners/Titanic_banner.jpg);
+        background-size: cover;
+        background-position: center center;
+        background-size: cover;
+        margin-bottom: 10.65em;
+    }
+    .principal .descripcion {
+        font-weight: normal;
+        font-size: 1.04em;
+        line-height: 1.75em;
+        width: 100%;
+    }
+    .btn_submit {
+        height: 2.5rem;
+        width: 40%;
+        font-weight: 600;
+        color: rgb(29, 28, 28);
+        border: none;
+        background: rgb(212, 205, 205);
+        border-radius: 0.4rem;
+    }
+    .principal .content {
+        margin-left: 1em;
+    }
+
+    .principal .img-container img {
+        width: 19em;
+        height: auto;
+    }
+    .container-video {
+        position: relative;
+        margin-top: 2em;
+        height: 30em;
+        display: flex;
+        width: 100%;
+    }
+}
+@media screen and (max-width: 576px) {
+    .principal {
+        font-size: 13px;
+        background: linear-gradient(rgba(2, 2, 20, 0), rgb(0, 0, 0, 1)),
+            url(/img/peliculas/banners/Titanic_banner.jpg);
+        background-size: cover;
+        background-position: center center;
+        background-size: cover;
+        margin-bottom: 10.65em;
+    }
+    .principal .descripcion {
+        font-weight: normal;
+        font-size: 1.04em;
+        line-height: 1.75em;
+        width: 100%;
+    }
+    .btn_submit {
+        height: 2.5rem;
+        width: 60%;
+        font-weight: 600;
+        color: rgb(29, 28, 28);
+        border: none;
+        background: rgb(212, 205, 205);
+        border-radius: 0.4rem;
+    }
+    .container-video {
+        position: relative;
+        margin-top: 2em;
+        height: 25em;
+        display: flex;
+        width: 100%;
+    }
+}

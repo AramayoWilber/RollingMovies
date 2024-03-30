@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/img/logoJStream_movies_100x100.png">
+    <link rel="stylesheet" href="/bootstrap/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bootstrap/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/bootstrap/fontawesome-free-6.5.1-web/css/all.min.css">
+    <link rel="stylesheet" href="css/verPelicula.css">
+    <title>Document</title>
+
+
+
+</head>
+
+
+<body>
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="./img/logo_sin_fondo.png" width="100px" height="40px">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active text-light " aria-current="page" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-light" aria-disabled="page"
+                            href="pages/contacto.html">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-light" aria-disabled="page"
+                            href="pages/nosotros.html">Nosotros</a>
+                    </li>
+                </ul>
+                <a href="pages/login.html">
+                    <button type="button" class="btn btn-primary mx-2 my-2">Iniciar Sesion</button>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ----banner Image---------- -->
+    <div id="banner" class="principal w-100 vh-100 d-flex justify-content-start align-items-end mb-0">
+        <div class="content">
+            <div id="logo" class="img-container mb-3">
+            </div>
+            <div id="descripcion">
+            </div>
+            <div class="mt-4">
+                <a href="#trailer">
+                    <button class="btn_submit">
+                        <i class="fa-solid fa-play m-1"></i> Ver ahora
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid m-0">
+        <div class="row justify-content-center align-items-stretch">
+            <div id="trailer" class="container-video">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container-fluid">
+            <div class="row justify-content-between mb-1">
+                <div class="col-sm-8">
+                    <div class="social-icons-redes">
+                        <i class="fa-brands fa-x-twitter"></i>
+                        <i class="fa-brands fa-facebook"></i>
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                </div>
+                <div class="col">
+                    <h6>© 2024 JStreamMovies, LLC. Todos los derechos reservados.</h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="enlances-footer">
+                    <a href="#">Política de privacidad</a>
+                    <a href="#">Términos de uso</a>
+                    <a href="#">Administrar las preferencias de cookies</a>
+                    <a href="#">info</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <script src="/bootstrap/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./js/verPelicula.js"></script>
+    <script>
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', e => {
+            if (window.pageYOffset > 100) {
+                console.log('scroll')
+                nav.classList.add('bg-dark', 'shadow');
+            } else {
+                nav.classList.remove('bg-dark', 'shadow');
+            }
+        });
+    </script>
+</body>
+
+</html>
