@@ -1,4 +1,9 @@
 import { pelicula } from './datos.js'
+
+
+//---------------TITLE-----------------
+document.title = pelicula.nombre + " - JStremMovies";
+
 // --------------------Fondo Banner------------------
 document.getElementById('banner').style.background = `linear-gradient(rgba(2, 2, 20, 0), rgb(0, 0, 0, 1)),
         url(${pelicula.img_banner})`;
