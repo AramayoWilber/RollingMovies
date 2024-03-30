@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="./img/logoJStream_movies_100x100.png">
+	<link rel="stylesheet" href="./bootstrap/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./bootstrap/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css">
+	<link rel="stylesheet" href="./bootstrap/fontawesome-free-6.5.1-web/css/all.min.css">
+	<title>JStream Movies - Acerca de Nosotros </title>
+	<link rel="stylesheet" href="./css/aboutUs.css">
+</head>
+
+<body>
+	<nav class="navbar fixed-top navbar-expand-lg navbar-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="index.html">
+				<img src="./img/logo_sin_fondo.png" width="100px" height="40px">
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						<a class="nav-link active text-light " aria-current="page" href="index.html">Inicio</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active text-light" aria-disabled="page"
+							href="pages/contacto.html">Contacto</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active text-light" aria-disabled="page"
+							href="pages/nosotros.html">Nosotros</a>
+					</li>
+				</ul>
+				<a href="pages/login.html">
+					<button type="button" class="btn btn-primary mx-2 my-2">Iniciar Sesion</button>
+				</a>
+			</div>
+		</div>
+	</nav>
+
+
+	<div class="contenedortexto1">
+		<h1> Acerca de nosotros</h1>
+		<h2> Nuestra Misión</h2>
+		<div>
+			<p>Como cinco amigos desarrolladores, nuestra empresa de streaming de películas <br>
+				y series se compromete a ofrecer una experiencia excepcional de entretenimiento. <br>
+				Nuestra misión es proporcionar un servicio de transmisión de alta calidad que reúna <br>
+				todas las películas y series más reconocidas en un solo lugar. Nos esforzamos por <br>
+				enriquecer la vida de nuestros clientes, promoviendo la accesibilidad y la diversidad <br>
+				cultural, mientras nos mantenemos a la vanguardia de la innovación tecnológica. <br>
+				Nuestro objetivo es ser la opción preferida de entretenimiento, ofreciendo una experiencia <br>
+				de visualización excepcional que refleje nuestra dedicación.
+			</p>
+		</div>
+
+		<div class="contenedor">
+			<div>
+				<img src="./img/fotos-del-equipo/Wilber.jpeg" alt="Imagen 1">
+				<div class="texto">Wilber Aramayo</div>
+			</div>
+			<div>
+				<img src="./img/fotos-del-equipo/Leila.jpeg" alt="Imagen 2">
+				<div class="texto">Leila Lovisa</div>
+			</div>
+			<div>
+				<img src="./img/fotos-del-equipo/Maximo.jpeg" alt="Imagen 3">
+				<div class="texto">Máximo García Toledo</div>
+			</div>
+			<div>
+				<img src="./img/fotos-del-equipo/Franco.jpeg" alt="Imagen 4">
+				<div class="texto">Franco Lorenzo</div>
+			</div>
+			<div>
+				<img src="./img/fotos-del-equipo/Cristian.jpeg" alt="Imagen 5">
+				<div class="texto">Cristian Tejeda</div>
+			</div>
+		</div>
+		<div>
+			<p>
+				Disfruten de nuestras películas y series, <br>
+				¡que cada pantalla sea una puerta a nuevas emociones y aventuras!
+			</p>
+		</div>
+	</div>
+	<footer>
+		<div class="container-fluid">
+			<div class="row justify-content-between mb-1">
+				<div class="col-sm-8">
+					<div class="social-icons-redes">
+						<i class="fa-brands fa-x-twitter"></i>
+						<i class="fa-brands fa-facebook"></i>
+						<i class="fa-brands fa-whatsapp"></i>
+						<i class="fa-brands fa-instagram"></i>
+						<i class="fa-brands fa-tiktok"></i>
+					</div>
+				</div>
+				<div class="col">
+					<h6>© 2024 JStreamMovies, LLC. Todos los derechos reservados.</h6>
+				</div>
+			</div>
+			<div class="row">
+				<div class="enlances-footer">
+					<a href="#">Política de privacidad</a>
+					<a href="#">Términos de uso</a>
+					<a href="#">Administrar las preferencias de cookies</a>
+					<a href="#">info</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script src="./bootstrap/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+	<script>
+		const nav = document.querySelector('nav');
+		window.addEventListener('scroll', e => {
+			if (window.pageYOffset > 100) {
+				nav.classList.add('bg-dark', 'shadow');
+			} else {
+				nav.classList.remove('bg-dark', 'shadow');
+			}
+		});
+	</script>
+</body>
+
+</html>
