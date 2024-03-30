@@ -2,256 +2,273 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="icon" href="img/logoJStream_movies_100x100.png">
-  <link rel="stylesheet" href="bootstrap/bootstrap-5.3.3-dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="bootstrap/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="./css/index.css">
-  <link rel="stylesheet" href="./css/footer.css">
-  <title>JStreamMovies</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="img/logoJStream_movies_100x100.png">
+    <link rel="stylesheet" href="bootstrap/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <title>JStreamMovies</title>
 </head>
 
 <body>
-  <header>
-    <nav class="navbar navbar-expand-lg navbars">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">
-          <img src="./img/logo_sin_fondo.png" class="img-fluid neon-border" width="100px" height="40px">
-        </a>
-        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-          aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active text-light " aria-current="page" href="index.html">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active text-light" aria-disabled="page" href="pages/contacto.html">Contacto</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active text-light" aria-disabled="page" href="pages/nosotros.html">Nosotros</a>
-            </li>
-          </ul>
-          <a href="pages/login.html">
-            <button type="button" class="btn btn-primary mx-2 my-2">Iniciar Sesion</button>
-          </a>
-          <a href="pages/suscripcion.html">
-            <button type="button" class="btn btn-info mx-2 my-2">Suscripción</button>
-          </a>
-          <form class="d-flex" role="search">
-            <input class="form-control me-2 mx-2" type="search" placeholder="Buscar Peliculas" aria-label="Search">
-            <button class="btn btn-outline-info" type="submit">Buscar</button>
-          </form>
-        </div>
-      </div>
-    </nav>
-  </header>
-
-  <div class="neon-line"></div>
-<main>
-  <div id="carouselExampleCaptions" class="carousel slide">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-        aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-        aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-        aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="./img/peliculas/banners/Harry_Potter_banner.jpg" class="imgbanner d-block w-100" alt="...">
-        <div class="carousel-caption">
-          <img src="./img/logo_sin_fondo.png" class="textbg mb-3 neon-border" style="width: 25%;" alt="">
-          <h2 class="textbg d-none d-sm-block ">Harry Potter y la piedra Filosofal</h2>
-          <h2 class="textbg h5 d-block d-sm-none ">Harry Potter y la piedra Filosofal</h2>
-          <p class="textbg textnone fs-4">Harry Potter, un niño que al cumplir 11 años descubre que es un mago, por lo cual es
-            enviado al Colegio Hogwarts de Magia y Hechicería para comenzar su entrenamiento como tal.</p>
-            <button class="btn btn-primary imghov">Reproducir</button>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="./img/peliculas/banners/Jurassic_World_banner.jpg" class="d-block w-100 imgbanner" alt="...">
-        <div class="carousel-caption">
-          <img src="./img/logo_sin_fondo.png" class="textbg mb-3 neon-border" style="width: 25%;" alt="">
-          <h2 class="textbg d-none d-sm-block">Jurassic World</h2>
-          <h2 class="textbg h4 d-block d-sm-none">Jurassic World</h2>   
-          <p class="textbg textnone fs-4">Ambientada 22 años después de los acontecimientos de Parque Jurásico, Jurassic World
-            tiene lugar en la misma isla ficticia centroamericana de isla Nublar, frente a la costa del Pacífico de
-            Costa Rica, donde un nuevo parque temático poblado con dinosaurios clonados ha operado durante diez años.
-          </p>
-          <button class="btn btn-primary imghov">Reproducir</button>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="./img/peliculas/banners/Wonka_banner.jpg" class="d-block w-100 imgbanner" alt="...">
-        <div class="carousel-caption">
-          <img src="./img/logo_sin_fondo.png" class="textbg mb-3 neon-border" style="width: 25%;" alt="">
-          <h2 class="textbg d-none d-sm-block">Wonka</h2>
-          <h2 class="textbg h4 d-block d-sm-none">Wonka</h2>
-          <p class="textbg textnone fs-4">El aspirante a mago, inventor y chocolatero Willy Wonka llega en barco a una ciudad
-            europea anónima para cumplir su sueño de abrir su tienda de chocolates en las Galerías Gourmet. el
-            analfabeto Wonka firma voluntariamente un contrato, lo que le obliga a pagar cargos excesivos.</p>
-          <button class="btn btn-primary imghov">Reproducir</button>
-        </div>
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-</main>
-
-  <div class="neon-line"></div>
-  <div class="neon-line mt-5"></div>
-
-  <section>
-    <div class="container">
-      <div class="row my-2">
-        <h3 class="text-white mb-5 mt-5">Sugeridos para ti</h3>
-        <div class="col-12">
-          <div id="mostradorPeliculas" class="row justify-content-center mb-5">
-            <div class="imghov col-9 col-sm-5 col-md-5 col-lg-3 my-2">
-              <a href="pages/error.html">
-                <img src="./img/peliculas/portadas/Avengers_portada.jpg" class="neon-border-2" width="100%"
-                  height="100%" alt="peli-sugerida">
-              </a>
+    <header>
+        <nav class="navbar navbar-expand-lg navbars">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img src="./img/logo_sin_fondo.png" class="img-fluid neon-border" width="100px" height="40px">
+                </a>
+                <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active text-light " aria-current="page" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-light" aria-disabled="page"
+                                href="pages/contacto.html">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-light" aria-disabled="page"
+                                href="pages/nosotros.html">Nosotros</a>
+                        </li>
+                    </ul>
+                    <a href="pages/login.html">
+                        <button type="button" class="btn btn-primary mx-2 my-2">Iniciar Sesion</button>
+                    </a>
+                    <a href="pages/suscripcion.html">
+                        <button type="button" class="btn btn-info mx-2 my-2">Suscripción</button>
+                    </a>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2 mx-2" type="search" placeholder="Buscar Peliculas"
+                            aria-label="Search">
+                        <button class="btn btn-outline-info" type="submit">Buscar</button>
+                    </form>
+                </div>
             </div>
-            <div class="imghov col-9 col-sm-5 col-md-5 col-lg-3 my-2">
-              <a href="pages/error.html">
-                <img src="./img/peliculas/portadas/Shrek_portada.jpg" class="neon-border-2" width="100%" height="100%"
-                  alt="peli-sugerida">
-              </a>
-            </div>
-            <div class="imghov col-9 col-sm-5 col-md-5 col-lg-3 my-2">
-              <a href="pages/error.html">
-                <img src="./img/peliculas/portadas/Wonka_portada.jpg" class="neon-border-2" width="100%" height="100%"
-                  alt="peli-sugerida">
-              </a>
-            </div>
-            <div class="imghov col-9 col-sm-5 col-md-5 col-lg-3 my-2">
-              <a href="pages/error.html">
-                <img src="./img/peliculas/portadas/Barbie_portada.jpg" class="neon-border-2" width="100%" height="100%"
-                  alt="peli-sugerida">
-              </a>
-            </div>
-            <div class="imghov col-9 col-sm-5 col-md-5 col-lg-3 my-2">
-              <a href="pages/error.html">
-                <img src="./img/peliculas/portadas/Oppenheimer_portada.jpg" class="neon-border-2" width="100%"
-                  height="100%" alt="peli-sugerida">
-              </a>
-            </div>
-            <div class="imghov col-9 col-sm-5 col-md-5 col-lg-3 my-2">
-              <a href="pages/error.html">
-                <img src="./img/peliculas/portadas/Mario_bros_portada.jpg" class="neon-border-2" width="100%"
-                  height="100%" alt="peli-sugerida">
-              </a>
-            </div>
-            <div class="imghov col-9 col-sm-5 col-md-5 col-lg-3 my-2">
-              <a href="pages/error.html">
-                <img src="./img/peliculas/portadas/kung_Fu_Panda_4_portada.jpg" class="neon-border-2" width="100%"
-                  height="100%" alt="peli-sugerida">
-              </a>
-            </div>
-            <div class="imghov col-9 col-sm-5 col-md-5 col-lg-3 my-2">
-              <a href="pages/error.html">
-                <img src="./img/peliculas/portadas/Wonder_portada.jpg" class="neon-border-2" width="100%" height="100%"
-                  alt="peli-sugerida">
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        </nav>
+    </header>
 
-  <div class="neon-line"></div>
+    <div class="neon-line"></div>
+    <main>
+        <div id="carouselExampleCaptions" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./img/peliculas/banners/Harry_Potter_banner.jpg" class="imgbanner d-block w-100"
+                        alt="...">
+                    <div class="carousel-caption">
+                        <img src="./img/logo_sin_fondo.png" class="textbg mb-3 neon-border" style="width: 25%;" alt="">
+                        <h2 class="textbg d-none d-sm-block ">Harry Potter y la piedra Filosofal</h2>
+                        <h2 class="textbg h5 d-block d-sm-none ">Harry Potter y la piedra Filosofal</h2>
+                        <p class="textbg textnone fs-4">Harry Potter, un niño que al cumplir 11 años descubre que es un
+                            mago, por lo cual es
+                            enviado al Colegio Hogwarts de Magia y Hechicería para comenzar su entrenamiento como tal.
+                        </p>
+                        <button class="btn btn-primary imghov">Reproducir</button>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./img/peliculas/banners/Jurassic_World_banner.jpg" class="d-block w-100 imgbanner"
+                        alt="...">
+                    <div class="carousel-caption">
+                        <img src="./img/logo_sin_fondo.png" class="textbg mb-3 neon-border" style="width: 25%;" alt="">
+                        <h2 class="textbg d-none d-sm-block">Jurassic World</h2>
+                        <h2 class="textbg h4 d-block d-sm-none">Jurassic World</h2>
+                        <p class="textbg textnone fs-4">Ambientada 22 años después de los acontecimientos de Parque
+                            Jurásico, Jurassic World
+                            tiene lugar en la misma isla ficticia centroamericana de isla Nublar, frente a la costa del
+                            Pacífico de
+                            Costa Rica, donde un nuevo parque temático poblado con dinosaurios clonados ha operado
+                            durante diez años.
+                        </p>
+                        <button class="btn btn-primary imghov">Reproducir</button>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./img/peliculas/banners/Wonka_banner.jpg" class="d-block w-100 imgbanner" alt="...">
+                    <div class="carousel-caption">
+                        <img src="./img/logo_sin_fondo.png" class="textbg mb-3 neon-border" style="width: 25%;" alt="">
+                        <h2 class="textbg d-none d-sm-block">Wonka</h2>
+                        <h2 class="textbg h4 d-block d-sm-none">Wonka</h2>
+                        <p class="textbg textnone fs-4">El aspirante a mago, inventor y chocolatero Willy Wonka llega en
+                            barco a una ciudad
+                            europea anónima para cumplir su sueño de abrir su tienda de chocolates en las Galerías
+                            Gourmet. el
+                            analfabeto Wonka firma voluntariamente un contrato, lo que le obliga a pagar cargos
+                            excesivos.</p>
+                        <button class="btn btn-primary imghov">Reproducir</button>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </main>
 
-  <div class="neon-line mt-1"></div>
+    <div class="neon-line"></div>
+    <div class="neon-line mt-5"></div>
 
-  <section>
-    <div class="container mt-4">
-      <div class="row">
-        <h3 class="text-white mt-5">Categorias Sugeridas</h3>
-      </div>
-      <div class="row d-flex justify-content-lg-between justify-content-sm-center justify-content-center mb-5 m-3">
-        <div class="col-10 col-md-6 col-lg-2 icon-filter">
-          <a href="pages/categoria-terror.html">
-            <img src="./img/index/scream_5839641.png" class="img-fluid imghov" alt="">
-          </a>
-          <h3 class="text-center text-white ">Terror</h3>
+    <section>
+        <div class="container">
+            <div class="row my-2">
+                <h3 class="text-white mb-5 mt-5">Sugeridos para ti</h3>
+                <div class="col-12">
+                    <div id="mostradorPeliculas" class="row justify-content-center mb-5">
+                        <div class="imghov col-9 col-sm-5 col-md-5 col-lg-3 my-2">
+                            <a href="pages/error.html">
+                                <img src="./img/peliculas/portadas/Avengers_portada.jpg" class="neon-border-2"
+                                    width="100%" height="100%" alt="peli-sugerida">
+                            </a>
+                        </div>
+                        <div class="imghov col-9 col-sm-5 col-md-5 col-lg-3 my-2">
+                            <a href="pages/error.html">
+                                <img src="./img/peliculas/portadas/Shrek_portada.jpg" class="neon-border-2" width="100%"
+                                    height="100%" alt="peli-sugerida">
+                            </a>
+                        </div>
+                        <div class="imghov col-9 col-sm-5 col-md-5 col-lg-3 my-2">
+                            <a href="pages/error.html">
+                                <img src="./img/peliculas/portadas/Wonka_portada.jpg" class="neon-border-2" width="100%"
+                                    height="100%" alt="peli-sugerida">
+                            </a>
+                        </div>
+                        <div class="imghov col-9 col-sm-5 col-md-5 col-lg-3 my-2">
+                            <a href="pages/error.html">
+                                <img src="./img/peliculas/portadas/Barbie_portada.jpg" class="neon-border-2"
+                                    width="100%" height="100%" alt="peli-sugerida">
+                            </a>
+                        </div>
+                        <div class="imghov col-9 col-sm-5 col-md-5 col-lg-3 my-2">
+                            <a href="pages/error.html">
+                                <img src="./img/peliculas/portadas/Oppenheimer_portada.jpg" class="neon-border-2"
+                                    width="100%" height="100%" alt="peli-sugerida">
+                            </a>
+                        </div>
+                        <div class="imghov col-9 col-sm-5 col-md-5 col-lg-3 my-2">
+                            <a href="pages/error.html">
+                                <img src="./img/peliculas/portadas/Mario_bros_portada.jpg" class="neon-border-2"
+                                    width="100%" height="100%" alt="peli-sugerida">
+                            </a>
+                        </div>
+                        <div class="imghov col-9 col-sm-5 col-md-5 col-lg-3 my-2">
+                            <a href="pages/error.html">
+                                <img src="./img/peliculas/portadas/kung_Fu_Panda_4_portada.jpg" class="neon-border-2"
+                                    width="100%" height="100%" alt="peli-sugerida">
+                            </a>
+                        </div>
+                        <div class="imghov col-9 col-sm-5 col-md-5 col-lg-3 my-2">
+                            <a href="pages/error.html">
+                                <img src="./img/peliculas/portadas/Wonder_portada.jpg" class="neon-border-2"
+                                    width="100%" height="100%" alt="peli-sugerida">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        </div>
-        <div class="col-10 col-md-6 col-lg-2">
-          <a href="pages/error.html">
-            <img src="./img/index/magic-wand.png" class="img-fluid imghov" alt="">
-          </a>
-          <h3 class="text-center text-white ">Fantasia</h3>
-        </div>
-        <div class="col-10 col-md-6 col-lg-2">
-          <a href="pages/categoria-comedia.html">
-            <img src="./img/index/barber-chair.png" class="img-fluid imghov" alt="">
-          </a>
-          <h3 class="text-center text-white ">Comedia</h3>
-        </div>
-        <div class="col-10 col-md-6 col-lg-2 text-center">
-          <a href="pages/serie-loki.html">
-            <img src="./img/index/serieicon.png" class="img-fluid imghov" alt="">
-          </a>
-          <h3 class="text-center text-white">Series</h3>
-        </div>
-      </div>
-    </div>
-  </section>
+    <div class="neon-line"></div>
 
-  <div class="neon-line"></div>
+    <div class="neon-line mt-1"></div>
 
-  <footer>
-    <div class="container">
-      <div class="row text-center text-md-start">
-        <div class="col-12 col-md-3">
-          <img class="logo img-fluid neon-border mb-5" src="./img/logo_sin_fondo.png" width="80%" alt="Logo del sitio">
-        </div>
-        <div class="col-12 col-md-3">
-          <h4>Enlaces útiles</h4>
-          <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="pages/nosotros.html">Acerca de nosotros</a></li>
-            <li><a href="pages/error.html">Mi Cuenta</a></li>
-          </ul>
-        </div>
-        <div class="col-12 col-md-3">
-          <h4>Contáctanos</h4>
-          <ul>
-            <li><a href="pages/contacto.html">Pagina de contacto/Soporte</a></li>
-            <li><a href="pages/error.html">Preguntas frecuentes</a></li>
-            <li><a href="pages/error.html">Términos y Condiciones</a></li>
-          </ul>
-        </div>
-        <div class="col-12 col-md-3">
-          <h4>Redes sociales</h4>
-          <ul class="social-icons">
-            <li><a href="pages/error.html" class="fab fa-facebook fa-2x"></a></li>
-            <li><a href="pages/error.html" class="fab fa-twitter fa-2x"></a></li>
-            <li><a href="pages/error.html" class="fab fa-instagram fa-2x"></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
+    <section>
+        <div class="container mt-4">
+            <div class="row">
+                <h3 class="text-white mt-5">Categorias Sugeridas</h3>
+            </div>
+            <div
+                class="row d-flex justify-content-lg-between justify-content-sm-center justify-content-center mb-5 m-3">
+                <div class="col-10 col-md-6 col-lg-2 icon-filter">
+                    <a href="pages/categoria-terror.html">
+                        <img src="./img/index/scream_5839641.png" class="img-fluid imghov" alt="">
+                    </a>
+                    <h3 class="text-center text-white ">Terror</h3>
 
-  <script src="bootstrap/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
-  <script type="module" src="js/index/pruebaPeliculas.js"></script>
+                </div>
+                <div class="col-10 col-md-6 col-lg-2">
+                    <a href="pages/error.html">
+                        <img src="./img/index/magic-wand.png" class="img-fluid imghov" alt="">
+                    </a>
+                    <h3 class="text-center text-white ">Fantasia</h3>
+                </div>
+                <div class="col-10 col-md-6 col-lg-2">
+                    <a href="pages/categoria-comedia.html">
+                        <img src="./img/index/barber-chair.png" class="img-fluid imghov" alt="">
+                    </a>
+                    <h3 class="text-center text-white ">Comedia</h3>
+                </div>
+                <div class="col-10 col-md-6 col-lg-2 text-center">
+                    <a href="pages/serie-loki.html">
+                        <img src="./img/index/serieicon.png" class="img-fluid imghov" alt="">
+                    </a>
+                    <h3 class="text-center text-white">Series</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="neon-line"></div>
+
+    <footer>
+        <div class="container">
+            <div class="row text-center text-md-start">
+                <div class="col-12 col-md-3">
+                    <img class="logo img-fluid neon-border mb-5" src="./img/logo_sin_fondo.png" width="80%"
+                        alt="Logo del sitio">
+                </div>
+                <div class="col-12 col-md-3">
+                    <h4>Enlaces útiles</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="pages/nosotros.html">Acerca de nosotros</a></li>
+                        <li><a href="pages/error.html">Mi Cuenta</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-3">
+                    <h4>Contáctanos</h4>
+                    <ul>
+                        <li><a href="pages/contacto.html">Pagina de contacto/Soporte</a></li>
+                        <li><a href="pages/error.html">Preguntas frecuentes</a></li>
+                        <li><a href="pages/error.html">Términos y Condiciones</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-3">
+                    <h4>Redes sociales</h4>
+                    <ul class="social-icons">
+                        <li><a href="pages/error.html" class="fab fa-facebook fa-2x"></a></li>
+                        <li><a href="pages/error.html" class="fab fa-twitter fa-2x"></a></li>
+                        <li><a href="pages/error.html" class="fab fa-instagram fa-2x"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="bootstrap/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="js/index/pruebaPeliculas.js"></script>
 </body>
 
 </html>
