@@ -25,40 +25,14 @@
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link hiding" aria-hidden="true" href="#">Administrar
-                                usuario</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" href="#">Administrar catalogo</a>
-                        </li>
+                <div id="collapseNavbar" class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul id="listaNavbar" class="navbar-nav me-auto mb-2 mb-lg-0">
                     </ul>
                     <div class="mx-auto"></div>
                     <form class="d-flex" role="search">
                         <input class="form-control me-2 mx-2" type="search" placeholder="Buscar Peliculas"
                             aria-label="Search">
                     </form>
-                    <a href="./html/login/login.html">
-                        <button type="button" class="btn btn-primary mx-2 my-2">Iniciar Sesion</button>
-                    </a>
-                    <div class="dropdown">
-                        <i class="bi bi-person-circle" data-bs-toggle="dropdown" aria-expanded="false"></i>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#"> <i class="fa-solid fa-user me-2"></i>Ver perfil</a>
-                            </li>
-                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-gear me-2"></i>Ajustes</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-circle-info me-2"></i>Soporte
-                                    tecnico</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">
-                                    <i class="fa-solid fa-right-to-bracket me-2"></i>
-                                    Cerrar sesión</a></li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </nav>
@@ -277,7 +251,7 @@
     </footer>
 
     <script src="/bootstrap/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
-    <script type="module" src="js/index/pruebaPeliculas.js"></script>
+    <script type="module" src="/js/index.js"></script>
 </body>
 
 </html>
