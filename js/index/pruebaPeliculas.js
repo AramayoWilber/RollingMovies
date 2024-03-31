@@ -1,5 +1,4 @@
-import { CatalogoDB } from '../clases/CatalogoDB.class.js';
-
+import { CatalogoDB } from "../clases/CatalogoDB.class.js";
 
 const catalogoDB = new CatalogoDB();
 const mostradorPeliculas = document.getElementById('mostradorPeliculas')
@@ -8,30 +7,31 @@ const mostradorPeliculas = document.getElementById('mostradorPeliculas')
 
 
 const mostrarPortadas = () => {
-   
+
     let peliculas = catalogoDB.establecerConexion();
-    mostradorPeliculas.innerHTML = '';          
+    console.log(peliculas)
+    mostradorPeliculas.innerHTML = '';
     peliculas.forEach((item) => {
-        
-        if(item.publicado === true){
-        const mostrarPortadaIndex = `
+
+        if (item.publicado === true) {
+            const mostrarPortadaIndex = `
             <div>
                 <img src="${item.img_portada}" class="neon-border-2" width="100%" height="100%" alt="peli-sugerida">
             </div>
         `;
-        
-        const nuevoItem = document.createElement('div');
-        nuevoItem.setAttribute('id', item.codigo)
-        nuevoItem.classList.add('imghov', 'col-9', 'col-sm-5', 'col-md-5', 'col-lg-3', 'my-2');
-        nuevoItem.innerHTML = mostrarPortadaIndex;
-        mostradorPeliculas.append(nuevoItem);
-    }
+
+            const nuevoItem = document.createElement('div');
+            nuevoItem.setAttribute('id', item.codigo)
+            nuevoItem.classList.add('imghov', 'col-9', 'col-sm-5', 'col-md-5', 'col-lg-3', 'my-2');
+            nuevoItem.innerHTML = mostrarPortadaIndex;
+            mostradorPeliculas.append(nuevoItem);
+        }
     });
 }
-   
+
 mostrarPortadas();
 
-window.addEventListener('storage', function(event) {
+window.addEventListener('storage', function (event) {
     // Verifica si el cambio fue en la clave 'peliculas'
     if (event.key === 'peliculas') {
         // Obtiene los nuevos datos de las películas
@@ -45,17 +45,33 @@ window.addEventListener('storage', function(event) {
         }
     }
 });
-let prueba
 
-mostradorPeliculas.addEventListener('click', e =>{
-    prueba = e.target.parentElement.parentElement.parentElement.getAttribute('id')
+
+mostradorPeliculas.addEventListener('click', e => {
+    const id = parseInt(e.target.parentElement.parentElement.getAttribute('id'))
     const peliculas = catalogoDB.establecerConexion()
-    let peliculafiltrada
-    peliculas.forEach((item) => {   
-        if(item.codigo === prueba){
-            peliculafiltrada = item[prueba]
-    }
-    window.location.href = "verPeliculas/pelicula.html"
-    }) 
+    let peliculafiltrada;
+    peliculas.forEach((item) => {
+        if (item.codigo === id) {
+            console.log(item)
+            peliculafiltrada = {
+                codigo: item.codigo,
+                nombre: item.nombre,
+                categoria: item.categoria,
+                genero: item.genero,
+                descripcion: item.descripcion,
+                publicado: item.publicado,
+                destacada: item.destacada,
+                img_logo: item.img_logo,
+                img_portada: item.img_portada,
+                img_banner: item.img_banner,
+                url_trailer: item.url_trailer
+            };
+        }
+    })
+    console.log(peliculafiltrada)
+    localStorage.setItem('dataMovie', JSON.stringify(peliculafiltrada));
+    window.location.href = "/verPelicula.html"
 })
-export default prueba
+
+

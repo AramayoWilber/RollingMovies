@@ -26,4 +26,18 @@ export class AdministradoresDB {
         return valido;
     }
 
+    encontrarIdUser(email, password) {
+        this.establecerConexion();
+        let administradores = JSON.parse(localStorage.getItem('administradores'));
+        let id_admin;
+
+        administradores.forEach(admin => {
+            if (email === admin.email && password === admin.password) {
+                id_admin = admin.id;
+            }
+        });
+
+        return id_admin;
+    }
+
 }

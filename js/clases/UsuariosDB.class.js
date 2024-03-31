@@ -67,6 +67,20 @@ export class UsuariosDB {
         return valido;
     }
 
+    encontrarIdUser(email, password) {
+        this.establecerConexion();
+        let usuarios = JSON.parse(localStorage.getItem('usuarios'));
+        let id_user;
+
+        usuarios.forEach(usuario => {
+            if (email === usuario.email && password === usuario.password) {
+                id_user = usuario.id;
+            }
+        });
+
+        return id_user;
+    }
+
 
     filtrarNombre(nombre) {
         this.establecerConexion();
@@ -111,6 +125,22 @@ export class UsuariosDB {
         localStorage.setItem('usuarios', JSON.stringify(usuarios));
     }
 
+    usuarioValido(key) {
+        const id = parseInt(key);
+        this.establecerConexion();
+        let valido;
+        const usuarios = JSON.parse(localStorage.getItem('usuarios'));
+        usuarios.forEach(usuario => {
+            if (usuario.id === id) {
+                valido = usuario.validado;
+            }
+        });
+
+        if (valido === "true")
+            return true;
+        if (valido === "false")
+            return false;
+    }
 
     eliminarRegistro(key) {
         const id = parseInt(key);
