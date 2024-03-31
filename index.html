@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" href="img/logoJStream_movies_100x100.png">
-    <link rel="stylesheet" href="bootstrap/bootstrap-5.3.3-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="bootstrap/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css">
+    <link rel="icon" href="./img/logoJStream_movies_100x100.png">
+    <link rel="stylesheet" href="./bootstrap/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./bootstrap/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/footer.css">
-    <title>JStreamMovies</title>
+    <title>Inicio - JStreamMovies</title>
 </head>
 
 <body>
@@ -25,30 +25,13 @@
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active text-light " aria-current="page" href="index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active text-light" aria-disabled="page"
-                                href="pages/contacto.html">Contacto</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active text-light" aria-disabled="page"
-                                href="pages/nosotros.html">Nosotros</a>
-                        </li>
+                <div id="collapseNavbar" class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul id="listaNavbar" class="navbar-nav me-auto mb-2 mb-lg-0">
                     </ul>
-                    <a href="pages/login.html">
-                        <button type="button" class="btn btn-primary mx-2 my-2">Iniciar Sesion</button>
-                    </a>
-                    <a href="pages/suscripcion.html">
-                        <button type="button" class="btn btn-info mx-2 my-2">Suscripción</button>
-                    </a>
+                    <div class="mx-auto"></div>
                     <form class="d-flex" role="search">
                         <input class="form-control me-2 mx-2" type="search" placeholder="Buscar Peliculas"
                             aria-label="Search">
-                        <button class="btn btn-outline-info" type="submit">Buscar</button>
                     </form>
                 </div>
             </div>
@@ -267,8 +250,8 @@
         </div>
     </footer>
 
-    <script src="bootstrap/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
-    <script type="module" src="js/index/pruebaPeliculas.js"></script>
+    <script src="/bootstrap/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="/js/index.js"></script>
 </body>
 
 </html>

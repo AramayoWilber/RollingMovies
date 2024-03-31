@@ -20,14 +20,16 @@ formulario.addEventListener('submit', e => {
     const password = document.getElementById('password').value;
 
     if (usuarios.validarLogin(email, password)) { // metodo de la clase usuariosDB.class para validad el Login}
-        setTimeout(() => {
-            window.location.href = '../../index.html';
-        }, 200);
-        console.log('logueado como usuario');
+        if (usuarios.usuarioValido(usuarios.encontrarIdUser(email, password))) {
+            localStorage.setItem('usuarioActivo', JSON.stringify({ id: usuarios.encontrarIdUser(email, password), administrador: false, logueado: true }));
+            window.location.href = '/index.html';
+        } else {
+            window.location.href = '/html/login/registroSuccess.html'
+        }
     } else {
         if (administradores.validarLogin(email, password)) {
-            window.location.href = '../../index.html';
-            console.log('logueado como administrador');
+            localStorage.setItem('usuarioActivo', JSON.stringify({ id: administradores.encontrarIdUser(email, password), administrador: true, logueado: true }));
+            window.location.href = '/index.html';
         }
         else {
             parrafo_alert.classList.remove('login-correcto');
@@ -35,3 +37,5 @@ formulario.addEventListener('submit', e => {
         }
     }
 });
+
+

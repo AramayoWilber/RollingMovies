@@ -1,4 +1,3 @@
-
 body {
     margin: 0;
     min-height: 100vh;
@@ -10,33 +9,33 @@ body {
     color: rgb(230, 219, 219);
 }
 
-.navbars{
+.navbars {
     background-image: url(../img/index/1014.jpg);
 }
 
-.imgbanner{
+.imgbanner {
     filter: brightness(0.5);
 }
-.imghov{
+.imghov {
     transition: all 0.3s;
 }
 
-.imghov:hover{
+.imghov:hover {
     transform: scale(1.15);
 }
-.container-background{
+.container-background {
     background-image: url("../img/index/suscríbete.jpg");
-    background-size: cover; 
+    background-size: cover;
 }
 
 #video {
-width: 1280px;
-padding-top: 10px;
+    width: 1280px;
+    padding-top: 10px;
 }
 
 .banner {
     width: 1280px;
-    height:auto;
+    height: auto;
     padding-top: 50px;
 }
 
@@ -63,7 +62,7 @@ h4 {
     overflow-y: auto;
 }
 
-.carousel-inner{
+.carousel-inner {
     /*height: 650px;*/
     overflow: hidden;
 }
@@ -72,18 +71,36 @@ h4 {
     object-fit: cover; /* Esto asegura que las imágenes se redimensionen correctamente */
 }
 
+/* ------------icon----------- */
+.bi-person-circle {
+    font-size: 2.1rem;
+    color: rgb(230, 219, 219);
+}
+
+.dropdown-menu {
+    background: #212529;
+}
+
+.dropdown-menu .dropdown-item {
+    color: white;
+}
+.dropdown-menu .dropdown-item:hover {
+    background: #2b3035;
+}
+.dropdown-menu .dropdown-divider {
+    background: white;
+}
 
 @media (max-width: 750px) {
     .textnone {
-       display: none; 
-    } 
+        display: none;
+    }
 }
 
-
-.carousel-item .imgbanner{
+.carousel-item .imgbanner {
     height: 100%;
     object-fit: cover;
-  }
+}
 .video-container {
     display: flex;
     justify-content: center;
@@ -94,7 +111,8 @@ h4 {
     width: 80%;
 }
 
-.neon-border-2{
-    box-shadow: 0 0 0px #68e6f7, 0 0 1px #68e6f7, 0 0 25px #68e6f7, 0 0 30px #68e6f7;
+.neon-border-2 {
+    box-shadow: 0 0 0px #68e6f7, 0 0 1px #68e6f7, 0 0 25px #68e6f7,
+        0 0 30px #68e6f7;
     padding: 5px;
-  }
+}

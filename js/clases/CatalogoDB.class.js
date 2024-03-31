@@ -19,10 +19,10 @@ export class CatalogoDB {
                     categoria: 'pelicula',
                     genero: 'drama',
                     descripcion: 'Durante la Segunda Guerra Mundial, el teniente general Leslie Groves designa al físico J. Robert Oppenheimer para un grupo de trabajo que está desarrollando el Proyecto Manhattan, cuyo objetivo consiste en fabricar la primera bomba atómica.',
-                    publicado: false,
+                    publicado: true,
                     destacada: true,
                     img_logo: 'https://image.tmdb.org/t/p/original/vsnVZCWKGnaVqln5erH0uHxHZeC.png',
-                    img_portada: '/https://image.tmdb.org/t/p/original/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg',
+                    img_portada: 'https://image.tmdb.org/t/p/original/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg',
                     img_banner: 'https://image.tmdb.org/t/p/original/ycnO0cjsAROSGJKuMODgRtWsHQw.jpg',
                     url_trailer: 'https://www.youtube.com/embed/yLYbOe914ZU?si=jVsUrKj7FUtGCFW3'
                 },
