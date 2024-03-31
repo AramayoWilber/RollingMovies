@@ -129,4 +129,3 @@ if (usuarioActivo.logueado) {
 } else {
     no_logueado();
 }
-
