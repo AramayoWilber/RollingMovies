@@ -1,6 +1,7 @@
 import loadUsers from './adicionales/cargarTablaUser.js';
 import { UsuariosDB } from './clases/UsuariosDB.class.js';
 import { opcionesAdmin, logueado } from './adicionales/navbar.js'
+import cerrar_seccion from "./adicionales/cerrarSeccion.js";
 
 const mostrar = () => {
     /////////////////CARGAR TABLA/////////////
@@ -89,7 +90,8 @@ const mostrar = () => {
         datosParaBorrar.filaTabla = null;
         datosParaBorrar.key = null;
         loadUsers(bodyTabla, items_paginacion, cantidadRegistros.value, search, SelectfiltarUsuarios.value);
-    })
+    });
+    cerrar_seccion();
 }
 
 const usuarioActivo = JSON.parse(localStorage.getItem('usuarioActivo')) || { logueado: false };

@@ -1,3 +1,4 @@
+import cerrar_seccion from './adicionales/cerrarSeccion.js';
 import { opcionesAdmin, logueado, no_logueado } from './adicionales/navbar.js'
 
 const mostrar = () => {
@@ -46,6 +47,7 @@ const mostrar = () => {
     iframe.setAttribute('allowfullscreen', true);
 
     trailer.append(iframe)
+    cerrar_seccion();
 }
 
 const usuarioActivo = JSON.parse(localStorage.getItem('usuarioActivo')) || { logueado: false };
@@ -57,5 +59,5 @@ if (usuarioActivo.logueado) {
     }
     mostrar();
 } else {
-    no_logueado();
+    window.location.href = '/html/login/login.html'
 }

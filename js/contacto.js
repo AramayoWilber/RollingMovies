@@ -1,4 +1,5 @@
 import { opcionesAdmin, logueado, no_logueado } from './adicionales/navbar.js'
+import cerrar_seccion from "./adicionales/cerrarSeccion.js";
 
 const btn = document.getElementById('button');
 
@@ -18,6 +19,7 @@ const mostrar = () => {
         alert(JSON.stringify(err));
       });
   });
+  cerrar_seccion();
 }
 
 const usuarioActivo = JSON.parse(localStorage.getItem('usuarioActivo')) || { logueado: false };

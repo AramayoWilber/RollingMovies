@@ -1,3 +1,4 @@
+import cerrar_seccion from "./adicionales/cerrarSeccion.js";
 import { CatalogoDB } from "./clases/CatalogoDB.class.js";
 
 const mostrar = () => {
@@ -71,6 +72,8 @@ const mostrar = () => {
         localStorage.setItem('dataMovie', JSON.stringify(peliculafiltrada));
         window.location.href = "/verPelicula.html"
     })
+
+    cerrar_seccion();
 }
 
 const opcionesAdmin = () => {
@@ -110,7 +113,7 @@ const logueado = () => {
             <li><a class="dropdown-item" href="#"><i class="fa-solid fa-gear me-2"></i>Ajustes</a></li>
             <li><a class="dropdown-item" href="#"><i class="fa-solid fa-circle-info me-2"></i>Soporte tecnico</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-right-to-bracket me-2"></i>Cerrar sesión</a></li>
+            <li id="cerrar_seccion"><a class="dropdown-item" href="#"><i class="fa-solid fa-right-to-bracket me-2"></i>Cerrar sesión</a></li>
         </ul>`;
     dropdown.innerHTML = contenido;
     collapseNavbar.append(dropdown);
