@@ -41,18 +41,7 @@
         </div>
     </div>
     <script src="/bootstrap/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
-    <script type="module">
-        import { opcionesAdmin, logueado, no_logueado } from '/js/adicionales/navbar.js';
-        const usuarioActivo = JSON.parse(localStorage.getItem('usuarioActivo')) || { logueado: false };
-        if (usuarioActivo.logueado) {
-            logueado();
-            if (usuarioActivo.administrador) {
-                opcionesAdmin();
-            }
-        } else {
-            no_logueado();
-        }
-    </script>
+    <script type="module" src="/js/err404.js"></script>
 </body>
 
 </html>

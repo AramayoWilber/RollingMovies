@@ -1,23 +1,46 @@
+import cerrar_seccion from "./adicionales/cerrarSeccion.js";
 import { CatalogoDB } from "./clases/CatalogoDB.class.js";
+
+window.reproducir = (id) => {
+    const peliculas = new CatalogoDB().establecerConexion();
+    let peliculafiltrada;
+    peliculas.forEach((item) => {
+        if (item.codigo === id) {
+            console.log(item)
+            peliculafiltrada = {
+                codigo: item.codigo,
+                nombre: item.nombre,
+                categoria: item.categoria,
+                genero: item.genero,
+                descripcion: item.descripcion,
+                publicado: item.publicado,
+                destacada: item.destacada,
+                img_logo: item.img_logo,
+                img_portada: item.img_portada,
+                img_banner: item.img_banner,
+                url_trailer: item.url_trailer
+            };
+        }
+    })
+    console.log(peliculafiltrada)
+    localStorage.setItem('dataMovie', JSON.stringify(peliculafiltrada));
+    window.location.href = "/verPelicula.html"
+}
 
 const mostrar = () => {
     const catalogoDB = new CatalogoDB();
     const mostradorPeliculas = document.getElementById('mostradorPeliculas')
 
     // Obtiene los datos de las películas
-
-
     const mostrarPortadas = () => {
         let peliculas = catalogoDB.establecerConexion();
         mostradorPeliculas.innerHTML = '';
         peliculas.forEach((item) => {
-
             if (item.publicado === true) {
                 const mostrarPortadaIndex = `
-            <div>
-                <img src="${item.img_portada}" class="neon-border-2" width="100%" height="100%" alt="peli-sugerida">
-            </div>`;
-
+                <div>
+                    <img src="${item.img_portada}" class="neon-border-2" width="100%" height="100%" alt="peli-sugerida">
+                </div>`;
                 const nuevoItem = document.createElement('div');
                 nuevoItem.setAttribute('id', item.codigo)
                 nuevoItem.classList.add('imghov', 'col-9', 'col-sm-5', 'col-md-5', 'col-lg-3', 'my-2');
@@ -26,6 +49,30 @@ const mostrar = () => {
             }
         });
     }
+
+    const carrocel = document.getElementById('container-carrousel');
+    const catalogo = new CatalogoDB().establecerConexion();
+    catalogo.forEach(item => {
+        if (item.destacada === true) {
+            const contenido = `
+                    <img src=${item.img_banner} class="imgbanner d-block w-100" alt="...">
+                    <div class="carousel-caption">
+                        <img src="./img/logo_sin_fondo.png" class="textbg mb-3 neon-border" style="width: 25%;" alt="">
+                        <h2 class="textbg d-none d-sm-block">${item.nombre}</h2>
+                        <h2 class="textbg h5 d-block d-sm-none">${item.nombre}</h2>
+                        <div class="module line-clamp">
+                            <p class="textbg textnone fs-4">${item.descripcion}</p>
+                        </div>
+                        <button onClick="reproducir(${item.codigo})" class="btn btn-primary imghov mt-2">Reproducir</button>
+                    </div>`;
+            const nuevoItem = document.createElement('div');
+            nuevoItem.classList.add('carousel-item');
+            nuevoItem.innerHTML = contenido;
+            carrocel.append(nuevoItem);
+        }
+    });
+
+    document.querySelector('#container-carrousel .carousel-item').classList.add('active')
 
     mostrarPortadas();
 
@@ -46,8 +93,8 @@ const mostrar = () => {
 
 
     mostradorPeliculas.addEventListener('click', e => {
-        const id = parseInt(e.target.parentElement.parentElement.getAttribute('id'))
-        const peliculas = catalogoDB.establecerConexion()
+        const id = parseInt(e.target.parentElement.parentElement.getAttribute('id'));
+        const peliculas = new CatalogoDB().establecerConexion();
         let peliculafiltrada;
         peliculas.forEach((item) => {
             if (item.codigo === id) {
@@ -70,7 +117,9 @@ const mostrar = () => {
         console.log(peliculafiltrada)
         localStorage.setItem('dataMovie', JSON.stringify(peliculafiltrada));
         window.location.href = "/verPelicula.html"
-    })
+    });
+
+    cerrar_seccion();
 }
 
 const opcionesAdmin = () => {
@@ -110,7 +159,7 @@ const logueado = () => {
             <li><a class="dropdown-item" href="#"><i class="fa-solid fa-gear me-2"></i>Ajustes</a></li>
             <li><a class="dropdown-item" href="#"><i class="fa-solid fa-circle-info me-2"></i>Soporte tecnico</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-right-to-bracket me-2"></i>Cerrar sesión</a></li>
+            <li id="cerrar_seccion"><a class="dropdown-item" href="#"><i class="fa-solid fa-right-to-bracket me-2"></i>Cerrar sesión</a></li>
         </ul>`;
     dropdown.innerHTML = contenido;
     collapseNavbar.append(dropdown);

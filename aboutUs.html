@@ -114,18 +114,7 @@
 			}
 		});
 	</script>
-	<script type="module">
-		import { opcionesAdmin, logueado, no_logueado } from '/js/adicionales/navbar.js'
-		const usuarioActivo = JSON.parse(localStorage.getItem('usuarioActivo')) || { logueado: false };
-		if (usuarioActivo.logueado) {
-			logueado();
-			if (usuarioActivo.administrador) {
-				opcionesAdmin();
-			}
-		} else {
-			no_logueado();
-		}
-	</script>
+	<script type="module" src="/js/aboutUs.js"></script>
 </body>
 
 </html>
