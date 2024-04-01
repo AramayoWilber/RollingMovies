@@ -8,7 +8,7 @@ body {
     min-height: 100vh;
     grid-template-rows: auto 1fr auto;
     margin: 0;
-    padding-bottom: 4em;
+    padding-bottom: 1em;
     min-height: 100vh;
     position: relative;
 }
@@ -19,23 +19,13 @@ body {
     box-sizing: border-box;
 }
 /* --------------------Navbar------------------- */
-/* .navbar {
-    position: absolute;
-    z-index: 10;
-    background: transparent;
-    top: 0;
-    display: flex;
-    width: 100%;
-} */
+.bi-person-circle {
+    font-size: 1.8rem;
+}
 
 /* -----------pelicula principal-------------- */
 .principal {
     font-size: 16px;
-    /* background: linear-gradient(rgba(2, 2, 20, 0), rgb(0, 0, 0, 1)),
-        url(/img/peliculas/banners/Titanic_banner.jpg); */
-    /* background-size: cover;
-    background-position: center center;
-    background-size: cover; */
     margin-bottom: 10.65em;
 }
 

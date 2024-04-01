@@ -1,3 +1,5 @@
+import { opcionesAdmin, logueado, no_logueado } from './adicionales/navbar.js'
+
 const mostrar = () => {
     const dataMovie = JSON.parse(localStorage.getItem('dataMovie'));
 
@@ -31,8 +33,6 @@ const mostrar = () => {
     img.setAttribute('alt', `logo_pelicula_${dataMovie.nombre}`);
     logo.append(img);
 
-
-
     // -------------- Trailer Pelicula----------------
 
     const trailer = document.getElementById('trailer');
@@ -51,7 +51,11 @@ const mostrar = () => {
 const usuarioActivo = JSON.parse(localStorage.getItem('usuarioActivo')) || { logueado: false };
 
 if (usuarioActivo.logueado) {
+    logueado();
+    if (usuarioActivo.administrador) {
+        opcionesAdmin();
+    }
     mostrar();
 } else {
-    window.location.href = '/html/login/login.html'
+    no_logueado();
 }

@@ -78,30 +78,29 @@ const opcionesAdmin = () => {
     const navbarList = document.getElementById('listaNavbar');
     const liUserAdmin = document.createElement('li');
     liUserAdmin.classList.add('nav-item');
-    const contenidoLiUser = `<a class="nav-link text-light" aria-hidden="true" href="#">Administrar
-                                usuario</a>`
+    const contenidoLiUser = `<a class="nav-link text-light" aria-hidden="true" href="/html/adminUsers/adminUsers.html">Usuarios</a>`
     liUserAdmin.innerHTML = contenidoLiUser;
     navbarList.append(liUserAdmin);
 
     const liAdminMovie = document.createElement('li');
     liAdminMovie.classList.add('nav-item');
-    const contenidoLiMovie = `<a class="nav-link text-light" href="#">Administrar catalogo</a>`
+    const contenidoLiMovie = `<a class="nav-link text-light" href="/html/adminPeliculas/adminPeliculas.html">Catalogo</a>`
     liAdminMovie.innerHTML = contenidoLiMovie;
     navbarList.append(liAdminMovie);
 }
 
 const no_logueado = () => {
-    const collapseNavbar = document.getElementById('collapseNavbar');
+    const collapseNavbar = document.getElementById('navbarSupportedContent');
 
     const login = document.createElement('a');
-    login.classList.add = `href = "./html/login/login.html"`
+    login.setAttribute('href', "./html/login/login.html");
     const contenido = `<button type="button" class="btn btn-primary mx-2 my-2">Iniciar Sesion</button>`;
     login.innerHTML = contenido;
     collapseNavbar.append(login);
 }
 
 const logueado = () => {
-    const collapseNavbar = document.getElementById('collapseNavbar');
+    const collapseNavbar = document.getElementById('navbarSupportedContent');
 
     const dropdown = document.createElement('div');
     dropdown.classList.add('dropdown');

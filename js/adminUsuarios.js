@@ -1,5 +1,5 @@
-import loadUsers from '../adicionales/cargarTablaUser.js';
-import { UsuariosDB } from '../clases/UsuariosDB.class.js';
+import loadUsers from './adicionales/cargarTablaUser.js';
+import { UsuariosDB } from './clases/UsuariosDB.class.js';
 
 /////////////////CARGAR TABLA/////////////
 
@@ -12,7 +12,6 @@ const filtrar = document.getElementById('filtrar_nombres');
 const search = document.getElementById('input-search').value;
 
 loadUsers(bodyTabla, items_paginacion, cantidadRegistros.value, search, SelectfiltarUsuarios.value);
-
 
 
 //////////////////////EVENTS LISTENENERS//////////////////////////////////////////////////
@@ -51,8 +50,7 @@ tabla.addEventListener('click', e => {
             cambiarEstado.cambiarEstado(key, 'true');
         }
     }
-})
-
+});
 
 // -----------MODAL BORRAR------------
 
