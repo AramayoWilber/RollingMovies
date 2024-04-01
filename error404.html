@@ -30,41 +30,29 @@
         </div>
     </nav>
 
-    <h1>Error 404</h1>
-    <div class="error-container">
-        <span class="error-number">404</span>
-        <span class="error-message">Lo sentimos, la página que buscas no existe.</span>
-        <a href="index.html">Volver al inicio</a>
-    </div>
-
-    <footer>
-        <div class="container-fluid">
-            <div class="row justify-content-between mb-1">
-                <div class="col-sm-8">
-                    <div class="social-icons-redes">
-                        <i class="fa-brands fa-x-twitter"></i>
-                        <i class="fa-brands fa-facebook"></i>
-                        <i class="fa-brands fa-whatsapp"></i>
-                        <i class="fa-brands fa-instagram"></i>
-                        <i class="fa-brands fa-tiktok"></i>
-                    </div>
-                </div>
-                <div class="col">
-                    <h6>© 2024 JStreamMovies, LLC. Todos los derechos reservados.</h6>
-                </div>
-            </div>
-            <div class="row">
-                <div class="enlances-footer">
-                    <a href="#">Política de privacidad</a>
-                    <a href="#">Términos de uso</a>
-                    <a href="#">Administrar las preferencias de cookies</a>
-                    <a href="#">info</a>
-                </div>
-            </div>
+    <div class="container text-center">
+        <h1>Error 404</h1>
+        <div class="error-container">
+            <span class="error-number">404</span>
+            <span class="error-message my-4">Lo sentimos, la página que buscas no existe.</span>
+            <a href="/index.html">
+                <button class="btn_submit">Volver al inicio</button>
+            </a>
         </div>
-    </footer>
-
+    </div>
     <script src="/bootstrap/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module">
+        import { opcionesAdmin, logueado, no_logueado } from '/js/adicionales/navbar.js';
+        const usuarioActivo = JSON.parse(localStorage.getItem('usuarioActivo')) || { logueado: false };
+        if (usuarioActivo.logueado) {
+            logueado();
+            if (usuarioActivo.administrador) {
+                opcionesAdmin();
+            }
+        } else {
+            no_logueado();
+        }
+    </script>
 </body>
 
 </html>

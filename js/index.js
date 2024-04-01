@@ -16,8 +16,7 @@ const mostrar = () => {
                 const mostrarPortadaIndex = `
             <div>
                 <img src="${item.img_portada}" class="neon-border-2" width="100%" height="100%" alt="peli-sugerida">
-            </div>
-        `;
+            </div>`;
 
                 const nuevoItem = document.createElement('div');
                 nuevoItem.setAttribute('id', item.codigo)
@@ -127,5 +126,6 @@ if (usuarioActivo.logueado) {
     mostrar();
 } else {
     no_logueado();
+    mostrar();
 }
 

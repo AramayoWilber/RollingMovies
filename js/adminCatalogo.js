@@ -263,8 +263,10 @@ if (usuarioActivo.logueado) {
     logueado();
     if (usuarioActivo.administrador) {
         opcionesAdmin();
+        mostrar();
+    } else {
+        window.location.href = '/index.html'
     }
-    mostrar();
 } else {
     window.location.href = '/html/login/login.html'
 }

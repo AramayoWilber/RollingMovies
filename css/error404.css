@@ -1,12 +1,19 @@
 body {
     margin: 0;
-    text-align: center;
     font-family: "Helvetica", sans-serif;
-    background-image: url("https://i.pinimg.com/originals/e8/37/f5/e837f5481a13a1f0e1e46908f78c6fbc.png");
+    background-image: url(/img/e837f5481a13a1f0e1e46908f78c6fbc.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     background-position: center center;
+    color: rgb(230, 219, 219);
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
+    margin: 0;
+    padding-bottom: 1em;
+    min-height: 100vh;
+    position: relative;
 }
 
 h1 {
@@ -17,7 +24,6 @@ h1 {
 .error-container {
     margin-top: 30px;
 }
-
 .error-container span {
     display: block;
 }
@@ -33,16 +39,15 @@ h1 {
     color: #fcfbfb;
 }
 
-a {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 10px 20px;
-    background-color: #f8f8f8;
-    border: 1px solid #ccc;
-    text-decoration: none;
-    color: #333;
+.btn_submit {
+    height: 2.5rem;
+    width: 20%;
+    font-weight: 600;
+    color: rgb(29, 28, 28);
+    border: none;
+    background: rgb(212, 205, 205);
+    border-radius: 0.4rem;
 }
-
-a:hover {
-    background-color: #e7e7e7;
+.btn_submit:hover {
+    background: rgb(236, 232, 232);
 }

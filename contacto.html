@@ -31,22 +31,28 @@
     </nav>
 
     <div class="container">
-        <form id="form">
-            <div class="field">
-                <h2>Contacto</h2>
-                <label for="from_name">Nombre</label>
-                <input type="text" name="from_name" id="from_name" required>
+        <div class="row justify-content-center align-items-stretch">
+            <div class="col d-none d-md-block col-md-6 col-lg-6 col-xl-6 d-block bg-img">
             </div>
-            <div class="field">
-                <label for="message">Mensaje</label>
-                <input type="text" name="message" id="message" required>
+            <div class="col">
+                <form id="form">
+                    <div class="field mb-3">
+                        <h2>Contacto</h2>
+                        <label for="from_name">Nombre</label>
+                        <input type="text" name="from_name" id="from_name" required>
+                    </div>
+                    <div class="field mb-3">
+                        <label for="email_id">Email</label>
+                        <input type="text" name="email_id" id="email_id" required>
+                    </div>
+                    <div class="field mb-3">
+                        <label for="message">Mensaje</label>
+                        <input type="text" name="message" id="message" placeholder="Escribe tu mensaje" required>
+                    </div>
+                    <input type="submit mt-3" id="button" value="Enviar">
+                </form>
             </div>
-            <div class="field">
-                <label for="email_id">Email</label>
-                <input type="text" name="email_id" id="email_id" required>
-            </div>
-            <input type="submit" id="button" value="Enviar">
-        </form>
+        </div>
     </div>
 
     <footer>
