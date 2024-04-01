@@ -9,7 +9,7 @@ body {
     min-height: 100vh;
     grid-template-rows: auto 1fr auto;
     margin: 0;
-    padding-bottom: 4em;
+    padding-bottom: 2em;
 }
 
 .borde-contenedor {

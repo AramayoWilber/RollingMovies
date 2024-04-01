@@ -266,5 +266,5 @@ if (usuarioActivo.logueado) {
     }
     mostrar();
 } else {
-    no_logueado();
+    window.location.href = '/html/login/login.html'
 }

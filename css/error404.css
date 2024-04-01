@@ -1,39 +1,39 @@
 body {
+    margin: 0;
     text-align: center;
-    padding: 50px; /* Reducido el padding */
-    font-family: 'Helvetica', sans-serif;
-    background-image: url('https://i.pinimg.com/originals/e8/37/f5/e837f5481a13a1f0e1e46908f78c6fbc.png');
+    font-family: "Helvetica", sans-serif;
+    background-image: url("https://i.pinimg.com/originals/e8/37/f5/e837f5481a13a1f0e1e46908f78c6fbc.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    background-position: center;
-  }
+    background-position: center center;
+}
 
-  h1 {
-    font-size: 3em; 
+h1 {
+    font-size: 3em;
     color: #fdfcfc;
-  }
+}
 
-  .error-container {
-    margin-top: 30px; 
-  }
+.error-container {
+    margin-top: 30px;
+}
 
-  .error-container span {
+.error-container span {
     display: block;
-  }
+}
 
-  .error-number {
-    font-size: 4em; 
+.error-number {
+    font-size: 4em;
     font-weight: bold;
     color: #fcf8f8;
-  }
+}
 
-  .error-message {
-    font-size: 1.5em; 
+.error-message {
+    font-size: 1.5em;
     color: #fcfbfb;
-  }
+}
 
-  a {
+a {
     display: inline-block;
     margin-top: 25px;
     padding: 10px 20px;
@@ -41,8 +41,8 @@ body {
     border: 1px solid #ccc;
     text-decoration: none;
     color: #333;
-  }
+}
 
-  a:hover {
+a:hover {
     background-color: #e7e7e7;
-  }
+}
