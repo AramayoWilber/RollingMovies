@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="utf-8" />
@@ -13,38 +13,48 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm mb-5">
-        <div class="container-fluid justify-content-between align-items-center">
-            <a class="navbar-brand" href="#">
-                <img src="/img/logo_sin_fondo.png" alt="logoJStream_movies">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/index.html">
+                <img src="/img/logo_sin_fondo.png" width="100px" height="40px">
             </a>
-            <a href="/html/login/registro.html">
-                <button type="button" class="btn-registrar">Registrarse ahora</button>
-            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul id="listaNavbar" class="navbar-nav me-auto mb-2 mb-lg-0">
+                </ul>
+            </div>
         </div>
     </nav>
-    <form id="form">
-        <div class="field">
-            <h2>Contacto</h2>
-            <label for="from_name">Nombre</label>
-            <input type="text" name="from_name" id="from_name" required>
-        </div>
-        <div class="field">
-            <label for="message">Mensaje</label>
-            <input type="text" name="message" id="message" required>
-        </div>
-        <div class="field">
-            <label for="email_id">Email</label>
-            <input type="text" name="email_id" id="email_id" required>
-        </div>
-        <input type="submit" id="button" value="Enviar">
-    </form>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-    <script type="text/javascript">
-        emailjs.init('mBpe19mizYqBrowBz')
-    </script>
-    <script src="./js/contacto.js"></script>
+    <div class="container">
+        <div class="row justify-content-center align-items-stretch">
+            <div class="col d-none d-md-block col-md-6 col-lg-6 col-xl-6 d-block bg-img">
+            </div>
+            <div class="col">
+                <form id="form">
+                    <div class="field mb-3">
+                        <h2>Contacto</h2>
+                        <label for="from_name">Nombre</label>
+                        <input type="text" name="from_name" id="from_name" required>
+                    </div>
+                    <div class="field mb-3">
+                        <label for="email_id">Email</label>
+                        <input type="text" name="email_id" id="email_id" required>
+                    </div>
+                    <div class="field mb-3">
+                        <label for="message">Mensaje</label>
+                        <input type="text" name="message" id="message" placeholder="Escribe tu mensaje" required>
+                    </div>
+                    <input type="submit mt-3" id="button" value="Enviar">
+                </form>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <div class="container-fluid">
             <div class="row justify-content-between mb-1">
@@ -73,10 +83,11 @@
     </footer>
 
     <script src="/bootstrap/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
-    <script type="module" src="./js/contacto.js"></script>
-</body>
-
-</html>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        emailjs.init('mBpe19mizYqBrowBz')
+    </script>
+    <script type="module" src="/js/contacto.js"></script>
 </body>
 
 </html>

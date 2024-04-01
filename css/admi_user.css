@@ -10,9 +10,9 @@ body {
 }
 
 /* --------------------NAV BAR------------------ */
-.navbar img {
-    width: 7rem;
-    height: auto;
+.bi-person-circle {
+    font-size: 1.8rem;
+    margin-right: 0.5rem;
 }
 
 /* -----------------TABLA------------------ */

@@ -86,102 +86,80 @@ function validarSelect(e) {
 }
 
 
-inputs.forEach(input => {
-    input.addEventListener('keyup', validadFormulario); //evento al presionar tecla en el input
-    input.addEventListener('blur', validadFormulario); // evento clip fuera del input
-});
+function mostrar() {
+    inputs.forEach(input => {
+        input.addEventListener('keyup', validadFormulario); //evento al presionar tecla en el input
+        input.addEventListener('blur', validadFormulario); // evento clip fuera del input
+    });
 
-selects.forEach(select => {
-    select.addEventListener('click', validarSelect)
-    select.addEventListener('blur', validarSelect);
+    selects.forEach(select => {
+        select.addEventListener('click', validarSelect)
+        select.addEventListener('blur', validarSelect);
 
-});
-
-
-formRegistro.addEventListener('submit', e => {
-    e.preventDefault();
+    });
 
 
-    const valorSelect = document.getElementById('genero_formRegistro').value;
+    formRegistro.addEventListener('submit', e => {
+        e.preventDefault();
 
-    if (valorSelect === "") {
-        document.getElementById('form-group-genero').classList.add('form_grupo_genero_correcto');
-        document.getElementById('form-group-genero').classList.add('form-grupo-genero');
-    }
 
-    const keyss = Object.keys(camposValidados);
+        const valorSelect = document.getElementById('genero_formRegistro').value;
 
-    for (let i = 0; i < keyss.length - 2; i++) {
-        const clave = keyss[i]
-        if (camposValidados[clave] === false) {
-            document.getElementById(`form-group-${clave}`).classList.add('form_grupo_incorrecto');
-            document.querySelector(`#form-group-${clave} i`).classList.remove('bi-check-circle-fill');
-            document.querySelector(`#form-group-${clave} i`).classList.add('bi-x-circle-fill');
-            document.querySelector(`#form-group-${clave} .input-error`).classList.add('input-error-activo');
+        if (valorSelect === "") {
+            document.getElementById('form-group-genero').classList.add('form_grupo_genero_correcto');
+            document.getElementById('form-group-genero').classList.add('form-grupo-genero');
         }
-    }
+
+        const keyss = Object.keys(camposValidados);
+
+        for (let i = 0; i < keyss.length - 2; i++) {
+            const clave = keyss[i]
+            if (camposValidados[clave] === false) {
+                document.getElementById(`form-group-${clave}`).classList.add('form_grupo_incorrecto');
+                document.querySelector(`#form-group-${clave} i`).classList.remove('bi-check-circle-fill');
+                document.querySelector(`#form-group-${clave} i`).classList.add('bi-x-circle-fill');
+                document.querySelector(`#form-group-${clave} .input-error`).classList.add('input-error-activo');
+            }
+        }
 
 
-    if (document.getElementById('check-terminos').checked) {
-        document.querySelector('#form-group-terminos .input-error-checked').classList.remove('input-error-checked-activo');
-        document.getElementById('form-group-terminos').classList.remove('form-grupo-checke-incorrecto');
-        camposValidados.terminos = true;
+        if (document.getElementById('check-terminos').checked) {
+            document.querySelector('#form-group-terminos .input-error-checked').classList.remove('input-error-checked-activo');
+            document.getElementById('form-group-terminos').classList.remove('form-grupo-checke-incorrecto');
+            camposValidados.terminos = true;
 
-    }
-    else {
-        document.querySelector('#form-group-terminos .input-error-checked').classList.add('input-error-checked-activo');
-        document.getElementById('form-group-terminos').classList.add('form-grupo-checke-incorrecto');
-        camposValidados.terminos = false;
-    }
-
-
-    if (camposValidados.email && camposValidados.email && camposValidados.nombre && camposValidados.apellido && camposValidados.telefono && camposValidados.password && camposValidados.genero && camposValidados.terminos) {
-
-        const usuarioDB = new UsuariosDB();
-
-        const form_email = document.getElementById('email_formRegistro').value;
-        const form_nombre = document.getElementById('nombre_formRegistro').value;
-        const form_apellido = document.getElementById('apellido_formRegistro').value;
-        const form_password = document.getElementById('password_formRegistro').value;
-        const form_telefono = document.getElementById('telefono_formRegistro').value;
-        const form_genero = document.getElementById('genero_formRegistro').value;
-
-        const nuevoUsuario = new Usuario(usuarioDB.obtenerNuevoId(), form_apellido, form_email, form_password, form_nombre, form_telefono, form_genero);
-
-        usuarioDB.agregarUsuario(nuevoUsuario);
-
-        window.location.href = '../../html/login/registroSuccess.html';
-    }
-});
+        }
+        else {
+            document.querySelector('#form-group-terminos .input-error-checked').classList.add('input-error-checked-activo');
+            document.getElementById('form-group-terminos').classList.add('form-grupo-checke-incorrecto');
+            camposValidados.terminos = false;
+        }
 
 
+        if (camposValidados.email && camposValidados.email && camposValidados.nombre && camposValidados.apellido && camposValidados.telefono && camposValidados.password && camposValidados.genero && camposValidados.terminos) {
 
+            const usuarioDB = new UsuariosDB();
 
+            const form_email = document.getElementById('email_formRegistro').value;
+            const form_nombre = document.getElementById('nombre_formRegistro').value;
+            const form_apellido = document.getElementById('apellido_formRegistro').value;
+            const form_password = document.getElementById('password_formRegistro').value;
+            const form_telefono = document.getElementById('telefono_formRegistro').value;
+            const form_genero = document.getElementById('genero_formRegistro').value;
 
+            const nuevoUsuario = new Usuario(usuarioDB.obtenerNuevoId(), form_apellido, form_email, form_password, form_nombre, form_telefono, form_genero);
 
+            usuarioDB.agregarUsuario(nuevoUsuario);
 
+            window.location.href = '../../html/login/registroSuccess.html';
+        }
+    });
+}
 
+const usuarioActivo = JSON.parse(localStorage.getItem('usuarioActivo')) || { logueado: false };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// formRegistro.addEventListener('submit', (e) => {
-//     e.preventDefault();
-//     e.stopPropagation();
-
-
-// });
-
-//form.classList.add('was-validated')
+if (usuarioActivo.logueado) {
+    window.location.href = '/index.html';
+} else {
+    mostrar();
+}

@@ -36,25 +36,35 @@ const verificarEmailDB = () => {
     }
 }
 
-input.addEventListener('keyup', validarCorreo);
-input.addEventListener('blur', validarCorreo);
+function mostrar() {
+    input.addEventListener('keyup', validarCorreo);
+    input.addEventListener('blur', validarCorreo);
 
 
-formulario.addEventListener('submit', e => {
-    e.preventDefault();
+    formulario.addEventListener('submit', e => {
+        e.preventDefault();
 
-    verificarEmailDB();
+        verificarEmailDB();
 
-    if (!emailValido) {
-        document.getElementById('formulario').classList.add('form-email-incorrecto');
-    } else {
-        if (!emailValidoEncontrado) {
-            document.getElementById('formulario').classList.add('email-no-valido');
+        if (!emailValido) {
+            document.getElementById('formulario').classList.add('form-email-incorrecto');
+        } else {
+            if (!emailValidoEncontrado) {
+                document.getElementById('formulario').classList.add('email-no-valido');
+            }
+            else {
+                window.location.href = '../../html/login/resetPasswordEmail.html';
+            }
         }
-        else {
-            window.location.href = '../../html/login/resetPasswordEmail.html';
-        }
-    }
 
 
-});
+    });
+}
+
+const usuarioActivo = JSON.parse(localStorage.getItem('usuarioActivo')) || { logueado: false };
+
+if (usuarioActivo.logueado) {
+    window.location.href = '/index.html';
+} else {
+    mostrar();
+}

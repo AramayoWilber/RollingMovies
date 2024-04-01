@@ -9,8 +9,7 @@ body {
     min-height: 100vh;
     grid-template-rows: auto 1fr auto;
     margin: 0;
-    padding-bottom: 4em;
-    min-height: 100vh;
+    padding-bottom: 2em;
 }
 
 .borde-contenedor {
@@ -23,13 +22,6 @@ body {
 
 /* --------------------nav bar ------------------- */
 
-.bg-navbar {
-    background: #202649;
-}
-
-.navbar-nav {
-    font-size: 1.1em;
-}
 .nav-link {
     color: azure;
 }
@@ -38,23 +30,11 @@ body {
     color: #8da0bc;
 }
 
-.navbar-toggler {
-    border: 1px solid #8da0bc;
-    color: #8da0bc;
+.bi-person-circle {
+    font-size: 1.9rem;
+    margin-right: 0.5rem;
 }
 
-.navbar-toggler span {
-    color: aqua;
-}
-
-.navbar-brand img {
-    height: 25%;
-    width: 7rem;
-}
-
-.ancho {
-    width: 90%;
-}
 /* -------------------------FORMULARIO------------------- */
 .form-search {
     position: relative;

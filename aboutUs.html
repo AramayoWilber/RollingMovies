@@ -13,37 +13,24 @@
 </head>
 
 <body>
-	<nav class="navbar fixed-top navbar-expand-lg navbar-dark">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="index.html">
-				<img src="./img/logo_sin_fondo.png" width="100px" height="40px">
-			</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item">
-						<a class="nav-link active text-light " aria-current="page" href="index.html">Inicio</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link active text-light" aria-disabled="page"
-							href="pages/contacto.html">Contacto</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link active text-light" aria-disabled="page"
-							href="pages/nosotros.html">Nosotros</a>
-					</li>
-				</ul>
-				<a href="pages/login.html">
-					<button type="button" class="btn btn-primary mx-2 my-2">Iniciar Sesion</button>
+	<header>
+		<nav class="navbar navbar-expand-md">
+			<div class="container-fluid ancho ">
+				<a class="navbar-brand" href="/index.html">
+					<img src="/img/logo_sin_fondo.png" width="100px">
 				</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+					data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul id="listaNavbar" class="navbar-nav me-auto mb-2 mb-lg-0">
+					</ul>
+				</div>
 			</div>
-		</div>
-	</nav>
-
+		</nav>
+	</header>
 
 	<div class="contenedortexto1">
 		<h1> Acerca de nosotros</h1>
@@ -116,7 +103,7 @@
 		</div>
 	</footer>
 
-	<script src="./bootstrap/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+	<script src="/bootstrap/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
 	<script>
 		const nav = document.querySelector('nav');
 		window.addEventListener('scroll', e => {
@@ -126,6 +113,18 @@
 				nav.classList.remove('bg-dark', 'shadow');
 			}
 		});
+	</script>
+	<script type="module">
+		import { opcionesAdmin, logueado, no_logueado } from '/js/adicionales/navbar.js'
+		const usuarioActivo = JSON.parse(localStorage.getItem('usuarioActivo')) || { logueado: false };
+		if (usuarioActivo.logueado) {
+			logueado();
+			if (usuarioActivo.administrador) {
+				opcionesAdmin();
+			}
+		} else {
+			no_logueado();
+		}
 	</script>
 </body>
 
