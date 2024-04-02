@@ -1,5 +1,25 @@
 import cerrar_seccion from "./adicionales/cerrarSeccion.js";
 import { CatalogoDB } from "./clases/CatalogoDB.class.js";
+import { opcionesAdmin, logueado, no_logueado } from './adicionales/navbar.js'
+
+
+window.buscarPelicula = (nombre) => {
+    // Buscar en la base de datos de películas
+    const peliculas = new CatalogoDB().establecerConexion();
+    let peliculaFiltrada = peliculas.find(pelicula => pelicula.nombre.toLowerCase() === nombre.toLowerCase());
+
+    if (peliculaFiltrada) {
+        // Almacenar los detalles de la película en el almacenamiento local
+        localStorage.setItem('dataMovie', JSON.stringify(peliculaFiltrada));
+
+        // Redirigir al usuario a la página de la película
+        window.location.href = "/verPelicula.html";
+    } else {
+        // Mostrar un mensaje si la película no se encuentra
+        alert("Película no encontrada");
+    }
+}
+
 
 window.reproducir = (id) => {
     const peliculas = new CatalogoDB().establecerConexion();
@@ -120,49 +140,6 @@ const mostrar = () => {
     });
 
     cerrar_seccion();
-}
-
-const opcionesAdmin = () => {
-    const navbarList = document.getElementById('listaNavbar');
-    const liUserAdmin = document.createElement('li');
-    liUserAdmin.classList.add('nav-item');
-    const contenidoLiUser = `<a class="nav-link text-light" aria-hidden="true" href="/html/adminUsers/adminUsers.html">Usuarios</a>`
-    liUserAdmin.innerHTML = contenidoLiUser;
-    navbarList.append(liUserAdmin);
-
-    const liAdminMovie = document.createElement('li');
-    liAdminMovie.classList.add('nav-item');
-    const contenidoLiMovie = `<a class="nav-link text-light" href="/html/adminPeliculas/adminPeliculas.html">Catalogo</a>`
-    liAdminMovie.innerHTML = contenidoLiMovie;
-    navbarList.append(liAdminMovie);
-}
-
-const no_logueado = () => {
-    const collapseNavbar = document.getElementById('navbarSupportedContent');
-
-    const login = document.createElement('a');
-    login.setAttribute('href', "./html/login/login.html");
-    const contenido = `<button type="button" class="btn btn-primary mx-2 my-2">Iniciar Sesion</button>`;
-    login.innerHTML = contenido;
-    collapseNavbar.append(login);
-}
-
-const logueado = () => {
-    const collapseNavbar = document.getElementById('navbarSupportedContent');
-
-    const dropdown = document.createElement('div');
-    dropdown.classList.add('dropdown');
-    const contenido = `
-        <i class="bi bi-person-circle" data-bs-toggle="dropdown" aria-expanded="false"></i>
-        <ul class="dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item" href="#"> <i class="fa-solid fa-user me-2"></i>Ver perfil</a></li>
-            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-gear me-2"></i>Ajustes</a></li>
-            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-circle-info me-2"></i>Soporte tecnico</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li id="cerrar_seccion"><a class="dropdown-item" href="#"><i class="fa-solid fa-right-to-bracket me-2"></i>Cerrar sesión</a></li>
-        </ul>`;
-    dropdown.innerHTML = contenido;
-    collapseNavbar.append(dropdown);
 }
 
 const usuarioActivo = JSON.parse(localStorage.getItem('usuarioActivo')) || { logueado: false };

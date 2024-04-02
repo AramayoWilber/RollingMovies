@@ -1,5 +1,6 @@
 export const opcionesAdmin = () => {
     const navbarList = document.getElementById('listaNavbar');
+
     const liUserAdmin = document.createElement('li');
     liUserAdmin.classList.add('nav-item');
     const contenidoLiUser = `<a class="nav-link text-light" href="/html/adminUsers/adminUsers.html">Usuarios</a>`
@@ -11,6 +12,7 @@ export const opcionesAdmin = () => {
     const contenidoLiMovie = `<a class="nav-link text-light" href="/html/adminPeliculas/adminPeliculas.html">Catalogo</a>`
     liAdminMovie.innerHTML = contenidoLiMovie;
     navbarList.append(liAdminMovie);
+
 }
 
 export const no_logueado = () => {
