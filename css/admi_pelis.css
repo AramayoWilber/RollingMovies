@@ -196,16 +196,20 @@ body {
     color: #1100ff;
     border: 1px solid blue;
 }
+/* --------------MODAL EDITAR----------------- */
+#formulario_modal_editar label {
+    color: #3c3d41;
+}
 
-/* -------------------MODAL-------------------- */
+/* -------------------MODAL AÑADIR-------------------- */
 
 .bg-modal-add {
     color: #e9dcdc;
     background: #1c2553;
 }
 .modal-content {
-    border: 2px solid red;
-    background: rgb(134, 46, 46) !important;
+    color: #3c3d41;
+    background: rgb(255, 255, 255) !important;
 }
 .modal-body {
     border-radius: 10px;
@@ -215,7 +219,7 @@ body {
     position: absolute;
     right: 15px;
     top: 8px;
-    font-size: 1.7em;
+    font-size: 1.6em;
     border: none;
     background: transparent;
 }

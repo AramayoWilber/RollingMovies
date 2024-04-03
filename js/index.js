@@ -2,24 +2,10 @@ import cerrar_seccion from "./adicionales/cerrarSeccion.js";
 import { CatalogoDB } from "./clases/CatalogoDB.class.js";
 import { opcionesAdmin, logueado, no_logueado } from './adicionales/navbar.js'
 
-
-window.buscarPelicula = (nombre) => {
-    // Buscar en la base de datos de películas
-    const peliculas = new CatalogoDB().establecerConexion();
-    let peliculaFiltrada = peliculas.find(pelicula => pelicula.nombre.toLowerCase() === nombre.toLowerCase());
-
-    if (peliculaFiltrada) {
-        // Almacenar los detalles de la película en el almacenamiento local
-        localStorage.setItem('dataMovie', JSON.stringify(peliculaFiltrada));
-
-        // Redirigir al usuario a la página de la película
-        window.location.href = "/verPelicula.html";
-    } else {
-        // Mostrar un mensaje si la película no se encuentra
-        alert("Película no encontrada");
-    }
+window.categoria = (categoria) => {
+    localStorage.setItem('categoria', JSON.stringify(categoria))
+    window.location.href = '/index-categoria.html';
 }
-
 
 window.reproducir = (id) => {
     const peliculas = new CatalogoDB().establecerConexion();
@@ -49,7 +35,9 @@ window.reproducir = (id) => {
 
 const mostrar = () => {
     const catalogoDB = new CatalogoDB();
-    const mostradorPeliculas = document.getElementById('mostradorPeliculas')
+    const mostradorPeliculas = document.getElementById('mostradorPeliculas');
+    const inputSearch = document.getElementById('filtrar_nombre_pelicula');
+    const formSearch = document.getElementById('formSearch');
 
     // Obtiene los datos de las películas
     const mostrarPortadas = () => {
@@ -110,6 +98,12 @@ const mostrar = () => {
             }
         }
     });
+
+    formSearch.addEventListener('submit', e => {
+        e.preventDefault()
+        localStorage.setItem('search', JSON.stringify(inputSearch.value));
+        window.location.href = '/index-buscar.html'
+    })
 
 
     mostradorPeliculas.addEventListener('click', e => {

@@ -13,7 +13,7 @@ const expresiones = {
 }
 
 const catalogo = new CatalogoDB();
-
+const btnGuardarCambios = document.querySelector('#btn-sutmit-guardar')
 const datosParaBorrar = {
     filaTabla: null,
     key: null
@@ -46,6 +46,9 @@ const validadFormulario = (e) => {
             break;
         case 'validacionURL_formEdit':
             validarCampo(expresiones.URL, e.target.value, 'trailer')
+            break;
+        case 'url_logo_formEdit':
+            validarCampo(expresiones.URL, e.target.value, 'logo')
             break;
         case 'url_portada_formEdit':
             validarCampo(expresiones.URL, e.target.value, 'portada')
@@ -88,6 +91,7 @@ function cargarModalEdit(e) {
         document.getElementById('destacar_formEdit').value = datosPelicula.destacada;
         document.getElementById('categoria_formEdit').value = datosPelicula.categoria;
         document.getElementById('validacionURL_formEdit').value = datosPelicula.url_trailer;
+        document.getElementById('url_logo_formEdit').value = datosPelicula.img_logo;
         document.getElementById('url_portada_formEdit').value = datosPelicula.img_portada;
         document.getElementById('url_banner_formEdit').value = datosPelicula.img_banner;
     }
@@ -161,7 +165,6 @@ function mostrar() {
     const bodyTabla = document.getElementById('body-tabla');
     const items_paginacion = document.getElementById('items-paginacion');
     const cantidadRegistros = document.getElementById('select_candidad_registros');
-    const btnGuardarCambios = document.querySelector('#btn-sutmit-guardar')
 
     cargarCatalogo(bodyTabla, items_paginacion, cantidadRegistros.value, "");
 
@@ -190,10 +193,11 @@ function mostrar() {
         const publicar = document.getElementById('publicar_form').value;
         const destacar = document.getElementById('destacar_form').value;
         const url_trailer = document.getElementById('validacionURL').value;
+        const url_logo = document.getElementById('url_logo_formEdit').value;
         const url_portada = document.getElementById('url_portada_form').value;
         const url_banner = document.getElementById('url_banner_form').value;
 
-        const pelicula = new Pelicula(catalogo.obtenerCodigo(), titulo, categoria, genero, descripcion, publicar, destacar, url_portada, url_banner, url_trailer);
+        const pelicula = new Pelicula(catalogo.obtenerCodigo(), titulo, categoria, genero, descripcion, publicar, destacar, url_logo, url_portada, url_banner, url_trailer);
         catalogo.agregarContenido(pelicula);
         cargarCatalogo(bodyTabla, items_paginacion, cantidadRegistros.value, "");
         setTimeout(() => {
@@ -217,10 +221,11 @@ function mostrar() {
         const publicar = document.getElementById('publicar_formEdit').value;
         const destacar = document.getElementById('destacar_formEdit').value;
         const url_trailer = document.getElementById('validacionURL_formEdit').value;
+        const url_logo = document.getElementById('url_logo_formEdit').value;
         const url_portada = document.getElementById('url_portada_formEdit').value;
         const url_banner = document.getElementById('url_banner_formEdit').value;
 
-        const nuevaPelicula = new Pelicula(key, titulo, categoria, genero, descripcion, publicar, destacar, url_portada, url_banner, url_trailer)
+        const nuevaPelicula = new Pelicula(key, titulo, categoria, genero, descripcion, publicar, destacar, url_logo, url_portada, url_banner, url_trailer)
         catalogo.editatElementoDelCatalogo(key, nuevaPelicula);
         cargarCatalogo(bodyTabla, items_paginacion, cantidadRegistros.value, "");
         setTimeout(() => {
