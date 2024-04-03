@@ -16,7 +16,7 @@
     <header>
         <nav class="navbar navbar-expand-md">
             <div class="container-fluid ancho ">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="/index.html">
                     <img src="/img/logo_sin_fondo.png" width="100px">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -187,6 +187,15 @@
                             </div>
 
                             <div class="mb-3">
+                                <label for="url_logo_form" class="form-label">URL logo</label>
+                                <input type="url" class="form-control" id="url_logo_form" required>
+                                <div class="valid-feedback">
+                                    Todo bien!
+                                </div>
+                                <div class="invalid-feedback">Ingrese una URL para del logo</div>
+                            </div>
+
+                            <div class="mb-3">
                                 <label for="url_portada_form" class="form-label">URL imagen portada</label>
                                 <input type="url" class="form-control" id="url_portada_form" required>
                                 <div class="valid-feedback">
@@ -306,6 +315,15 @@
                                                 Todo bien!
                                             </div>
                                             <div class="invalid-feedback">Ingrese una URL del video</div>
+                                        </div>
+
+                                        <div class="mb-3" id="group-logo">
+                                            <label for="url_logo_formEdit" class="form-label">URL logo</label>
+                                            <input type="url" class="form-control" id="url_logo_formEdit" required>
+                                            <div class="valid-feedback">
+                                                Todo bien!
+                                            </div>
+                                            <div class="invalid-feedback">Ingrese una URL para del logo</div>
                                         </div>
 
                                         <div class="mb-3" id="group-portada">

@@ -41,28 +41,12 @@
     </header>
 
     <div class="neon-line"></div>
-    <main>
-        <div id="carouselExample" class="carousel slide">
-            <div id="container-carrousel" class="carousel-inner">
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-    </main>
-
-    <div class="neon-line"></div>
-    <div class="neon-line mt-5"></div>
+    <div class="neon-line mt-1"></div>
 
     <section>
         <div class="container">
             <div class="row my-2">
-                <h3 class="text-white mb-5 mt-5">Sugeridos para ti</h3>
+                <h3 id="categoria" class="text-white mb-5 mt-5"></h3>
                 <div class="col-12">
                     <div id="mostradorPeliculas" class="row justify-content-center mb-5">
                     </div>
@@ -87,15 +71,16 @@
                         <img src="./img/index/scream_5839641.png" class="img-fluid imghov" alt="">
                     </a>
                     <h3 class="text-center text-white ">Terror</h3>
+
                 </div>
                 <div class="col-10 col-md-6 col-lg-2">
-                    <a href="#" onclick="categoria('fantasia')">
+                    <a onclick="categoria('fantasia')" href="#">
                         <img src="./img/index/magic-wand.png" class="img-fluid imghov" alt="">
                     </a>
                     <h3 class="text-center text-white ">Fantasia</h3>
                 </div>
                 <div class="col-10 col-md-6 col-lg-2">
-                    <a href="#" onclick="categoria('comedia')">
+                    <a onclick="categoria('comedia')" href="#">
                         <img src="./img/index/barber-chair.png" class="img-fluid imghov" alt="">
                     </a>
                     <h3 class="text-center text-white ">Comedia</h3>
@@ -148,7 +133,7 @@
     </footer>
 
     <script src="/bootstrap/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
-    <script type="module" src="/js/index.js"></script>
+    <script type="module" src="/js/index-categoria.js"></script>
 </body>
 
 </html>
