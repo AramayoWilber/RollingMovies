@@ -15,11 +15,9 @@ window.addEventListener('load', e => {
     const categoriaTitulo = document.getElementById('categoria');
     categoriaTitulo.append(obtenerCategoria.toUpperCase())
     let peliculas = catalogoDB.establecerConexion();
-    console.log(peliculas)
     mostradorPeliculas.innerHTML = '';
     peliculas.forEach((item) => {
         if (item.publicado === true && item.genero === obtenerCategoria) {
-            console.log('estoy')
             const mostrarPortadaIndex = `
                 <div>
                     <img src="${item.img_portada}" class="neon-border-2" width="100%" height="100%" alt="peli-sugerida">
@@ -33,6 +31,15 @@ window.addEventListener('load', e => {
     });
 })
 
+const formSearch = document.getElementById('formSearch');
+const inputSearch = document.getElementById('filtrar_nombre_pelicula');
+
+formSearch.addEventListener('submit', e => {
+    e.preventDefault()
+    localStorage.setItem('search', JSON.stringify(inputSearch.value));
+    window.location.href = '/index-buscar.html'
+})
+
 cerrar_seccion();
 
 const usuarioActivo = JSON.parse(localStorage.getItem('usuarioActivo')) || { logueado: false };
@@ -42,7 +49,6 @@ if (usuarioActivo.logueado) {
     if (usuarioActivo.administrador) {
         opcionesAdmin();
     }
-    mostrar();
 } else {
     no_logueado();
 
