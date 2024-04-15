@@ -44,6 +44,33 @@ function mostrar() {
         });
     }
 
+    mostradorPeliculas.addEventListener('click', e => {
+        const id = parseInt(e.target.parentElement.parentElement.getAttribute('id'));
+        const peliculas = new CatalogoDB().establecerConexion();
+        let peliculafiltrada;
+        peliculas.forEach((item) => {
+            if (item.codigo === id) {
+                console.log(item)
+                peliculafiltrada = {
+                    codigo: item.codigo,
+                    nombre: item.nombre,
+                    categoria: item.categoria,
+                    genero: item.genero,
+                    descripcion: item.descripcion,
+                    publicado: item.publicado,
+                    destacada: item.destacada,
+                    img_logo: item.img_logo,
+                    img_portada: item.img_portada,
+                    img_banner: item.img_banner,
+                    url_trailer: item.url_trailer
+                };
+            }
+        })
+        console.log(peliculafiltrada)
+        localStorage.setItem('dataMovie', JSON.stringify(peliculafiltrada));
+        window.location.href = "/verPelicula.html"
+    });
+
     cerrar_seccion();
 }
 
